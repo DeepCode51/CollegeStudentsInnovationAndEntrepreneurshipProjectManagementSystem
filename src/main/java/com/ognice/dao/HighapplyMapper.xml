@@ -1,0 +1,4061 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.HighapplyMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Highapply">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+		<result column="projectnum" property="projectnum" jdbcType="INTEGER" />
+		<result column="preuserid" property="preuserid" jdbcType="INTEGER" />
+		<result column="preusername" property="preusername" jdbcType="VARCHAR" />
+		<result column="xueyuan" property="xueyuan" jdbcType="VARCHAR" />
+		<result column="utel" property="utel" jdbcType="VARCHAR" />
+		<result column="umail" property="umail" jdbcType="VARCHAR" />
+		<result column="tea" property="tea" jdbcType="VARCHAR" />
+		<result column="tealevel" property="tealevel" jdbcType="VARCHAR" />
+		<result column="teadw" property="teadw" jdbcType="VARCHAR" />
+		<result column="teatel" property="teatel" jdbcType="VARCHAR" />
+		<result column="teamail" property="teamail" jdbcType="VARCHAR" />
+		<result column="created" property="created" jdbcType="VARCHAR" />
+		<result column="protype" property="protype" jdbcType="VARCHAR" />
+		<result column="prolevel" property="prolevel" jdbcType="VARCHAR" />
+		<result column="xingming" property="xingming" jdbcType="VARCHAR" />
+		<result column="xingbie" property="xingbie" jdbcType="VARCHAR" />
+		<result column="mingzhu" property="mingzhu" jdbcType="VARCHAR" />
+		<result column="sfz" property="sfz" jdbcType="VARCHAR" />
+		<result column="szxy" property="szxy" jdbcType="VARCHAR" />
+		<result column="xh" property="xh" jdbcType="VARCHAR" />
+		<result column="nj" property="nj" jdbcType="VARCHAR" />
+		<result column="zy" property="zy" jdbcType="VARCHAR" />
+		<result column="dh" property="dh" jdbcType="VARCHAR" />
+		<result column="sj" property="sj" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="sstart1" property="sstart1" jdbcType="VARCHAR" />
+		<result column="send1" property="send1" jdbcType="VARCHAR" />
+		<result column="sstart2" property="sstart2" jdbcType="VARCHAR" />
+		<result column="send2" property="send2" jdbcType="VARCHAR" />
+		<result column="sstart3" property="sstart3" jdbcType="VARCHAR" />
+		<result column="send3" property="send3" jdbcType="VARCHAR" />
+		<result column="school1" property="school1" jdbcType="VARCHAR" />
+		<result column="school2" property="school2" jdbcType="VARCHAR" />
+		<result column="school3" property="school3" jdbcType="VARCHAR" />
+		<result column="remark1" property="remark1" jdbcType="VARCHAR" />
+		<result column="remark2" property="remark2" jdbcType="VARCHAR" />
+		<result column="remark3" property="remark3" jdbcType="VARCHAR" />
+		<result column="kstart1" property="kstart1" jdbcType="VARCHAR" />
+		<result column="kend1" property="kend1" jdbcType="VARCHAR" />
+		<result column="kstart2" property="kstart2" jdbcType="VARCHAR" />
+		<result column="kend2" property="kend2" jdbcType="VARCHAR" />
+		<result column="kstart3" property="kstart3" jdbcType="VARCHAR" />
+		<result column="kend3" property="kend3" jdbcType="VARCHAR" />
+		<result column="kstart4" property="kstart4" jdbcType="VARCHAR" />
+		<result column="kend4" property="kend4" jdbcType="VARCHAR" />
+		<result column="pro1" property="pro1" jdbcType="VARCHAR" />
+		<result column="pro2" property="pro2" jdbcType="VARCHAR" />
+		<result column="pro3" property="pro3" jdbcType="VARCHAR" />
+		<result column="pro4" property="pro4" jdbcType="VARCHAR" />
+		<result column="from1" property="from1" jdbcType="VARCHAR" />
+		<result column="from2" property="from2" jdbcType="VARCHAR" />
+		<result column="from3" property="from3" jdbcType="VARCHAR" />
+		<result column="from4" property="from4" jdbcType="VARCHAR" />
+		<result column="on1" property="on1" jdbcType="VARCHAR" />
+		<result column="on2" property="on2" jdbcType="VARCHAR" />
+		<result column="on3" property="on3" jdbcType="VARCHAR" />
+		<result column="on4" property="on4" jdbcType="VARCHAR" />
+		<result column="result1" property="result1" jdbcType="VARCHAR" />
+		<result column="result2" property="result2" jdbcType="VARCHAR" />
+		<result column="result3" property="result3" jdbcType="VARCHAR" />
+		<result column="result4" property="result4" jdbcType="VARCHAR" />
+		<result column="meb1" property="meb1" jdbcType="VARCHAR" />
+		<result column="num1" property="num1" jdbcType="VARCHAR" />
+		<result column="sex1" property="sex1" jdbcType="VARCHAR" />
+		<result column="sfz1" property="sfz1" jdbcType="VARCHAR" />
+		<result column="xy1" property="xy1" jdbcType="VARCHAR" />
+		<result column="nj1" property="nj1" jdbcType="VARCHAR" />
+		<result column="zy1" property="zy1" jdbcType="VARCHAR" />
+		<result column="dh1" property="dh1" jdbcType="VARCHAR" />
+		<result column="sj1" property="sj1" jdbcType="VARCHAR" />
+		<result column="email1" property="email1" jdbcType="VARCHAR" />
+		<result column="fg1" property="fg1" jdbcType="VARCHAR" />
+		<result column="qm1" property="qm1" jdbcType="VARCHAR" />
+		<result column="kymc1" property="kymc1" jdbcType="VARCHAR" />
+		<result column="qz1" property="qz1" jdbcType="VARCHAR" />
+		<result column="cg1" property="cg1" jdbcType="VARCHAR" />
+		<result column="kymc2" property="kymc2" jdbcType="VARCHAR" />
+		<result column="qz2" property="qz2" jdbcType="VARCHAR" />
+		<result column="cg2" property="cg2" jdbcType="VARCHAR" />
+		<result column="kymc3" property="kymc3" jdbcType="VARCHAR" />
+		<result column="qz3" property="qz3" jdbcType="VARCHAR" />
+		<result column="cg3" property="cg3" jdbcType="VARCHAR" />
+		<result column="meb2" property="meb2" jdbcType="VARCHAR" />
+		<result column="num2" property="num2" jdbcType="VARCHAR" />
+		<result column="sex2" property="sex2" jdbcType="VARCHAR" />
+		<result column="sfz2" property="sfz2" jdbcType="VARCHAR" />
+		<result column="xy2" property="xy2" jdbcType="VARCHAR" />
+		<result column="nj2" property="nj2" jdbcType="VARCHAR" />
+		<result column="zy2" property="zy2" jdbcType="VARCHAR" />
+		<result column="dh2" property="dh2" jdbcType="VARCHAR" />
+		<result column="sj2" property="sj2" jdbcType="VARCHAR" />
+		<result column="email2" property="email2" jdbcType="VARCHAR" />
+		<result column="fg2" property="fg2" jdbcType="VARCHAR" />
+		<result column="qm2" property="qm2" jdbcType="VARCHAR" />
+		<result column="kymc4" property="kymc4" jdbcType="VARCHAR" />
+		<result column="qz4" property="qz4" jdbcType="VARCHAR" />
+		<result column="cg4" property="cg4" jdbcType="VARCHAR" />
+		<result column="kymc5" property="kymc5" jdbcType="VARCHAR" />
+		<result column="qz5" property="qz5" jdbcType="VARCHAR" />
+		<result column="cg5" property="cg5" jdbcType="VARCHAR" />
+		<result column="kymc6" property="kymc6" jdbcType="VARCHAR" />
+		<result column="qz6" property="qz6" jdbcType="VARCHAR" />
+		<result column="cg6" property="cg6" jdbcType="VARCHAR" />
+		<result column="xmzy" property="xmzy" jdbcType="VARCHAR" />
+		<result column="yjfa" property="yjfa" jdbcType="VARCHAR" />
+		<result column="yjsj" property="yjsj" jdbcType="VARCHAR" />
+		<result column="ap" property="ap" jdbcType="VARCHAR" />
+		<result column="tj" property="tj" jdbcType="VARCHAR" />
+		<result column="cgxs" property="cgxs" jdbcType="VARCHAR" />
+		<result column="jfze" property="jfze" jdbcType="VARCHAR" />
+		<result column="rjjf" property="rjjf" jdbcType="VARCHAR" />
+		<result column="dxscxcyxljhzz" property="dxscxcyxljhzz" jdbcType="VARCHAR" />
+		<result column="sqxxzz" property="sqxxzz" jdbcType="VARCHAR" />
+		<result column="xxptzz" property="xxptzz" jdbcType="VARCHAR" />
+		<result column="jsktf" property="jsktf" jdbcType="VARCHAR" />
+		<result column="qt" property="qt" jdbcType="VARCHAR" />
+		<result column="yszckm1" property="yszckm1" jdbcType="VARCHAR" />
+		<result column="zc1" property="zc1" jdbcType="VARCHAR" />
+		<result column="zcyy1" property="zcyy1" jdbcType="VARCHAR" />
+		<result column="yszckm2" property="yszckm2" jdbcType="VARCHAR" />
+		<result column="zc2" property="zc2" jdbcType="VARCHAR" />
+		<result column="zcyy2" property="zcyy2" jdbcType="VARCHAR" />
+		<result column="yszckm3" property="yszckm3" jdbcType="VARCHAR" />
+		<result column="zc3" property="zc3" jdbcType="VARCHAR" />
+		<result column="zcyy3" property="zcyy3" jdbcType="VARCHAR" />
+		<result column="yszckm4" property="yszckm4" jdbcType="VARCHAR" />
+		<result column="zc4" property="zc4" jdbcType="VARCHAR" />
+		<result column="zcyy4" property="zcyy4" jdbcType="VARCHAR" />
+		<result column="yszckm5" property="yszckm5" jdbcType="VARCHAR" />
+		<result column="zc5" property="zc5" jdbcType="VARCHAR" />
+		<result column="zcyy5" property="zcyy5" jdbcType="VARCHAR" />
+		<result column="yszckm6" property="yszckm6" jdbcType="VARCHAR" />
+		<result column="zc6" property="zc6" jdbcType="VARCHAR" />
+		<result column="zcyy6" property="zcyy6" jdbcType="VARCHAR" />
+		<result column="yszckm7" property="yszckm7" jdbcType="VARCHAR" />
+		<result column="zc7" property="zc7" jdbcType="VARCHAR" />
+		<result column="zcyy7" property="zcyy7" jdbcType="VARCHAR" />
+		<result column="yszckm8" property="yszckm8" jdbcType="VARCHAR" />
+		<result column="zc8" property="zc8" jdbcType="VARCHAR" />
+		<result column="zcyy8" property="zcyy8" jdbcType="VARCHAR" />
+		<result column="yszckm9" property="yszckm9" jdbcType="VARCHAR" />
+		<result column="zc9" property="zc9" jdbcType="VARCHAR" />
+		<result column="zcyy9" property="zcyy9" jdbcType="VARCHAR" />
+		<result column="yszckm10" property="yszckm10" jdbcType="VARCHAR" />
+		<result column="zc10" property="zc10" jdbcType="VARCHAR" />
+		<result column="zcyy10" property="zcyy10" jdbcType="VARCHAR" />
+		<result column="yszckm11" property="yszckm11" jdbcType="VARCHAR" />
+		<result column="zc11" property="zc11" jdbcType="VARCHAR" />
+		<result column="zcyy11" property="zcyy11" jdbcType="VARCHAR" />
+		<result column="yszckm12" property="yszckm12" jdbcType="VARCHAR" />
+		<result column="zc12" property="zc12" jdbcType="VARCHAR" />
+		<result column="zcyy12" property="zcyy12" jdbcType="VARCHAR" />
+		<result column="yszckm13" property="yszckm13" jdbcType="VARCHAR" />
+		<result column="zc13" property="zc13" jdbcType="VARCHAR" />
+		<result column="zcyy13" property="zcyy13" jdbcType="VARCHAR" />
+		<result column="yszckm14" property="yszckm14" jdbcType="VARCHAR" />
+		<result column="zc14" property="zc14" jdbcType="VARCHAR" />
+		<result column="zcyy14" property="zcyy14" jdbcType="VARCHAR" />
+		<result column="yszckm15" property="yszckm15" jdbcType="VARCHAR" />
+		<result column="zc15" property="zc15" jdbcType="VARCHAR" />
+		<result column="zcyy15" property="zcyy15" jdbcType="VARCHAR" />
+		<result column="yszckm16" property="yszckm16" jdbcType="VARCHAR" />
+		<result column="zc16" property="zc16" jdbcType="VARCHAR" />
+		<result column="zcyy16" property="zcyy16" jdbcType="VARCHAR" />
+		<result column="yszckm17" property="yszckm17" jdbcType="VARCHAR" />
+		<result column="zc17" property="zc17" jdbcType="VARCHAR" />
+		<result column="zcyy17" property="zcyy17" jdbcType="VARCHAR" />
+		<result column="yszckm18" property="yszckm18" jdbcType="VARCHAR" />
+		<result column="zc18" property="zc18" jdbcType="VARCHAR" />
+		<result column="zcyy18" property="zcyy18" jdbcType="VARCHAR" />
+		<result column="teaname" property="teaname" jdbcType="VARCHAR" />
+		<result column="teasex" property="teasex" jdbcType="VARCHAR" />
+		<result column="teamz" property="teamz" jdbcType="VARCHAR" />
+		<result column="teacsny" property="teacsny" jdbcType="VARCHAR" />
+		<result column="teaxy" property="teaxy" jdbcType="VARCHAR" />
+		<result column="teaxl" property="teaxl" jdbcType="VARCHAR" />
+		<result column="teazc" property="teazc" jdbcType="VARCHAR" />
+		<result column="teazw" property="teazw" jdbcType="VARCHAR" />
+		<result column="teafx" property="teafx" jdbcType="VARCHAR" />
+		<result column="teadz" property="teadz" jdbcType="VARCHAR" />
+		<result column="teayb" property="teayb" jdbcType="VARCHAR" />
+		<result column="teamail2" property="teamail2" jdbcType="VARCHAR" />
+		<result column="teadh" property="teadh" jdbcType="VARCHAR" />
+		<result column="teasj" property="teasj" jdbcType="VARCHAR" />
+		<result column="teanowdesc" property="teanowdesc" jdbcType="VARCHAR" />
+		<result column="teajy" property="teajy" jdbcType="VARCHAR" />
+		<result column="teajy2" property="teajy2" jdbcType="VARCHAR" />
+		<result column="xyyj" property="xyyj" jdbcType="VARCHAR" />
+		<result column="tjfzr" property="tjfzr" jdbcType="VARCHAR" />
+		<result column="xyrq" property="xyrq" jdbcType="VARCHAR" />
+		<result column="tearq" property="tearq" jdbcType="VARCHAR" />
+		<result column="xxrq" property="xxrq" jdbcType="VARCHAR" />
+		<result column="zjyj" property="zjyj" jdbcType="VARCHAR" />
+		<result column="zjrq" property="zjrq" jdbcType="VARCHAR" />
+		<result column="c1" property="c1" jdbcType="VARCHAR" />
+		<result column="c2" property="c2" jdbcType="VARCHAR" />
+		<result column="c3" property="c3" jdbcType="VARCHAR" />
+		<result column="c4" property="c4" jdbcType="VARCHAR" />
+		<result column="c5" property="c5" jdbcType="VARCHAR" />
+		<result column="c6" property="c6" jdbcType="VARCHAR" />
+		<result column="c7" property="c7" jdbcType="VARCHAR" />
+		<result column="c8" property="c8" jdbcType="VARCHAR" />
+		<result column="c9" property="c9" jdbcType="VARCHAR" />
+		<result column="c10" property="c10" jdbcType="VARCHAR" />
+		<result column="c11" property="c11" jdbcType="VARCHAR" />
+		<result column="c12" property="c12" jdbcType="VARCHAR" />
+		<result column="c13" property="c13" jdbcType="VARCHAR" />
+		<result column="c14" property="c14" jdbcType="VARCHAR" />
+		<result column="lb1" property="lb1" jdbcType="VARCHAR" />
+		<result column="lb2" property="lb2" jdbcType="VARCHAR" />
+		<result column="lb3" property="lb3" jdbcType="VARCHAR" />
+		<result column="lb4" property="lb4" jdbcType="VARCHAR" />
+		<result column="lb5" property="lb5" jdbcType="VARCHAR" />
+		<result column="lb6" property="lb6" jdbcType="VARCHAR" />
+		<result column="lb7" property="lb7" jdbcType="VARCHAR" />
+		<result column="lb8" property="lb8" jdbcType="VARCHAR" />
+		<result column="lb9" property="lb9" jdbcType="VARCHAR" />
+		<result column="lb10" property="lb10" jdbcType="VARCHAR" />
+		<result column="lb11" property="lb11" jdbcType="VARCHAR" />
+		<result column="lb12" property="lb12" jdbcType="VARCHAR" />
+		<result column="lb13" property="lb13" jdbcType="VARCHAR" />
+		<result column="lb14" property="lb14" jdbcType="VARCHAR" />
+		<result column="s1" property="s1" jdbcType="VARCHAR" />
+		<result column="s2" property="s2" jdbcType="VARCHAR" />
+		<result column="s3" property="s3" jdbcType="VARCHAR" />
+		<result column="s4" property="s4" jdbcType="VARCHAR" />
+		<result column="s5" property="s5" jdbcType="VARCHAR" />
+		<result column="s6" property="s6" jdbcType="VARCHAR" />
+		<result column="s7" property="s7" jdbcType="VARCHAR" />
+		<result column="s8" property="s8" jdbcType="VARCHAR" />
+		<result column="s9" property="s9" jdbcType="VARCHAR" />
+		<result column="s10" property="s10" jdbcType="VARCHAR" />
+		<result column="s11" property="s11" jdbcType="VARCHAR" />
+		<result column="s12" property="s12" jdbcType="VARCHAR" />
+		<result column="s13" property="s13" jdbcType="VARCHAR" />
+		<result column="s14" property="s14" jdbcType="VARCHAR" />
+		<result column="cj1" property="cj1" jdbcType="VARCHAR" />
+		<result column="cj2" property="cj2" jdbcType="VARCHAR" />
+		<result column="cj3" property="cj3" jdbcType="VARCHAR" />
+		<result column="cj4" property="cj4" jdbcType="VARCHAR" />
+		<result column="cj5" property="cj5" jdbcType="VARCHAR" />
+		<result column="cj6" property="cj6" jdbcType="VARCHAR" />
+		<result column="cj7" property="cj7" jdbcType="VARCHAR" />
+		<result column="cj8" property="cj8" jdbcType="VARCHAR" />
+		<result column="cj9" property="cj9" jdbcType="VARCHAR" />
+		<result column="cj10" property="cj10" jdbcType="VARCHAR" />
+		<result column="cj11" property="cj11" jdbcType="VARCHAR" />
+		<result column="cj12" property="cj12" jdbcType="VARCHAR" />
+		<result column="cj13" property="cj13" jdbcType="VARCHAR" />
+		<result column="cj14" property="cj14" jdbcType="VARCHAR" />
+		<result column="c15" property="c15" jdbcType="VARCHAR" />
+		<result column="c16" property="c16" jdbcType="VARCHAR" />
+		<result column="c17" property="c17" jdbcType="VARCHAR" />
+		<result column="c18" property="c18" jdbcType="VARCHAR" />
+		<result column="c19" property="c19" jdbcType="VARCHAR" />
+		<result column="c20" property="c20" jdbcType="VARCHAR" />
+		<result column="c21" property="c21" jdbcType="VARCHAR" />
+		<result column="c22" property="c22" jdbcType="VARCHAR" />
+		<result column="c23" property="c23" jdbcType="VARCHAR" />
+		<result column="c24" property="c24" jdbcType="VARCHAR" />
+		<result column="c25" property="c25" jdbcType="VARCHAR" />
+		<result column="c26" property="c26" jdbcType="VARCHAR" />
+		<result column="c27" property="c27" jdbcType="VARCHAR" />
+		<result column="c28" property="c28" jdbcType="VARCHAR" />
+		<result column="lb15" property="lb15" jdbcType="VARCHAR" />
+		<result column="lb16" property="lb16" jdbcType="VARCHAR" />
+		<result column="lb17" property="lb17" jdbcType="VARCHAR" />
+		<result column="lb18" property="lb18" jdbcType="VARCHAR" />
+		<result column="lb19" property="lb19" jdbcType="VARCHAR" />
+		<result column="lb20" property="lb20" jdbcType="VARCHAR" />
+		<result column="lb21" property="lb21" jdbcType="VARCHAR" />
+		<result column="lb22" property="lb22" jdbcType="VARCHAR" />
+		<result column="lb23" property="lb23" jdbcType="VARCHAR" />
+		<result column="lb24" property="lb24" jdbcType="VARCHAR" />
+		<result column="lb25" property="lb25" jdbcType="VARCHAR" />
+		<result column="lb26" property="lb26" jdbcType="VARCHAR" />
+		<result column="lb27" property="lb27" jdbcType="VARCHAR" />
+		<result column="lb28" property="lb28" jdbcType="VARCHAR" />
+		<result column="s15" property="s15" jdbcType="VARCHAR" />
+		<result column="s16" property="s16" jdbcType="VARCHAR" />
+		<result column="s17" property="s17" jdbcType="VARCHAR" />
+		<result column="s18" property="s18" jdbcType="VARCHAR" />
+		<result column="s19" property="s19" jdbcType="VARCHAR" />
+		<result column="s20" property="s20" jdbcType="VARCHAR" />
+		<result column="s21" property="s21" jdbcType="VARCHAR" />
+		<result column="s22" property="s22" jdbcType="VARCHAR" />
+		<result column="s23" property="s23" jdbcType="VARCHAR" />
+		<result column="s24" property="s24" jdbcType="VARCHAR" />
+		<result column="s25" property="s25" jdbcType="VARCHAR" />
+		<result column="s26" property="s26" jdbcType="VARCHAR" />
+		<result column="s27" property="s27" jdbcType="VARCHAR" />
+		<result column="s28" property="s28" jdbcType="VARCHAR" />
+		<result column="cj15" property="cj15" jdbcType="VARCHAR" />
+		<result column="cj16" property="cj16" jdbcType="VARCHAR" />
+		<result column="cj17" property="cj17" jdbcType="VARCHAR" />
+		<result column="cj18" property="cj18" jdbcType="VARCHAR" />
+		<result column="cj19" property="cj19" jdbcType="VARCHAR" />
+		<result column="cj20" property="cj20" jdbcType="VARCHAR" />
+		<result column="cj21" property="cj21" jdbcType="VARCHAR" />
+		<result column="cj22" property="cj22" jdbcType="VARCHAR" />
+		<result column="cj23" property="cj23" jdbcType="VARCHAR" />
+		<result column="cj24" property="cj24" jdbcType="VARCHAR" />
+		<result column="cj25" property="cj25" jdbcType="VARCHAR" />
+		<result column="cj26" property="cj26" jdbcType="VARCHAR" />
+		<result column="cj27" property="cj27" jdbcType="VARCHAR" />
+		<result column="cj28" property="cj28" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`projectnum`
+		,
+		`preuserid`
+		,
+		`preusername`
+		,
+		`xueyuan`
+		,
+		`utel`
+		,
+		`umail`
+		,
+		`tea`
+		,
+		`tealevel`
+		,
+		`teadw`
+		,
+		`teatel`
+		,
+		`teamail`
+		,
+		`created`
+		,
+		`protype`
+		,
+		`prolevel`
+		,
+		`xingming`
+		,
+		`xingbie`
+		,
+		`mingzhu`
+		,
+		`sfz`
+		,
+		`szxy`
+		,
+		`xh`
+		,
+		`nj`
+		,
+		`zy`
+		,
+		`dh`
+		,
+		`sj`
+		,
+		`email`
+		,
+		`sstart1`
+		,
+		`send1`
+		,
+		`sstart2`
+		,
+		`send2`
+		,
+		`sstart3`
+		,
+		`send3`
+		,
+		`school1`
+		,
+		`school2`
+		,
+		`school3`
+		,
+		`remark1`
+		,
+		`remark2`
+		,
+		`remark3`
+		,
+		`kstart1`
+		,
+		`kend1`
+		,
+		`kstart2`
+		,
+		`kend2`
+		,
+		`kstart3`
+		,
+		`kend3`
+		,
+		`kstart4`
+		,
+		`kend4`
+		,
+		`pro1`
+		,
+		`pro2`
+		,
+		`pro3`
+		,
+		`pro4`
+		,
+		`from1`
+		,
+		`from2`
+		,
+		`from3`
+		,
+		`from4`
+		,
+		`on1`
+		,
+		`on2`
+		,
+		`on3`
+		,
+		`on4`
+		,
+		`result1`
+		,
+		`result2`
+		,
+		`result3`
+		,
+		`result4`
+		,
+		`meb1`
+		,
+		`num1`
+		,
+		`sex1`
+		,
+		`sfz1`
+		,
+		`xy1`
+		,
+		`nj1`
+		,
+		`zy1`
+		,
+		`dh1`
+		,
+		`sj1`
+		,
+		`email1`
+		,
+		`fg1`
+		,
+		`qm1`
+		,
+		`kymc1`
+		,
+		`qz1`
+		,
+		`cg1`
+		,
+		`kymc2`
+		,
+		`qz2`
+		,
+		`cg2`
+		,
+		`kymc3`
+		,
+		`qz3`
+		,
+		`cg3`
+		,
+		`meb2`
+		,
+		`num2`
+		,
+		`sex2`
+		,
+		`sfz2`
+		,
+		`xy2`
+		,
+		`nj2`
+		,
+		`zy2`
+		,
+		`dh2`
+		,
+		`sj2`
+		,
+		`email2`
+		,
+		`fg2`
+		,
+		`qm2`
+		,
+		`kymc4`
+		,
+		`qz4`
+		,
+		`cg4`
+		,
+		`kymc5`
+		,
+		`qz5`
+		,
+		`cg5`
+		,
+		`kymc6`
+		,
+		`qz6`
+		,
+		`cg6`
+		,
+		`xmzy`
+		,
+		`yjfa`
+		,
+		`yjsj`
+		,
+		`ap`
+		,
+		`tj`
+		,
+		`cgxs`
+		,
+		`jfze`
+		,
+		`rjjf`
+		,
+		`dxscxcyxljhzz`
+		,
+		`sqxxzz`
+		,
+		`xxptzz`
+		,
+		`jsktf`
+		,
+		`qt`
+		,
+		`yszckm1`
+		,
+		`zc1`
+		,
+		`zcyy1`
+		,
+		`yszckm2`
+		,
+		`zc2`
+		,
+		`zcyy2`
+		,
+		`yszckm3`
+		,
+		`zc3`
+		,
+		`zcyy3`
+		,
+		`yszckm4`
+		,
+		`zc4`
+		,
+		`zcyy4`
+		,
+		`yszckm5`
+		,
+		`zc5`
+		,
+		`zcyy5`
+		,
+		`yszckm6`
+		,
+		`zc6`
+		,
+		`zcyy6`
+		,
+		`yszckm7`
+		,
+		`zc7`
+		,
+		`zcyy7`
+		,
+		`yszckm8`
+		,
+		`zc8`
+		,
+		`zcyy8`
+		,
+		`yszckm9`
+		,
+		`zc9`
+		,
+		`zcyy9`
+		,
+		`yszckm10`
+		,
+		`zc10`
+		,
+		`zcyy10`
+		,
+		`yszckm11`
+		,
+		`zc11`
+		,
+		`zcyy11`
+		,
+		`yszckm12`
+		,
+		`zc12`
+		,
+		`zcyy12`
+		,
+		`yszckm13`
+		,
+		`zc13`
+		,
+		`zcyy13`
+		,
+		`yszckm14`
+		,
+		`zc14`
+		,
+		`zcyy14`
+		,
+		`yszckm15`
+		,
+		`zc15`
+		,
+		`zcyy15`
+		,
+		`yszckm16`
+		,
+		`zc16`
+		,
+		`zcyy16`
+		,
+		`yszckm17`
+		,
+		`zc17`
+		,
+		`zcyy17`
+		,
+		`yszckm18`
+		,
+		`zc18`
+		,
+		`zcyy18`
+		,
+		`teaname`
+		,
+		`teasex`
+		,
+		`teamz`
+		,
+		`teacsny`
+		,
+		`teaxy`
+		,
+		`teaxl`
+		,
+		`teazc`
+		,
+		`teazw`
+		,
+		`teafx`
+		,
+		`teadz`
+		,
+		`teayb`
+		,
+		`teamail2`
+		,
+		`teadh`
+		,
+		`teasj`
+		,
+		`teanowdesc`
+		,
+		`teajy`
+		,
+		`teajy2`
+		,
+		`xyyj`
+		,
+		`tjfzr`
+		,
+		`xyrq`
+		,
+		`tearq`
+		,
+		`xxrq`
+		,
+		`zjyj`
+		,
+		`zjrq`
+		,
+		`c1`
+		,
+		`c2`
+		,
+		`c3`
+		,
+		`c4`
+		,
+		`c5`
+		,
+		`c6`
+		,
+		`c7`
+		,
+		`c8`
+		,
+		`c9`
+		,
+		`c10`
+		,
+		`c11`
+		,
+		`c12`
+		,
+		`c13`
+		,
+		`c14`
+		,
+		`lb1`
+		,
+		`lb2`
+		,
+		`lb3`
+		,
+		`lb4`
+		,
+		`lb5`
+		,
+		`lb6`
+		,
+		`lb7`
+		,
+		`lb8`
+		,
+		`lb9`
+		,
+		`lb10`
+		,
+		`lb11`
+		,
+		`lb12`
+		,
+		`lb13`
+		,
+		`lb14`
+		,
+		`s1`
+		,
+		`s2`
+		,
+		`s3`
+		,
+		`s4`
+		,
+		`s5`
+		,
+		`s6`
+		,
+		`s7`
+		,
+		`s8`
+		,
+		`s9`
+		,
+		`s10`
+		,
+		`s11`
+		,
+		`s12`
+		,
+		`s13`
+		,
+		`s14`
+		,
+		`cj1`
+		,
+		`cj2`
+		,
+		`cj3`
+		,
+		`cj4`
+		,
+		`cj5`
+		,
+		`cj6`
+		,
+		`cj7`
+		,
+		`cj8`
+		,
+		`cj9`
+		,
+		`cj10`
+		,
+		`cj11`
+		,
+		`cj12`
+		,
+		`cj13`
+		,
+		`cj14`
+		,
+		`c15`
+		,
+		`c16`
+		,
+		`c17`
+		,
+		`c18`
+		,
+		`c19`
+		,
+		`c20`
+		,
+		`c21`
+		,
+		`c22`
+		,
+		`c23`
+		,
+		`c24`
+		,
+		`c25`
+		,
+		`c26`
+		,
+		`c27`
+		,
+		`c28`
+		,
+		`lb15`
+		,
+		`lb16`
+		,
+		`lb17`
+		,
+		`lb18`
+		,
+		`lb19`
+		,
+		`lb20`
+		,
+		`lb21`
+		,
+		`lb22`
+		,
+		`lb23`
+		,
+		`lb24`
+		,
+		`lb25`
+		,
+		`lb26`
+		,
+		`lb27`
+		,
+		`lb28`
+		,
+		`s15`
+		,
+		`s16`
+		,
+		`s17`
+		,
+		`s18`
+		,
+		`s19`
+		,
+		`s20`
+		,
+		`s21`
+		,
+		`s22`
+		,
+		`s23`
+		,
+		`s24`
+		,
+		`s25`
+		,
+		`s26`
+		,
+		`s27`
+		,
+		`s28`
+		,
+		`cj15`
+		,
+		`cj16`
+		,
+		`cj17`
+		,
+		`cj18`
+		,
+		`cj19`
+		,
+		`cj20`
+		,
+		`cj21`
+		,
+		`cj22`
+		,
+		`cj23`
+		,
+		`cj24`
+		,
+		`cj25`
+		,
+		`cj26`
+		,
+		`cj27`
+		,
+		`cj28`
+		
+	</sql>
+	<select id="selectHighapplyById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `highapply` where id = #{id,jdbcType=INTEGER}
+	</select>
+
+    <select id="selectHighapplyByProId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from `highapply` where projectid = #{id,jdbcType=INTEGER}
+    </select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `highapply` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		<if test="params.projectnum !=null ">
+		AND `projectnum` = #{params.projectnum}
+		</if>
+		<if test="params.preuserid !=null ">
+		AND `preuserid` = #{params.preuserid}
+		</if>
+		<if test="params.preusername !=null and params.preusername!=''">
+		 AND `preusername` like concat('%',#{params.preusername},'%')
+		</if>
+		<if test="params.xueyuan !=null and params.xueyuan!=''">
+		 AND `xueyuan` like concat('%',#{params.xueyuan},'%')
+		</if>
+		<if test="params.utel !=null and params.utel!=''">
+		 AND `utel` like concat('%',#{params.utel},'%')
+		</if>
+		<if test="params.umail !=null and params.umail!=''">
+		 AND `umail` like concat('%',#{params.umail},'%')
+		</if>
+		<if test="params.tea !=null and params.tea!=''">
+		 AND `tea` like concat('%',#{params.tea},'%')
+		</if>
+		<if test="params.tealevel !=null and params.tealevel!=''">
+		 AND `tealevel` like concat('%',#{params.tealevel},'%')
+		</if>
+		<if test="params.teadw !=null and params.teadw!=''">
+		 AND `teadw` like concat('%',#{params.teadw},'%')
+		</if>
+		<if test="params.teatel !=null and params.teatel!=''">
+		 AND `teatel` like concat('%',#{params.teatel},'%')
+		</if>
+		<if test="params.teamail !=null and params.teamail!=''">
+		 AND `teamail` like concat('%',#{params.teamail},'%')
+		</if>
+		<if test="params.created !=null and params.created!=''">
+		 AND `created` like concat('%',#{params.created},'%')
+		</if>
+		<if test="params.protype !=null and params.protype!=''">
+		 AND `protype` like concat('%',#{params.protype},'%')
+		</if>
+		<if test="params.prolevel !=null and params.prolevel!=''">
+		 AND `prolevel` like concat('%',#{params.prolevel},'%')
+		</if>
+		<if test="params.xingming !=null and params.xingming!=''">
+		 AND `xingming` like concat('%',#{params.xingming},'%')
+		</if>
+		<if test="params.xingbie !=null and params.xingbie!=''">
+		 AND `xingbie` like concat('%',#{params.xingbie},'%')
+		</if>
+		<if test="params.mingzhu !=null and params.mingzhu!=''">
+		 AND `mingzhu` like concat('%',#{params.mingzhu},'%')
+		</if>
+		<if test="params.sfz !=null and params.sfz!=''">
+		 AND `sfz` like concat('%',#{params.sfz},'%')
+		</if>
+		<if test="params.szxy !=null and params.szxy!=''">
+		 AND `szxy` like concat('%',#{params.szxy},'%')
+		</if>
+		<if test="params.xh !=null and params.xh!=''">
+		 AND `xh` like concat('%',#{params.xh},'%')
+		</if>
+		<if test="params.nj !=null and params.nj!=''">
+		 AND `nj` like concat('%',#{params.nj},'%')
+		</if>
+		<if test="params.zy !=null and params.zy!=''">
+		 AND `zy` like concat('%',#{params.zy},'%')
+		</if>
+		<if test="params.dh !=null and params.dh!=''">
+		 AND `dh` like concat('%',#{params.dh},'%')
+		</if>
+		<if test="params.sj !=null and params.sj!=''">
+		 AND `sj` like concat('%',#{params.sj},'%')
+		</if>
+		<if test="params.email !=null and params.email!=''">
+		 AND `email` like concat('%',#{params.email},'%')
+		</if>
+		<if test="params.sstart1 !=null and params.sstart1!=''">
+		 AND `sstart1` like concat('%',#{params.sstart1},'%')
+		</if>
+		<if test="params.send1 !=null and params.send1!=''">
+		 AND `send1` like concat('%',#{params.send1},'%')
+		</if>
+		<if test="params.sstart2 !=null and params.sstart2!=''">
+		 AND `sstart2` like concat('%',#{params.sstart2},'%')
+		</if>
+		<if test="params.send2 !=null and params.send2!=''">
+		 AND `send2` like concat('%',#{params.send2},'%')
+		</if>
+		<if test="params.sstart3 !=null and params.sstart3!=''">
+		 AND `sstart3` like concat('%',#{params.sstart3},'%')
+		</if>
+		<if test="params.send3 !=null and params.send3!=''">
+		 AND `send3` like concat('%',#{params.send3},'%')
+		</if>
+		<if test="params.school1 !=null and params.school1!=''">
+		 AND `school1` like concat('%',#{params.school1},'%')
+		</if>
+		<if test="params.school2 !=null and params.school2!=''">
+		 AND `school2` like concat('%',#{params.school2},'%')
+		</if>
+		<if test="params.school3 !=null and params.school3!=''">
+		 AND `school3` like concat('%',#{params.school3},'%')
+		</if>
+		<if test="params.remark1 !=null and params.remark1!=''">
+		 AND `remark1` like concat('%',#{params.remark1},'%')
+		</if>
+		<if test="params.remark2 !=null and params.remark2!=''">
+		 AND `remark2` like concat('%',#{params.remark2},'%')
+		</if>
+		<if test="params.remark3 !=null and params.remark3!=''">
+		 AND `remark3` like concat('%',#{params.remark3},'%')
+		</if>
+		<if test="params.kstart1 !=null and params.kstart1!=''">
+		 AND `kstart1` like concat('%',#{params.kstart1},'%')
+		</if>
+		<if test="params.kend1 !=null and params.kend1!=''">
+		 AND `kend1` like concat('%',#{params.kend1},'%')
+		</if>
+		<if test="params.kstart2 !=null and params.kstart2!=''">
+		 AND `kstart2` like concat('%',#{params.kstart2},'%')
+		</if>
+		<if test="params.kend2 !=null and params.kend2!=''">
+		 AND `kend2` like concat('%',#{params.kend2},'%')
+		</if>
+		<if test="params.kstart3 !=null and params.kstart3!=''">
+		 AND `kstart3` like concat('%',#{params.kstart3},'%')
+		</if>
+		<if test="params.kend3 !=null and params.kend3!=''">
+		 AND `kend3` like concat('%',#{params.kend3},'%')
+		</if>
+		<if test="params.kstart4 !=null and params.kstart4!=''">
+		 AND `kstart4` like concat('%',#{params.kstart4},'%')
+		</if>
+		<if test="params.kend4 !=null and params.kend4!=''">
+		 AND `kend4` like concat('%',#{params.kend4},'%')
+		</if>
+		<if test="params.pro1 !=null and params.pro1!=''">
+		 AND `pro1` like concat('%',#{params.pro1},'%')
+		</if>
+		<if test="params.pro2 !=null and params.pro2!=''">
+		 AND `pro2` like concat('%',#{params.pro2},'%')
+		</if>
+		<if test="params.pro3 !=null and params.pro3!=''">
+		 AND `pro3` like concat('%',#{params.pro3},'%')
+		</if>
+		<if test="params.pro4 !=null and params.pro4!=''">
+		 AND `pro4` like concat('%',#{params.pro4},'%')
+		</if>
+		<if test="params.from1 !=null and params.from1!=''">
+		 AND `from1` like concat('%',#{params.from1},'%')
+		</if>
+		<if test="params.from2 !=null and params.from2!=''">
+		 AND `from2` like concat('%',#{params.from2},'%')
+		</if>
+		<if test="params.from3 !=null and params.from3!=''">
+		 AND `from3` like concat('%',#{params.from3},'%')
+		</if>
+		<if test="params.from4 !=null and params.from4!=''">
+		 AND `from4` like concat('%',#{params.from4},'%')
+		</if>
+		<if test="params.on1 !=null and params.on1!=''">
+		 AND `on1` like concat('%',#{params.on1},'%')
+		</if>
+		<if test="params.on2 !=null and params.on2!=''">
+		 AND `on2` like concat('%',#{params.on2},'%')
+		</if>
+		<if test="params.on3 !=null and params.on3!=''">
+		 AND `on3` like concat('%',#{params.on3},'%')
+		</if>
+		<if test="params.on4 !=null and params.on4!=''">
+		 AND `on4` like concat('%',#{params.on4},'%')
+		</if>
+		<if test="params.result1 !=null and params.result1!=''">
+		 AND `result1` like concat('%',#{params.result1},'%')
+		</if>
+		<if test="params.result2 !=null and params.result2!=''">
+		 AND `result2` like concat('%',#{params.result2},'%')
+		</if>
+		<if test="params.result3 !=null and params.result3!=''">
+		 AND `result3` like concat('%',#{params.result3},'%')
+		</if>
+		<if test="params.result4 !=null and params.result4!=''">
+		 AND `result4` like concat('%',#{params.result4},'%')
+		</if>
+		<if test="params.meb1 !=null and params.meb1!=''">
+		 AND `meb1` like concat('%',#{params.meb1},'%')
+		</if>
+		<if test="params.num1 !=null and params.num1!=''">
+		 AND `num1` like concat('%',#{params.num1},'%')
+		</if>
+		<if test="params.sex1 !=null and params.sex1!=''">
+		 AND `sex1` like concat('%',#{params.sex1},'%')
+		</if>
+		<if test="params.sfz1 !=null and params.sfz1!=''">
+		 AND `sfz1` like concat('%',#{params.sfz1},'%')
+		</if>
+		<if test="params.xy1 !=null and params.xy1!=''">
+		 AND `xy1` like concat('%',#{params.xy1},'%')
+		</if>
+		<if test="params.nj1 !=null and params.nj1!=''">
+		 AND `nj1` like concat('%',#{params.nj1},'%')
+		</if>
+		<if test="params.zy1 !=null and params.zy1!=''">
+		 AND `zy1` like concat('%',#{params.zy1},'%')
+		</if>
+		<if test="params.dh1 !=null and params.dh1!=''">
+		 AND `dh1` like concat('%',#{params.dh1},'%')
+		</if>
+		<if test="params.sj1 !=null and params.sj1!=''">
+		 AND `sj1` like concat('%',#{params.sj1},'%')
+		</if>
+		<if test="params.email1 !=null and params.email1!=''">
+		 AND `email1` like concat('%',#{params.email1},'%')
+		</if>
+		<if test="params.fg1 !=null and params.fg1!=''">
+		 AND `fg1` like concat('%',#{params.fg1},'%')
+		</if>
+		<if test="params.qm1 !=null and params.qm1!=''">
+		 AND `qm1` like concat('%',#{params.qm1},'%')
+		</if>
+		<if test="params.kymc1 !=null and params.kymc1!=''">
+		 AND `kymc1` like concat('%',#{params.kymc1},'%')
+		</if>
+		<if test="params.qz1 !=null and params.qz1!=''">
+		 AND `qz1` like concat('%',#{params.qz1},'%')
+		</if>
+		<if test="params.cg1 !=null and params.cg1!=''">
+		 AND `cg1` like concat('%',#{params.cg1},'%')
+		</if>
+		<if test="params.kymc2 !=null and params.kymc2!=''">
+		 AND `kymc2` like concat('%',#{params.kymc2},'%')
+		</if>
+		<if test="params.qz2 !=null and params.qz2!=''">
+		 AND `qz2` like concat('%',#{params.qz2},'%')
+		</if>
+		<if test="params.cg2 !=null and params.cg2!=''">
+		 AND `cg2` like concat('%',#{params.cg2},'%')
+		</if>
+		<if test="params.kymc3 !=null and params.kymc3!=''">
+		 AND `kymc3` like concat('%',#{params.kymc3},'%')
+		</if>
+		<if test="params.qz3 !=null and params.qz3!=''">
+		 AND `qz3` like concat('%',#{params.qz3},'%')
+		</if>
+		<if test="params.cg3 !=null and params.cg3!=''">
+		 AND `cg3` like concat('%',#{params.cg3},'%')
+		</if>
+		<if test="params.meb2 !=null and params.meb2!=''">
+		 AND `meb2` like concat('%',#{params.meb2},'%')
+		</if>
+		<if test="params.num2 !=null and params.num2!=''">
+		 AND `num2` like concat('%',#{params.num2},'%')
+		</if>
+		<if test="params.sex2 !=null and params.sex2!=''">
+		 AND `sex2` like concat('%',#{params.sex2},'%')
+		</if>
+		<if test="params.sfz2 !=null and params.sfz2!=''">
+		 AND `sfz2` like concat('%',#{params.sfz2},'%')
+		</if>
+		<if test="params.xy2 !=null and params.xy2!=''">
+		 AND `xy2` like concat('%',#{params.xy2},'%')
+		</if>
+		<if test="params.nj2 !=null and params.nj2!=''">
+		 AND `nj2` like concat('%',#{params.nj2},'%')
+		</if>
+		<if test="params.zy2 !=null and params.zy2!=''">
+		 AND `zy2` like concat('%',#{params.zy2},'%')
+		</if>
+		<if test="params.dh2 !=null and params.dh2!=''">
+		 AND `dh2` like concat('%',#{params.dh2},'%')
+		</if>
+		<if test="params.sj2 !=null and params.sj2!=''">
+		 AND `sj2` like concat('%',#{params.sj2},'%')
+		</if>
+		<if test="params.email2 !=null and params.email2!=''">
+		 AND `email2` like concat('%',#{params.email2},'%')
+		</if>
+		<if test="params.fg2 !=null and params.fg2!=''">
+		 AND `fg2` like concat('%',#{params.fg2},'%')
+		</if>
+		<if test="params.qm2 !=null and params.qm2!=''">
+		 AND `qm2` like concat('%',#{params.qm2},'%')
+		</if>
+		<if test="params.kymc4 !=null and params.kymc4!=''">
+		 AND `kymc4` like concat('%',#{params.kymc4},'%')
+		</if>
+		<if test="params.qz4 !=null and params.qz4!=''">
+		 AND `qz4` like concat('%',#{params.qz4},'%')
+		</if>
+		<if test="params.cg4 !=null and params.cg4!=''">
+		 AND `cg4` like concat('%',#{params.cg4},'%')
+		</if>
+		<if test="params.kymc5 !=null and params.kymc5!=''">
+		 AND `kymc5` like concat('%',#{params.kymc5},'%')
+		</if>
+		<if test="params.qz5 !=null and params.qz5!=''">
+		 AND `qz5` like concat('%',#{params.qz5},'%')
+		</if>
+		<if test="params.cg5 !=null and params.cg5!=''">
+		 AND `cg5` like concat('%',#{params.cg5},'%')
+		</if>
+		<if test="params.kymc6 !=null and params.kymc6!=''">
+		 AND `kymc6` like concat('%',#{params.kymc6},'%')
+		</if>
+		<if test="params.qz6 !=null and params.qz6!=''">
+		 AND `qz6` like concat('%',#{params.qz6},'%')
+		</if>
+		<if test="params.cg6 !=null and params.cg6!=''">
+		 AND `cg6` like concat('%',#{params.cg6},'%')
+		</if>
+		<if test="params.xmzy !=null and params.xmzy!=''">
+		 AND `xmzy` like concat('%',#{params.xmzy},'%')
+		</if>
+		<if test="params.yjfa !=null and params.yjfa!=''">
+		 AND `yjfa` like concat('%',#{params.yjfa},'%')
+		</if>
+		<if test="params.yjsj !=null and params.yjsj!=''">
+		 AND `yjsj` like concat('%',#{params.yjsj},'%')
+		</if>
+		<if test="params.ap !=null and params.ap!=''">
+		 AND `ap` like concat('%',#{params.ap},'%')
+		</if>
+		<if test="params.tj !=null and params.tj!=''">
+		 AND `tj` like concat('%',#{params.tj},'%')
+		</if>
+		<if test="params.cgxs !=null and params.cgxs!=''">
+		 AND `cgxs` like concat('%',#{params.cgxs},'%')
+		</if>
+		<if test="params.jfze !=null and params.jfze!=''">
+		 AND `jfze` like concat('%',#{params.jfze},'%')
+		</if>
+		<if test="params.rjjf !=null and params.rjjf!=''">
+		 AND `rjjf` like concat('%',#{params.rjjf},'%')
+		</if>
+		<if test="params.dxscxcyxljhzz !=null and params.dxscxcyxljhzz!=''">
+		 AND `dxscxcyxljhzz` like concat('%',#{params.dxscxcyxljhzz},'%')
+		</if>
+		<if test="params.sqxxzz !=null and params.sqxxzz!=''">
+		 AND `sqxxzz` like concat('%',#{params.sqxxzz},'%')
+		</if>
+		<if test="params.xxptzz !=null and params.xxptzz!=''">
+		 AND `xxptzz` like concat('%',#{params.xxptzz},'%')
+		</if>
+		<if test="params.jsktf !=null and params.jsktf!=''">
+		 AND `jsktf` like concat('%',#{params.jsktf},'%')
+		</if>
+		<if test="params.qt !=null and params.qt!=''">
+		 AND `qt` like concat('%',#{params.qt},'%')
+		</if>
+		<if test="params.yszckm1 !=null and params.yszckm1!=''">
+		 AND `yszckm1` like concat('%',#{params.yszckm1},'%')
+		</if>
+		<if test="params.zc1 !=null and params.zc1!=''">
+		 AND `zc1` like concat('%',#{params.zc1},'%')
+		</if>
+		<if test="params.zcyy1 !=null and params.zcyy1!=''">
+		 AND `zcyy1` like concat('%',#{params.zcyy1},'%')
+		</if>
+		<if test="params.yszckm2 !=null and params.yszckm2!=''">
+		 AND `yszckm2` like concat('%',#{params.yszckm2},'%')
+		</if>
+		<if test="params.zc2 !=null and params.zc2!=''">
+		 AND `zc2` like concat('%',#{params.zc2},'%')
+		</if>
+		<if test="params.zcyy2 !=null and params.zcyy2!=''">
+		 AND `zcyy2` like concat('%',#{params.zcyy2},'%')
+		</if>
+		<if test="params.yszckm3 !=null and params.yszckm3!=''">
+		 AND `yszckm3` like concat('%',#{params.yszckm3},'%')
+		</if>
+		<if test="params.zc3 !=null and params.zc3!=''">
+		 AND `zc3` like concat('%',#{params.zc3},'%')
+		</if>
+		<if test="params.zcyy3 !=null and params.zcyy3!=''">
+		 AND `zcyy3` like concat('%',#{params.zcyy3},'%')
+		</if>
+		<if test="params.yszckm4 !=null and params.yszckm4!=''">
+		 AND `yszckm4` like concat('%',#{params.yszckm4},'%')
+		</if>
+		<if test="params.zc4 !=null and params.zc4!=''">
+		 AND `zc4` like concat('%',#{params.zc4},'%')
+		</if>
+		<if test="params.zcyy4 !=null and params.zcyy4!=''">
+		 AND `zcyy4` like concat('%',#{params.zcyy4},'%')
+		</if>
+		<if test="params.yszckm5 !=null and params.yszckm5!=''">
+		 AND `yszckm5` like concat('%',#{params.yszckm5},'%')
+		</if>
+		<if test="params.zc5 !=null and params.zc5!=''">
+		 AND `zc5` like concat('%',#{params.zc5},'%')
+		</if>
+		<if test="params.zcyy5 !=null and params.zcyy5!=''">
+		 AND `zcyy5` like concat('%',#{params.zcyy5},'%')
+		</if>
+		<if test="params.yszckm6 !=null and params.yszckm6!=''">
+		 AND `yszckm6` like concat('%',#{params.yszckm6},'%')
+		</if>
+		<if test="params.zc6 !=null and params.zc6!=''">
+		 AND `zc6` like concat('%',#{params.zc6},'%')
+		</if>
+		<if test="params.zcyy6 !=null and params.zcyy6!=''">
+		 AND `zcyy6` like concat('%',#{params.zcyy6},'%')
+		</if>
+		<if test="params.yszckm7 !=null and params.yszckm7!=''">
+		 AND `yszckm7` like concat('%',#{params.yszckm7},'%')
+		</if>
+		<if test="params.zc7 !=null and params.zc7!=''">
+		 AND `zc7` like concat('%',#{params.zc7},'%')
+		</if>
+		<if test="params.zcyy7 !=null and params.zcyy7!=''">
+		 AND `zcyy7` like concat('%',#{params.zcyy7},'%')
+		</if>
+		<if test="params.yszckm8 !=null and params.yszckm8!=''">
+		 AND `yszckm8` like concat('%',#{params.yszckm8},'%')
+		</if>
+		<if test="params.zc8 !=null and params.zc8!=''">
+		 AND `zc8` like concat('%',#{params.zc8},'%')
+		</if>
+		<if test="params.zcyy8 !=null and params.zcyy8!=''">
+		 AND `zcyy8` like concat('%',#{params.zcyy8},'%')
+		</if>
+		<if test="params.yszckm9 !=null and params.yszckm9!=''">
+		 AND `yszckm9` like concat('%',#{params.yszckm9},'%')
+		</if>
+		<if test="params.zc9 !=null and params.zc9!=''">
+		 AND `zc9` like concat('%',#{params.zc9},'%')
+		</if>
+		<if test="params.zcyy9 !=null and params.zcyy9!=''">
+		 AND `zcyy9` like concat('%',#{params.zcyy9},'%')
+		</if>
+		<if test="params.yszckm10 !=null and params.yszckm10!=''">
+		 AND `yszckm10` like concat('%',#{params.yszckm10},'%')
+		</if>
+		<if test="params.zc10 !=null and params.zc10!=''">
+		 AND `zc10` like concat('%',#{params.zc10},'%')
+		</if>
+		<if test="params.zcyy10 !=null and params.zcyy10!=''">
+		 AND `zcyy10` like concat('%',#{params.zcyy10},'%')
+		</if>
+		<if test="params.yszckm11 !=null and params.yszckm11!=''">
+		 AND `yszckm11` like concat('%',#{params.yszckm11},'%')
+		</if>
+		<if test="params.zc11 !=null and params.zc11!=''">
+		 AND `zc11` like concat('%',#{params.zc11},'%')
+		</if>
+		<if test="params.zcyy11 !=null and params.zcyy11!=''">
+		 AND `zcyy11` like concat('%',#{params.zcyy11},'%')
+		</if>
+		<if test="params.yszckm12 !=null and params.yszckm12!=''">
+		 AND `yszckm12` like concat('%',#{params.yszckm12},'%')
+		</if>
+		<if test="params.zc12 !=null and params.zc12!=''">
+		 AND `zc12` like concat('%',#{params.zc12},'%')
+		</if>
+		<if test="params.zcyy12 !=null and params.zcyy12!=''">
+		 AND `zcyy12` like concat('%',#{params.zcyy12},'%')
+		</if>
+		<if test="params.yszckm13 !=null and params.yszckm13!=''">
+		 AND `yszckm13` like concat('%',#{params.yszckm13},'%')
+		</if>
+		<if test="params.zc13 !=null and params.zc13!=''">
+		 AND `zc13` like concat('%',#{params.zc13},'%')
+		</if>
+		<if test="params.zcyy13 !=null and params.zcyy13!=''">
+		 AND `zcyy13` like concat('%',#{params.zcyy13},'%')
+		</if>
+		<if test="params.yszckm14 !=null and params.yszckm14!=''">
+		 AND `yszckm14` like concat('%',#{params.yszckm14},'%')
+		</if>
+		<if test="params.zc14 !=null and params.zc14!=''">
+		 AND `zc14` like concat('%',#{params.zc14},'%')
+		</if>
+		<if test="params.zcyy14 !=null and params.zcyy14!=''">
+		 AND `zcyy14` like concat('%',#{params.zcyy14},'%')
+		</if>
+		<if test="params.yszckm15 !=null and params.yszckm15!=''">
+		 AND `yszckm15` like concat('%',#{params.yszckm15},'%')
+		</if>
+		<if test="params.zc15 !=null and params.zc15!=''">
+		 AND `zc15` like concat('%',#{params.zc15},'%')
+		</if>
+		<if test="params.zcyy15 !=null and params.zcyy15!=''">
+		 AND `zcyy15` like concat('%',#{params.zcyy15},'%')
+		</if>
+		<if test="params.yszckm16 !=null and params.yszckm16!=''">
+		 AND `yszckm16` like concat('%',#{params.yszckm16},'%')
+		</if>
+		<if test="params.zc16 !=null and params.zc16!=''">
+		 AND `zc16` like concat('%',#{params.zc16},'%')
+		</if>
+		<if test="params.zcyy16 !=null and params.zcyy16!=''">
+		 AND `zcyy16` like concat('%',#{params.zcyy16},'%')
+		</if>
+		<if test="params.yszckm17 !=null and params.yszckm17!=''">
+		 AND `yszckm17` like concat('%',#{params.yszckm17},'%')
+		</if>
+		<if test="params.zc17 !=null and params.zc17!=''">
+		 AND `zc17` like concat('%',#{params.zc17},'%')
+		</if>
+		<if test="params.zcyy17 !=null and params.zcyy17!=''">
+		 AND `zcyy17` like concat('%',#{params.zcyy17},'%')
+		</if>
+		<if test="params.yszckm18 !=null and params.yszckm18!=''">
+		 AND `yszckm18` like concat('%',#{params.yszckm18},'%')
+		</if>
+		<if test="params.zc18 !=null and params.zc18!=''">
+		 AND `zc18` like concat('%',#{params.zc18},'%')
+		</if>
+		<if test="params.zcyy18 !=null and params.zcyy18!=''">
+		 AND `zcyy18` like concat('%',#{params.zcyy18},'%')
+		</if>
+		<if test="params.teaname !=null and params.teaname!=''">
+		 AND `teaname` like concat('%',#{params.teaname},'%')
+		</if>
+		<if test="params.teasex !=null and params.teasex!=''">
+		 AND `teasex` like concat('%',#{params.teasex},'%')
+		</if>
+		<if test="params.teamz !=null and params.teamz!=''">
+		 AND `teamz` like concat('%',#{params.teamz},'%')
+		</if>
+		<if test="params.teacsny !=null and params.teacsny!=''">
+		 AND `teacsny` like concat('%',#{params.teacsny},'%')
+		</if>
+		<if test="params.teaxy !=null and params.teaxy!=''">
+		 AND `teaxy` like concat('%',#{params.teaxy},'%')
+		</if>
+		<if test="params.teaxl !=null and params.teaxl!=''">
+		 AND `teaxl` like concat('%',#{params.teaxl},'%')
+		</if>
+		<if test="params.teazc !=null and params.teazc!=''">
+		 AND `teazc` like concat('%',#{params.teazc},'%')
+		</if>
+		<if test="params.teazw !=null and params.teazw!=''">
+		 AND `teazw` like concat('%',#{params.teazw},'%')
+		</if>
+		<if test="params.teafx !=null and params.teafx!=''">
+		 AND `teafx` like concat('%',#{params.teafx},'%')
+		</if>
+		<if test="params.teadz !=null and params.teadz!=''">
+		 AND `teadz` like concat('%',#{params.teadz},'%')
+		</if>
+		<if test="params.teayb !=null and params.teayb!=''">
+		 AND `teayb` like concat('%',#{params.teayb},'%')
+		</if>
+		<if test="params.teamail2 !=null and params.teamail2!=''">
+		 AND `teamail2` like concat('%',#{params.teamail2},'%')
+		</if>
+		<if test="params.teadh !=null and params.teadh!=''">
+		 AND `teadh` like concat('%',#{params.teadh},'%')
+		</if>
+		<if test="params.teasj !=null and params.teasj!=''">
+		 AND `teasj` like concat('%',#{params.teasj},'%')
+		</if>
+		<if test="params.teanowdesc !=null and params.teanowdesc!=''">
+		 AND `teanowdesc` like concat('%',#{params.teanowdesc},'%')
+		</if>
+		<if test="params.teajy !=null and params.teajy!=''">
+		 AND `teajy` like concat('%',#{params.teajy},'%')
+		</if>
+		<if test="params.teajy2 !=null and params.teajy2!=''">
+		 AND `teajy2` like concat('%',#{params.teajy2},'%')
+		</if>
+		<if test="params.xyyj !=null and params.xyyj!=''">
+		 AND `xyyj` like concat('%',#{params.xyyj},'%')
+		</if>
+		<if test="params.tjfzr !=null and params.tjfzr!=''">
+		 AND `tjfzr` like concat('%',#{params.tjfzr},'%')
+		</if>
+		<if test="params.xyrq !=null and params.xyrq!=''">
+		 AND `xyrq` like concat('%',#{params.xyrq},'%')
+		</if>
+		<if test="params.tearq !=null and params.tearq!=''">
+		 AND `tearq` like concat('%',#{params.tearq},'%')
+		</if>
+		<if test="params.xxrq !=null and params.xxrq!=''">
+		 AND `xxrq` like concat('%',#{params.xxrq},'%')
+		</if>
+		<if test="params.zjyj !=null and params.zjyj!=''">
+		 AND `zjyj` like concat('%',#{params.zjyj},'%')
+		</if>
+		<if test="params.zjrq !=null and params.zjrq!=''">
+		 AND `zjrq` like concat('%',#{params.zjrq},'%')
+		</if>
+		<if test="params.c1 !=null and params.c1!=''">
+		 AND `c1` like concat('%',#{params.c1},'%')
+		</if>
+		<if test="params.c2 !=null and params.c2!=''">
+		 AND `c2` like concat('%',#{params.c2},'%')
+		</if>
+		<if test="params.c3 !=null and params.c3!=''">
+		 AND `c3` like concat('%',#{params.c3},'%')
+		</if>
+		<if test="params.c4 !=null and params.c4!=''">
+		 AND `c4` like concat('%',#{params.c4},'%')
+		</if>
+		<if test="params.c5 !=null and params.c5!=''">
+		 AND `c5` like concat('%',#{params.c5},'%')
+		</if>
+		<if test="params.c6 !=null and params.c6!=''">
+		 AND `c6` like concat('%',#{params.c6},'%')
+		</if>
+		<if test="params.c7 !=null and params.c7!=''">
+		 AND `c7` like concat('%',#{params.c7},'%')
+		</if>
+		<if test="params.c8 !=null and params.c8!=''">
+		 AND `c8` like concat('%',#{params.c8},'%')
+		</if>
+		<if test="params.c9 !=null and params.c9!=''">
+		 AND `c9` like concat('%',#{params.c9},'%')
+		</if>
+		<if test="params.c10 !=null and params.c10!=''">
+		 AND `c10` like concat('%',#{params.c10},'%')
+		</if>
+		<if test="params.c11 !=null and params.c11!=''">
+		 AND `c11` like concat('%',#{params.c11},'%')
+		</if>
+		<if test="params.c12 !=null and params.c12!=''">
+		 AND `c12` like concat('%',#{params.c12},'%')
+		</if>
+		<if test="params.c13 !=null and params.c13!=''">
+		 AND `c13` like concat('%',#{params.c13},'%')
+		</if>
+		<if test="params.c14 !=null and params.c14!=''">
+		 AND `c14` like concat('%',#{params.c14},'%')
+		</if>
+		<if test="params.lb1 !=null and params.lb1!=''">
+		 AND `lb1` like concat('%',#{params.lb1},'%')
+		</if>
+		<if test="params.lb2 !=null and params.lb2!=''">
+		 AND `lb2` like concat('%',#{params.lb2},'%')
+		</if>
+		<if test="params.lb3 !=null and params.lb3!=''">
+		 AND `lb3` like concat('%',#{params.lb3},'%')
+		</if>
+		<if test="params.lb4 !=null and params.lb4!=''">
+		 AND `lb4` like concat('%',#{params.lb4},'%')
+		</if>
+		<if test="params.lb5 !=null and params.lb5!=''">
+		 AND `lb5` like concat('%',#{params.lb5},'%')
+		</if>
+		<if test="params.lb6 !=null and params.lb6!=''">
+		 AND `lb6` like concat('%',#{params.lb6},'%')
+		</if>
+		<if test="params.lb7 !=null and params.lb7!=''">
+		 AND `lb7` like concat('%',#{params.lb7},'%')
+		</if>
+		<if test="params.lb8 !=null and params.lb8!=''">
+		 AND `lb8` like concat('%',#{params.lb8},'%')
+		</if>
+		<if test="params.lb9 !=null and params.lb9!=''">
+		 AND `lb9` like concat('%',#{params.lb9},'%')
+		</if>
+		<if test="params.lb10 !=null and params.lb10!=''">
+		 AND `lb10` like concat('%',#{params.lb10},'%')
+		</if>
+		<if test="params.lb11 !=null and params.lb11!=''">
+		 AND `lb11` like concat('%',#{params.lb11},'%')
+		</if>
+		<if test="params.lb12 !=null and params.lb12!=''">
+		 AND `lb12` like concat('%',#{params.lb12},'%')
+		</if>
+		<if test="params.lb13 !=null and params.lb13!=''">
+		 AND `lb13` like concat('%',#{params.lb13},'%')
+		</if>
+		<if test="params.lb14 !=null and params.lb14!=''">
+		 AND `lb14` like concat('%',#{params.lb14},'%')
+		</if>
+		<if test="params.s1 !=null and params.s1!=''">
+		 AND `s1` like concat('%',#{params.s1},'%')
+		</if>
+		<if test="params.s2 !=null and params.s2!=''">
+		 AND `s2` like concat('%',#{params.s2},'%')
+		</if>
+		<if test="params.s3 !=null and params.s3!=''">
+		 AND `s3` like concat('%',#{params.s3},'%')
+		</if>
+		<if test="params.s4 !=null and params.s4!=''">
+		 AND `s4` like concat('%',#{params.s4},'%')
+		</if>
+		<if test="params.s5 !=null and params.s5!=''">
+		 AND `s5` like concat('%',#{params.s5},'%')
+		</if>
+		<if test="params.s6 !=null and params.s6!=''">
+		 AND `s6` like concat('%',#{params.s6},'%')
+		</if>
+		<if test="params.s7 !=null and params.s7!=''">
+		 AND `s7` like concat('%',#{params.s7},'%')
+		</if>
+		<if test="params.s8 !=null and params.s8!=''">
+		 AND `s8` like concat('%',#{params.s8},'%')
+		</if>
+		<if test="params.s9 !=null and params.s9!=''">
+		 AND `s9` like concat('%',#{params.s9},'%')
+		</if>
+		<if test="params.s10 !=null and params.s10!=''">
+		 AND `s10` like concat('%',#{params.s10},'%')
+		</if>
+		<if test="params.s11 !=null and params.s11!=''">
+		 AND `s11` like concat('%',#{params.s11},'%')
+		</if>
+		<if test="params.s12 !=null and params.s12!=''">
+		 AND `s12` like concat('%',#{params.s12},'%')
+		</if>
+		<if test="params.s13 !=null and params.s13!=''">
+		 AND `s13` like concat('%',#{params.s13},'%')
+		</if>
+		<if test="params.s14 !=null and params.s14!=''">
+		 AND `s14` like concat('%',#{params.s14},'%')
+		</if>
+		<if test="params.cj1 !=null and params.cj1!=''">
+		 AND `cj1` like concat('%',#{params.cj1},'%')
+		</if>
+		<if test="params.cj2 !=null and params.cj2!=''">
+		 AND `cj2` like concat('%',#{params.cj2},'%')
+		</if>
+		<if test="params.cj3 !=null and params.cj3!=''">
+		 AND `cj3` like concat('%',#{params.cj3},'%')
+		</if>
+		<if test="params.cj4 !=null and params.cj4!=''">
+		 AND `cj4` like concat('%',#{params.cj4},'%')
+		</if>
+		<if test="params.cj5 !=null and params.cj5!=''">
+		 AND `cj5` like concat('%',#{params.cj5},'%')
+		</if>
+		<if test="params.cj6 !=null and params.cj6!=''">
+		 AND `cj6` like concat('%',#{params.cj6},'%')
+		</if>
+		<if test="params.cj7 !=null and params.cj7!=''">
+		 AND `cj7` like concat('%',#{params.cj7},'%')
+		</if>
+		<if test="params.cj8 !=null and params.cj8!=''">
+		 AND `cj8` like concat('%',#{params.cj8},'%')
+		</if>
+		<if test="params.cj9 !=null and params.cj9!=''">
+		 AND `cj9` like concat('%',#{params.cj9},'%')
+		</if>
+		<if test="params.cj10 !=null and params.cj10!=''">
+		 AND `cj10` like concat('%',#{params.cj10},'%')
+		</if>
+		<if test="params.cj11 !=null and params.cj11!=''">
+		 AND `cj11` like concat('%',#{params.cj11},'%')
+		</if>
+		<if test="params.cj12 !=null and params.cj12!=''">
+		 AND `cj12` like concat('%',#{params.cj12},'%')
+		</if>
+		<if test="params.cj13 !=null and params.cj13!=''">
+		 AND `cj13` like concat('%',#{params.cj13},'%')
+		</if>
+		<if test="params.cj14 !=null and params.cj14!=''">
+		 AND `cj14` like concat('%',#{params.cj14},'%')
+		</if>
+		<if test="params.c15 !=null and params.c15!=''">
+		 AND `c15` like concat('%',#{params.c15},'%')
+		</if>
+		<if test="params.c16 !=null and params.c16!=''">
+		 AND `c16` like concat('%',#{params.c16},'%')
+		</if>
+		<if test="params.c17 !=null and params.c17!=''">
+		 AND `c17` like concat('%',#{params.c17},'%')
+		</if>
+		<if test="params.c18 !=null and params.c18!=''">
+		 AND `c18` like concat('%',#{params.c18},'%')
+		</if>
+		<if test="params.c19 !=null and params.c19!=''">
+		 AND `c19` like concat('%',#{params.c19},'%')
+		</if>
+		<if test="params.c20 !=null and params.c20!=''">
+		 AND `c20` like concat('%',#{params.c20},'%')
+		</if>
+		<if test="params.c21 !=null and params.c21!=''">
+		 AND `c21` like concat('%',#{params.c21},'%')
+		</if>
+		<if test="params.c22 !=null and params.c22!=''">
+		 AND `c22` like concat('%',#{params.c22},'%')
+		</if>
+		<if test="params.c23 !=null and params.c23!=''">
+		 AND `c23` like concat('%',#{params.c23},'%')
+		</if>
+		<if test="params.c24 !=null and params.c24!=''">
+		 AND `c24` like concat('%',#{params.c24},'%')
+		</if>
+		<if test="params.c25 !=null and params.c25!=''">
+		 AND `c25` like concat('%',#{params.c25},'%')
+		</if>
+		<if test="params.c26 !=null and params.c26!=''">
+		 AND `c26` like concat('%',#{params.c26},'%')
+		</if>
+		<if test="params.c27 !=null and params.c27!=''">
+		 AND `c27` like concat('%',#{params.c27},'%')
+		</if>
+		<if test="params.c28 !=null and params.c28!=''">
+		 AND `c28` like concat('%',#{params.c28},'%')
+		</if>
+		<if test="params.lb15 !=null and params.lb15!=''">
+		 AND `lb15` like concat('%',#{params.lb15},'%')
+		</if>
+		<if test="params.lb16 !=null and params.lb16!=''">
+		 AND `lb16` like concat('%',#{params.lb16},'%')
+		</if>
+		<if test="params.lb17 !=null and params.lb17!=''">
+		 AND `lb17` like concat('%',#{params.lb17},'%')
+		</if>
+		<if test="params.lb18 !=null and params.lb18!=''">
+		 AND `lb18` like concat('%',#{params.lb18},'%')
+		</if>
+		<if test="params.lb19 !=null and params.lb19!=''">
+		 AND `lb19` like concat('%',#{params.lb19},'%')
+		</if>
+		<if test="params.lb20 !=null and params.lb20!=''">
+		 AND `lb20` like concat('%',#{params.lb20},'%')
+		</if>
+		<if test="params.lb21 !=null and params.lb21!=''">
+		 AND `lb21` like concat('%',#{params.lb21},'%')
+		</if>
+		<if test="params.lb22 !=null and params.lb22!=''">
+		 AND `lb22` like concat('%',#{params.lb22},'%')
+		</if>
+		<if test="params.lb23 !=null and params.lb23!=''">
+		 AND `lb23` like concat('%',#{params.lb23},'%')
+		</if>
+		<if test="params.lb24 !=null and params.lb24!=''">
+		 AND `lb24` like concat('%',#{params.lb24},'%')
+		</if>
+		<if test="params.lb25 !=null and params.lb25!=''">
+		 AND `lb25` like concat('%',#{params.lb25},'%')
+		</if>
+		<if test="params.lb26 !=null and params.lb26!=''">
+		 AND `lb26` like concat('%',#{params.lb26},'%')
+		</if>
+		<if test="params.lb27 !=null and params.lb27!=''">
+		 AND `lb27` like concat('%',#{params.lb27},'%')
+		</if>
+		<if test="params.lb28 !=null and params.lb28!=''">
+		 AND `lb28` like concat('%',#{params.lb28},'%')
+		</if>
+		<if test="params.s15 !=null and params.s15!=''">
+		 AND `s15` like concat('%',#{params.s15},'%')
+		</if>
+		<if test="params.s16 !=null and params.s16!=''">
+		 AND `s16` like concat('%',#{params.s16},'%')
+		</if>
+		<if test="params.s17 !=null and params.s17!=''">
+		 AND `s17` like concat('%',#{params.s17},'%')
+		</if>
+		<if test="params.s18 !=null and params.s18!=''">
+		 AND `s18` like concat('%',#{params.s18},'%')
+		</if>
+		<if test="params.s19 !=null and params.s19!=''">
+		 AND `s19` like concat('%',#{params.s19},'%')
+		</if>
+		<if test="params.s20 !=null and params.s20!=''">
+		 AND `s20` like concat('%',#{params.s20},'%')
+		</if>
+		<if test="params.s21 !=null and params.s21!=''">
+		 AND `s21` like concat('%',#{params.s21},'%')
+		</if>
+		<if test="params.s22 !=null and params.s22!=''">
+		 AND `s22` like concat('%',#{params.s22},'%')
+		</if>
+		<if test="params.s23 !=null and params.s23!=''">
+		 AND `s23` like concat('%',#{params.s23},'%')
+		</if>
+		<if test="params.s24 !=null and params.s24!=''">
+		 AND `s24` like concat('%',#{params.s24},'%')
+		</if>
+		<if test="params.s25 !=null and params.s25!=''">
+		 AND `s25` like concat('%',#{params.s25},'%')
+		</if>
+		<if test="params.s26 !=null and params.s26!=''">
+		 AND `s26` like concat('%',#{params.s26},'%')
+		</if>
+		<if test="params.s27 !=null and params.s27!=''">
+		 AND `s27` like concat('%',#{params.s27},'%')
+		</if>
+		<if test="params.s28 !=null and params.s28!=''">
+		 AND `s28` like concat('%',#{params.s28},'%')
+		</if>
+		<if test="params.cj15 !=null and params.cj15!=''">
+		 AND `cj15` like concat('%',#{params.cj15},'%')
+		</if>
+		<if test="params.cj16 !=null and params.cj16!=''">
+		 AND `cj16` like concat('%',#{params.cj16},'%')
+		</if>
+		<if test="params.cj17 !=null and params.cj17!=''">
+		 AND `cj17` like concat('%',#{params.cj17},'%')
+		</if>
+		<if test="params.cj18 !=null and params.cj18!=''">
+		 AND `cj18` like concat('%',#{params.cj18},'%')
+		</if>
+		<if test="params.cj19 !=null and params.cj19!=''">
+		 AND `cj19` like concat('%',#{params.cj19},'%')
+		</if>
+		<if test="params.cj20 !=null and params.cj20!=''">
+		 AND `cj20` like concat('%',#{params.cj20},'%')
+		</if>
+		<if test="params.cj21 !=null and params.cj21!=''">
+		 AND `cj21` like concat('%',#{params.cj21},'%')
+		</if>
+		<if test="params.cj22 !=null and params.cj22!=''">
+		 AND `cj22` like concat('%',#{params.cj22},'%')
+		</if>
+		<if test="params.cj23 !=null and params.cj23!=''">
+		 AND `cj23` like concat('%',#{params.cj23},'%')
+		</if>
+		<if test="params.cj24 !=null and params.cj24!=''">
+		 AND `cj24` like concat('%',#{params.cj24},'%')
+		</if>
+		<if test="params.cj25 !=null and params.cj25!=''">
+		 AND `cj25` like concat('%',#{params.cj25},'%')
+		</if>
+		<if test="params.cj26 !=null and params.cj26!=''">
+		 AND `cj26` like concat('%',#{params.cj26},'%')
+		</if>
+		<if test="params.cj27 !=null and params.cj27!=''">
+		 AND `cj27` like concat('%',#{params.cj27},'%')
+		</if>
+		<if test="params.cj28 !=null and params.cj28!=''">
+		 AND `cj28` like concat('%',#{params.cj28},'%')
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `highapply` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Highapply"> insert into `highapply` (
+		`id`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`projectnum`
+				,
+		`preuserid`
+				,
+		`preusername`
+				,
+		`xueyuan`
+				,
+		`utel`
+				,
+		`umail`
+				,
+		`tea`
+				,
+		`tealevel`
+				,
+		`teadw`
+				,
+		`teatel`
+				,
+		`teamail`
+				,
+		`created`
+				,
+		`protype`
+				,
+		`prolevel`
+				,
+		`xingming`
+				,
+		`xingbie`
+				,
+		`mingzhu`
+				,
+		`sfz`
+				,
+		`szxy`
+				,
+		`xh`
+				,
+		`nj`
+				,
+		`zy`
+				,
+		`dh`
+				,
+		`sj`
+				,
+		`email`
+				,
+		`sstart1`
+				,
+		`send1`
+				,
+		`sstart2`
+				,
+		`send2`
+				,
+		`sstart3`
+				,
+		`send3`
+				,
+		`school1`
+				,
+		`school2`
+				,
+		`school3`
+				,
+		`remark1`
+				,
+		`remark2`
+				,
+		`remark3`
+				,
+		`kstart1`
+				,
+		`kend1`
+				,
+		`kstart2`
+				,
+		`kend2`
+				,
+		`kstart3`
+				,
+		`kend3`
+				,
+		`kstart4`
+				,
+		`kend4`
+				,
+		`pro1`
+				,
+		`pro2`
+				,
+		`pro3`
+				,
+		`pro4`
+				,
+		`from1`
+				,
+		`from2`
+				,
+		`from3`
+				,
+		`from4`
+				,
+		`on1`
+				,
+		`on2`
+				,
+		`on3`
+				,
+		`on4`
+				,
+		`result1`
+				,
+		`result2`
+				,
+		`result3`
+				,
+		`result4`
+				,
+		`meb1`
+				,
+		`num1`
+				,
+		`sex1`
+				,
+		`sfz1`
+				,
+		`xy1`
+				,
+		`nj1`
+				,
+		`zy1`
+				,
+		`dh1`
+				,
+		`sj1`
+				,
+		`email1`
+				,
+		`fg1`
+				,
+		`qm1`
+				,
+		`kymc1`
+				,
+		`qz1`
+				,
+		`cg1`
+				,
+		`kymc2`
+				,
+		`qz2`
+				,
+		`cg2`
+				,
+		`kymc3`
+				,
+		`qz3`
+				,
+		`cg3`
+				,
+		`meb2`
+				,
+		`num2`
+				,
+		`sex2`
+				,
+		`sfz2`
+				,
+		`xy2`
+				,
+		`nj2`
+				,
+		`zy2`
+				,
+		`dh2`
+				,
+		`sj2`
+				,
+		`email2`
+				,
+		`fg2`
+				,
+		`qm2`
+				,
+		`kymc4`
+				,
+		`qz4`
+				,
+		`cg4`
+				,
+		`kymc5`
+				,
+		`qz5`
+				,
+		`cg5`
+				,
+		`kymc6`
+				,
+		`qz6`
+				,
+		`cg6`
+				,
+		`xmzy`
+				,
+		`yjfa`
+				,
+		`yjsj`
+				,
+		`ap`
+				,
+		`tj`
+				,
+		`cgxs`
+				,
+		`jfze`
+				,
+		`rjjf`
+				,
+		`dxscxcyxljhzz`
+				,
+		`sqxxzz`
+				,
+		`xxptzz`
+				,
+		`jsktf`
+				,
+		`qt`
+				,
+		`yszckm1`
+				,
+		`zc1`
+				,
+		`zcyy1`
+				,
+		`yszckm2`
+				,
+		`zc2`
+				,
+		`zcyy2`
+				,
+		`yszckm3`
+				,
+		`zc3`
+				,
+		`zcyy3`
+				,
+		`yszckm4`
+				,
+		`zc4`
+				,
+		`zcyy4`
+				,
+		`yszckm5`
+				,
+		`zc5`
+				,
+		`zcyy5`
+				,
+		`yszckm6`
+				,
+		`zc6`
+				,
+		`zcyy6`
+				,
+		`yszckm7`
+				,
+		`zc7`
+				,
+		`zcyy7`
+				,
+		`yszckm8`
+				,
+		`zc8`
+				,
+		`zcyy8`
+				,
+		`yszckm9`
+				,
+		`zc9`
+				,
+		`zcyy9`
+				,
+		`yszckm10`
+				,
+		`zc10`
+				,
+		`zcyy10`
+				,
+		`yszckm11`
+				,
+		`zc11`
+				,
+		`zcyy11`
+				,
+		`yszckm12`
+				,
+		`zc12`
+				,
+		`zcyy12`
+				,
+		`yszckm13`
+				,
+		`zc13`
+				,
+		`zcyy13`
+				,
+		`yszckm14`
+				,
+		`zc14`
+				,
+		`zcyy14`
+				,
+		`yszckm15`
+				,
+		`zc15`
+				,
+		`zcyy15`
+				,
+		`yszckm16`
+				,
+		`zc16`
+				,
+		`zcyy16`
+				,
+		`yszckm17`
+				,
+		`zc17`
+				,
+		`zcyy17`
+				,
+		`yszckm18`
+				,
+		`zc18`
+				,
+		`zcyy18`
+				,
+		`teaname`
+				,
+		`teasex`
+				,
+		`teamz`
+				,
+		`teacsny`
+				,
+		`teaxy`
+				,
+		`teaxl`
+				,
+		`teazc`
+				,
+		`teazw`
+				,
+		`teafx`
+				,
+		`teadz`
+				,
+		`teayb`
+				,
+		`teamail2`
+				,
+		`teadh`
+				,
+		`teasj`
+				,
+		`teanowdesc`
+				,
+		`teajy`
+				,
+		`teajy2`
+				,
+		`xyyj`
+				,
+		`tjfzr`
+				,
+		`xyrq`
+				,
+		`tearq`
+				,
+		`xxrq`
+				,
+		`zjyj`
+				,
+		`zjrq`
+				,
+		`c1`
+				,
+		`c2`
+				,
+		`c3`
+				,
+		`c4`
+				,
+		`c5`
+				,
+		`c6`
+				,
+		`c7`
+				,
+		`c8`
+				,
+		`c9`
+				,
+		`c10`
+				,
+		`c11`
+				,
+		`c12`
+				,
+		`c13`
+				,
+		`c14`
+				,
+		`lb1`
+				,
+		`lb2`
+				,
+		`lb3`
+				,
+		`lb4`
+				,
+		`lb5`
+				,
+		`lb6`
+				,
+		`lb7`
+				,
+		`lb8`
+				,
+		`lb9`
+				,
+		`lb10`
+				,
+		`lb11`
+				,
+		`lb12`
+				,
+		`lb13`
+				,
+		`lb14`
+				,
+		`s1`
+				,
+		`s2`
+				,
+		`s3`
+				,
+		`s4`
+				,
+		`s5`
+				,
+		`s6`
+				,
+		`s7`
+				,
+		`s8`
+				,
+		`s9`
+				,
+		`s10`
+				,
+		`s11`
+				,
+		`s12`
+				,
+		`s13`
+				,
+		`s14`
+				,
+		`cj1`
+				,
+		`cj2`
+				,
+		`cj3`
+				,
+		`cj4`
+				,
+		`cj5`
+				,
+		`cj6`
+				,
+		`cj7`
+				,
+		`cj8`
+				,
+		`cj9`
+				,
+		`cj10`
+				,
+		`cj11`
+				,
+		`cj12`
+				,
+		`cj13`
+				,
+		`cj14`
+				,
+		`c15`
+				,
+		`c16`
+				,
+		`c17`
+				,
+		`c18`
+				,
+		`c19`
+				,
+		`c20`
+				,
+		`c21`
+				,
+		`c22`
+				,
+		`c23`
+				,
+		`c24`
+				,
+		`c25`
+				,
+		`c26`
+				,
+		`c27`
+				,
+		`c28`
+				,
+		`lb15`
+				,
+		`lb16`
+				,
+		`lb17`
+				,
+		`lb18`
+				,
+		`lb19`
+				,
+		`lb20`
+				,
+		`lb21`
+				,
+		`lb22`
+				,
+		`lb23`
+				,
+		`lb24`
+				,
+		`lb25`
+				,
+		`lb26`
+				,
+		`lb27`
+				,
+		`lb28`
+				,
+		`s15`
+				,
+		`s16`
+				,
+		`s17`
+				,
+		`s18`
+				,
+		`s19`
+				,
+		`s20`
+				,
+		`s21`
+				,
+		`s22`
+				,
+		`s23`
+				,
+		`s24`
+				,
+		`s25`
+				,
+		`s26`
+				,
+		`s27`
+				,
+		`s28`
+				,
+		`cj15`
+				,
+		`cj16`
+				,
+		`cj17`
+				,
+		`cj18`
+				,
+		`cj19`
+				,
+		`cj20`
+				,
+		`cj21`
+				,
+		`cj22`
+				,
+		`cj23`
+				,
+		`cj24`
+				,
+		`cj25`
+				,
+		`cj26`
+				,
+		`cj27`
+				,
+		`cj28`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{projectnum,jdbcType=INTEGER}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				,
+		#{xueyuan,jdbcType=VARCHAR}
+				,
+		#{utel,jdbcType=VARCHAR}
+				,
+		#{umail,jdbcType=VARCHAR}
+				,
+		#{tea,jdbcType=VARCHAR}
+				,
+		#{tealevel,jdbcType=VARCHAR}
+				,
+		#{teadw,jdbcType=VARCHAR}
+				,
+		#{teatel,jdbcType=VARCHAR}
+				,
+		#{teamail,jdbcType=VARCHAR}
+				,
+		#{created,jdbcType=VARCHAR}
+				,
+		#{protype,jdbcType=VARCHAR}
+				,
+		#{prolevel,jdbcType=VARCHAR}
+				,
+		#{xingming,jdbcType=VARCHAR}
+				,
+		#{xingbie,jdbcType=VARCHAR}
+				,
+		#{mingzhu,jdbcType=VARCHAR}
+				,
+		#{sfz,jdbcType=VARCHAR}
+				,
+		#{szxy,jdbcType=VARCHAR}
+				,
+		#{xh,jdbcType=VARCHAR}
+				,
+		#{nj,jdbcType=VARCHAR}
+				,
+		#{zy,jdbcType=VARCHAR}
+				,
+		#{dh,jdbcType=VARCHAR}
+				,
+		#{sj,jdbcType=VARCHAR}
+				,
+		#{email,jdbcType=VARCHAR}
+				,
+		#{sstart1,jdbcType=VARCHAR}
+				,
+		#{send1,jdbcType=VARCHAR}
+				,
+		#{sstart2,jdbcType=VARCHAR}
+				,
+		#{send2,jdbcType=VARCHAR}
+				,
+		#{sstart3,jdbcType=VARCHAR}
+				,
+		#{send3,jdbcType=VARCHAR}
+				,
+		#{school1,jdbcType=VARCHAR}
+				,
+		#{school2,jdbcType=VARCHAR}
+				,
+		#{school3,jdbcType=VARCHAR}
+				,
+		#{remark1,jdbcType=VARCHAR}
+				,
+		#{remark2,jdbcType=VARCHAR}
+				,
+		#{remark3,jdbcType=VARCHAR}
+				,
+		#{kstart1,jdbcType=VARCHAR}
+				,
+		#{kend1,jdbcType=VARCHAR}
+				,
+		#{kstart2,jdbcType=VARCHAR}
+				,
+		#{kend2,jdbcType=VARCHAR}
+				,
+		#{kstart3,jdbcType=VARCHAR}
+				,
+		#{kend3,jdbcType=VARCHAR}
+				,
+		#{kstart4,jdbcType=VARCHAR}
+				,
+		#{kend4,jdbcType=VARCHAR}
+				,
+		#{pro1,jdbcType=VARCHAR}
+				,
+		#{pro2,jdbcType=VARCHAR}
+				,
+		#{pro3,jdbcType=VARCHAR}
+				,
+		#{pro4,jdbcType=VARCHAR}
+				,
+		#{from1,jdbcType=VARCHAR}
+				,
+		#{from2,jdbcType=VARCHAR}
+				,
+		#{from3,jdbcType=VARCHAR}
+				,
+		#{from4,jdbcType=VARCHAR}
+				,
+		#{on1,jdbcType=VARCHAR}
+				,
+		#{on2,jdbcType=VARCHAR}
+				,
+		#{on3,jdbcType=VARCHAR}
+				,
+		#{on4,jdbcType=VARCHAR}
+				,
+		#{result1,jdbcType=VARCHAR}
+				,
+		#{result2,jdbcType=VARCHAR}
+				,
+		#{result3,jdbcType=VARCHAR}
+				,
+		#{result4,jdbcType=VARCHAR}
+				,
+		#{meb1,jdbcType=VARCHAR}
+				,
+		#{num1,jdbcType=VARCHAR}
+				,
+		#{sex1,jdbcType=VARCHAR}
+				,
+		#{sfz1,jdbcType=VARCHAR}
+				,
+		#{xy1,jdbcType=VARCHAR}
+				,
+		#{nj1,jdbcType=VARCHAR}
+				,
+		#{zy1,jdbcType=VARCHAR}
+				,
+		#{dh1,jdbcType=VARCHAR}
+				,
+		#{sj1,jdbcType=VARCHAR}
+				,
+		#{email1,jdbcType=VARCHAR}
+				,
+		#{fg1,jdbcType=VARCHAR}
+				,
+		#{qm1,jdbcType=VARCHAR}
+				,
+		#{kymc1,jdbcType=VARCHAR}
+				,
+		#{qz1,jdbcType=VARCHAR}
+				,
+		#{cg1,jdbcType=VARCHAR}
+				,
+		#{kymc2,jdbcType=VARCHAR}
+				,
+		#{qz2,jdbcType=VARCHAR}
+				,
+		#{cg2,jdbcType=VARCHAR}
+				,
+		#{kymc3,jdbcType=VARCHAR}
+				,
+		#{qz3,jdbcType=VARCHAR}
+				,
+		#{cg3,jdbcType=VARCHAR}
+				,
+		#{meb2,jdbcType=VARCHAR}
+				,
+		#{num2,jdbcType=VARCHAR}
+				,
+		#{sex2,jdbcType=VARCHAR}
+				,
+		#{sfz2,jdbcType=VARCHAR}
+				,
+		#{xy2,jdbcType=VARCHAR}
+				,
+		#{nj2,jdbcType=VARCHAR}
+				,
+		#{zy2,jdbcType=VARCHAR}
+				,
+		#{dh2,jdbcType=VARCHAR}
+				,
+		#{sj2,jdbcType=VARCHAR}
+				,
+		#{email2,jdbcType=VARCHAR}
+				,
+		#{fg2,jdbcType=VARCHAR}
+				,
+		#{qm2,jdbcType=VARCHAR}
+				,
+		#{kymc4,jdbcType=VARCHAR}
+				,
+		#{qz4,jdbcType=VARCHAR}
+				,
+		#{cg4,jdbcType=VARCHAR}
+				,
+		#{kymc5,jdbcType=VARCHAR}
+				,
+		#{qz5,jdbcType=VARCHAR}
+				,
+		#{cg5,jdbcType=VARCHAR}
+				,
+		#{kymc6,jdbcType=VARCHAR}
+				,
+		#{qz6,jdbcType=VARCHAR}
+				,
+		#{cg6,jdbcType=VARCHAR}
+				,
+		#{xmzy,jdbcType=VARCHAR}
+				,
+		#{yjfa,jdbcType=VARCHAR}
+				,
+		#{yjsj,jdbcType=VARCHAR}
+				,
+		#{ap,jdbcType=VARCHAR}
+				,
+		#{tj,jdbcType=VARCHAR}
+				,
+		#{cgxs,jdbcType=VARCHAR}
+				,
+		#{jfze,jdbcType=VARCHAR}
+				,
+		#{rjjf,jdbcType=VARCHAR}
+				,
+		#{dxscxcyxljhzz,jdbcType=VARCHAR}
+				,
+		#{sqxxzz,jdbcType=VARCHAR}
+				,
+		#{xxptzz,jdbcType=VARCHAR}
+				,
+		#{jsktf,jdbcType=VARCHAR}
+				,
+		#{qt,jdbcType=VARCHAR}
+				,
+		#{yszckm1,jdbcType=VARCHAR}
+				,
+		#{zc1,jdbcType=VARCHAR}
+				,
+		#{zcyy1,jdbcType=VARCHAR}
+				,
+		#{yszckm2,jdbcType=VARCHAR}
+				,
+		#{zc2,jdbcType=VARCHAR}
+				,
+		#{zcyy2,jdbcType=VARCHAR}
+				,
+		#{yszckm3,jdbcType=VARCHAR}
+				,
+		#{zc3,jdbcType=VARCHAR}
+				,
+		#{zcyy3,jdbcType=VARCHAR}
+				,
+		#{yszckm4,jdbcType=VARCHAR}
+				,
+		#{zc4,jdbcType=VARCHAR}
+				,
+		#{zcyy4,jdbcType=VARCHAR}
+				,
+		#{yszckm5,jdbcType=VARCHAR}
+				,
+		#{zc5,jdbcType=VARCHAR}
+				,
+		#{zcyy5,jdbcType=VARCHAR}
+				,
+		#{yszckm6,jdbcType=VARCHAR}
+				,
+		#{zc6,jdbcType=VARCHAR}
+				,
+		#{zcyy6,jdbcType=VARCHAR}
+				,
+		#{yszckm7,jdbcType=VARCHAR}
+				,
+		#{zc7,jdbcType=VARCHAR}
+				,
+		#{zcyy7,jdbcType=VARCHAR}
+				,
+		#{yszckm8,jdbcType=VARCHAR}
+				,
+		#{zc8,jdbcType=VARCHAR}
+				,
+		#{zcyy8,jdbcType=VARCHAR}
+				,
+		#{yszckm9,jdbcType=VARCHAR}
+				,
+		#{zc9,jdbcType=VARCHAR}
+				,
+		#{zcyy9,jdbcType=VARCHAR}
+				,
+		#{yszckm10,jdbcType=VARCHAR}
+				,
+		#{zc10,jdbcType=VARCHAR}
+				,
+		#{zcyy10,jdbcType=VARCHAR}
+				,
+		#{yszckm11,jdbcType=VARCHAR}
+				,
+		#{zc11,jdbcType=VARCHAR}
+				,
+		#{zcyy11,jdbcType=VARCHAR}
+				,
+		#{yszckm12,jdbcType=VARCHAR}
+				,
+		#{zc12,jdbcType=VARCHAR}
+				,
+		#{zcyy12,jdbcType=VARCHAR}
+				,
+		#{yszckm13,jdbcType=VARCHAR}
+				,
+		#{zc13,jdbcType=VARCHAR}
+				,
+		#{zcyy13,jdbcType=VARCHAR}
+				,
+		#{yszckm14,jdbcType=VARCHAR}
+				,
+		#{zc14,jdbcType=VARCHAR}
+				,
+		#{zcyy14,jdbcType=VARCHAR}
+				,
+		#{yszckm15,jdbcType=VARCHAR}
+				,
+		#{zc15,jdbcType=VARCHAR}
+				,
+		#{zcyy15,jdbcType=VARCHAR}
+				,
+		#{yszckm16,jdbcType=VARCHAR}
+				,
+		#{zc16,jdbcType=VARCHAR}
+				,
+		#{zcyy16,jdbcType=VARCHAR}
+				,
+		#{yszckm17,jdbcType=VARCHAR}
+				,
+		#{zc17,jdbcType=VARCHAR}
+				,
+		#{zcyy17,jdbcType=VARCHAR}
+				,
+		#{yszckm18,jdbcType=VARCHAR}
+				,
+		#{zc18,jdbcType=VARCHAR}
+				,
+		#{zcyy18,jdbcType=VARCHAR}
+				,
+		#{teaname,jdbcType=VARCHAR}
+				,
+		#{teasex,jdbcType=VARCHAR}
+				,
+		#{teamz,jdbcType=VARCHAR}
+				,
+		#{teacsny,jdbcType=VARCHAR}
+				,
+		#{teaxy,jdbcType=VARCHAR}
+				,
+		#{teaxl,jdbcType=VARCHAR}
+				,
+		#{teazc,jdbcType=VARCHAR}
+				,
+		#{teazw,jdbcType=VARCHAR}
+				,
+		#{teafx,jdbcType=VARCHAR}
+				,
+		#{teadz,jdbcType=VARCHAR}
+				,
+		#{teayb,jdbcType=VARCHAR}
+				,
+		#{teamail2,jdbcType=VARCHAR}
+				,
+		#{teadh,jdbcType=VARCHAR}
+				,
+		#{teasj,jdbcType=VARCHAR}
+				,
+		#{teanowdesc,jdbcType=VARCHAR}
+				,
+		#{teajy,jdbcType=VARCHAR}
+				,
+		#{teajy2,jdbcType=VARCHAR}
+				,
+		#{xyyj,jdbcType=VARCHAR}
+				,
+		#{tjfzr,jdbcType=VARCHAR}
+				,
+		#{xyrq,jdbcType=VARCHAR}
+				,
+		#{tearq,jdbcType=VARCHAR}
+				,
+		#{xxrq,jdbcType=VARCHAR}
+				,
+		#{zjyj,jdbcType=VARCHAR}
+				,
+		#{zjrq,jdbcType=VARCHAR}
+				,
+		#{c1,jdbcType=VARCHAR}
+				,
+		#{c2,jdbcType=VARCHAR}
+				,
+		#{c3,jdbcType=VARCHAR}
+				,
+		#{c4,jdbcType=VARCHAR}
+				,
+		#{c5,jdbcType=VARCHAR}
+				,
+		#{c6,jdbcType=VARCHAR}
+				,
+		#{c7,jdbcType=VARCHAR}
+				,
+		#{c8,jdbcType=VARCHAR}
+				,
+		#{c9,jdbcType=VARCHAR}
+				,
+		#{c10,jdbcType=VARCHAR}
+				,
+		#{c11,jdbcType=VARCHAR}
+				,
+		#{c12,jdbcType=VARCHAR}
+				,
+		#{c13,jdbcType=VARCHAR}
+				,
+		#{c14,jdbcType=VARCHAR}
+				,
+		#{lb1,jdbcType=VARCHAR}
+				,
+		#{lb2,jdbcType=VARCHAR}
+				,
+		#{lb3,jdbcType=VARCHAR}
+				,
+		#{lb4,jdbcType=VARCHAR}
+				,
+		#{lb5,jdbcType=VARCHAR}
+				,
+		#{lb6,jdbcType=VARCHAR}
+				,
+		#{lb7,jdbcType=VARCHAR}
+				,
+		#{lb8,jdbcType=VARCHAR}
+				,
+		#{lb9,jdbcType=VARCHAR}
+				,
+		#{lb10,jdbcType=VARCHAR}
+				,
+		#{lb11,jdbcType=VARCHAR}
+				,
+		#{lb12,jdbcType=VARCHAR}
+				,
+		#{lb13,jdbcType=VARCHAR}
+				,
+		#{lb14,jdbcType=VARCHAR}
+				,
+		#{s1,jdbcType=VARCHAR}
+				,
+		#{s2,jdbcType=VARCHAR}
+				,
+		#{s3,jdbcType=VARCHAR}
+				,
+		#{s4,jdbcType=VARCHAR}
+				,
+		#{s5,jdbcType=VARCHAR}
+				,
+		#{s6,jdbcType=VARCHAR}
+				,
+		#{s7,jdbcType=VARCHAR}
+				,
+		#{s8,jdbcType=VARCHAR}
+				,
+		#{s9,jdbcType=VARCHAR}
+				,
+		#{s10,jdbcType=VARCHAR}
+				,
+		#{s11,jdbcType=VARCHAR}
+				,
+		#{s12,jdbcType=VARCHAR}
+				,
+		#{s13,jdbcType=VARCHAR}
+				,
+		#{s14,jdbcType=VARCHAR}
+				,
+		#{cj1,jdbcType=VARCHAR}
+				,
+		#{cj2,jdbcType=VARCHAR}
+				,
+		#{cj3,jdbcType=VARCHAR}
+				,
+		#{cj4,jdbcType=VARCHAR}
+				,
+		#{cj5,jdbcType=VARCHAR}
+				,
+		#{cj6,jdbcType=VARCHAR}
+				,
+		#{cj7,jdbcType=VARCHAR}
+				,
+		#{cj8,jdbcType=VARCHAR}
+				,
+		#{cj9,jdbcType=VARCHAR}
+				,
+		#{cj10,jdbcType=VARCHAR}
+				,
+		#{cj11,jdbcType=VARCHAR}
+				,
+		#{cj12,jdbcType=VARCHAR}
+				,
+		#{cj13,jdbcType=VARCHAR}
+				,
+		#{cj14,jdbcType=VARCHAR}
+				,
+		#{c15,jdbcType=VARCHAR}
+				,
+		#{c16,jdbcType=VARCHAR}
+				,
+		#{c17,jdbcType=VARCHAR}
+				,
+		#{c18,jdbcType=VARCHAR}
+				,
+		#{c19,jdbcType=VARCHAR}
+				,
+		#{c20,jdbcType=VARCHAR}
+				,
+		#{c21,jdbcType=VARCHAR}
+				,
+		#{c22,jdbcType=VARCHAR}
+				,
+		#{c23,jdbcType=VARCHAR}
+				,
+		#{c24,jdbcType=VARCHAR}
+				,
+		#{c25,jdbcType=VARCHAR}
+				,
+		#{c26,jdbcType=VARCHAR}
+				,
+		#{c27,jdbcType=VARCHAR}
+				,
+		#{c28,jdbcType=VARCHAR}
+				,
+		#{lb15,jdbcType=VARCHAR}
+				,
+		#{lb16,jdbcType=VARCHAR}
+				,
+		#{lb17,jdbcType=VARCHAR}
+				,
+		#{lb18,jdbcType=VARCHAR}
+				,
+		#{lb19,jdbcType=VARCHAR}
+				,
+		#{lb20,jdbcType=VARCHAR}
+				,
+		#{lb21,jdbcType=VARCHAR}
+				,
+		#{lb22,jdbcType=VARCHAR}
+				,
+		#{lb23,jdbcType=VARCHAR}
+				,
+		#{lb24,jdbcType=VARCHAR}
+				,
+		#{lb25,jdbcType=VARCHAR}
+				,
+		#{lb26,jdbcType=VARCHAR}
+				,
+		#{lb27,jdbcType=VARCHAR}
+				,
+		#{lb28,jdbcType=VARCHAR}
+				,
+		#{s15,jdbcType=VARCHAR}
+				,
+		#{s16,jdbcType=VARCHAR}
+				,
+		#{s17,jdbcType=VARCHAR}
+				,
+		#{s18,jdbcType=VARCHAR}
+				,
+		#{s19,jdbcType=VARCHAR}
+				,
+		#{s20,jdbcType=VARCHAR}
+				,
+		#{s21,jdbcType=VARCHAR}
+				,
+		#{s22,jdbcType=VARCHAR}
+				,
+		#{s23,jdbcType=VARCHAR}
+				,
+		#{s24,jdbcType=VARCHAR}
+				,
+		#{s25,jdbcType=VARCHAR}
+				,
+		#{s26,jdbcType=VARCHAR}
+				,
+		#{s27,jdbcType=VARCHAR}
+				,
+		#{s28,jdbcType=VARCHAR}
+				,
+		#{cj15,jdbcType=VARCHAR}
+				,
+		#{cj16,jdbcType=VARCHAR}
+				,
+		#{cj17,jdbcType=VARCHAR}
+				,
+		#{cj18,jdbcType=VARCHAR}
+				,
+		#{cj19,jdbcType=VARCHAR}
+				,
+		#{cj20,jdbcType=VARCHAR}
+				,
+		#{cj21,jdbcType=VARCHAR}
+				,
+		#{cj22,jdbcType=VARCHAR}
+				,
+		#{cj23,jdbcType=VARCHAR}
+				,
+		#{cj24,jdbcType=VARCHAR}
+				,
+		#{cj25,jdbcType=VARCHAR}
+				,
+		#{cj26,jdbcType=VARCHAR}
+				,
+		#{cj27,jdbcType=VARCHAR}
+				,
+		#{cj28,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Highapply">
+		update `highapply`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		<if test="projectnum != null and projectnum!=''">
+		`projectnum`= #{projectnum,jdbcType=INTEGER},
+		</if>
+		<if test="preuserid != null and preuserid!=''">
+		`preuserid`= #{preuserid,jdbcType=INTEGER},
+		</if>
+		<if test="preusername != null and preusername!=''">
+		`preusername`= #{preusername,jdbcType=VARCHAR},
+		</if>
+		<if test="xueyuan != null and xueyuan!=''">
+		`xueyuan`= #{xueyuan,jdbcType=VARCHAR},
+		</if>
+		<if test="utel != null and utel!=''">
+		`utel`= #{utel,jdbcType=VARCHAR},
+		</if>
+		<if test="umail != null and umail!=''">
+		`umail`= #{umail,jdbcType=VARCHAR},
+		</if>
+		<if test="tea != null and tea!=''">
+		`tea`= #{tea,jdbcType=VARCHAR},
+		</if>
+		<if test="tealevel != null and tealevel!=''">
+		`tealevel`= #{tealevel,jdbcType=VARCHAR},
+		</if>
+		<if test="teadw != null and teadw!=''">
+		`teadw`= #{teadw,jdbcType=VARCHAR},
+		</if>
+		<if test="teatel != null and teatel!=''">
+		`teatel`= #{teatel,jdbcType=VARCHAR},
+		</if>
+		<if test="teamail != null and teamail!=''">
+		`teamail`= #{teamail,jdbcType=VARCHAR},
+		</if>
+		<if test="created != null and created!=''">
+		`created`= #{created,jdbcType=VARCHAR},
+		</if>
+		<if test="protype != null and protype!=''">
+		`protype`= #{protype,jdbcType=VARCHAR},
+		</if>
+		<if test="prolevel != null and prolevel!=''">
+		`prolevel`= #{prolevel,jdbcType=VARCHAR},
+		</if>
+		<if test="xingming != null and xingming!=''">
+		`xingming`= #{xingming,jdbcType=VARCHAR},
+		</if>
+		<if test="xingbie != null and xingbie!=''">
+		`xingbie`= #{xingbie,jdbcType=VARCHAR},
+		</if>
+		<if test="mingzhu != null and mingzhu!=''">
+		`mingzhu`= #{mingzhu,jdbcType=VARCHAR},
+		</if>
+		<if test="sfz != null and sfz!=''">
+		`sfz`= #{sfz,jdbcType=VARCHAR},
+		</if>
+		<if test="szxy != null and szxy!=''">
+		`szxy`= #{szxy,jdbcType=VARCHAR},
+		</if>
+		<if test="xh != null and xh!=''">
+		`xh`= #{xh,jdbcType=VARCHAR},
+		</if>
+		<if test="nj != null and nj!=''">
+		`nj`= #{nj,jdbcType=VARCHAR},
+		</if>
+		<if test="zy != null and zy!=''">
+		`zy`= #{zy,jdbcType=VARCHAR},
+		</if>
+		<if test="dh != null and dh!=''">
+		`dh`= #{dh,jdbcType=VARCHAR},
+		</if>
+		<if test="sj != null and sj!=''">
+		`sj`= #{sj,jdbcType=VARCHAR},
+		</if>
+		<if test="email != null and email!=''">
+		`email`= #{email,jdbcType=VARCHAR},
+		</if>
+		<if test="sstart1 != null and sstart1!=''">
+		`sstart1`= #{sstart1,jdbcType=VARCHAR},
+		</if>
+		<if test="send1 != null and send1!=''">
+		`send1`= #{send1,jdbcType=VARCHAR},
+		</if>
+		<if test="sstart2 != null and sstart2!=''">
+		`sstart2`= #{sstart2,jdbcType=VARCHAR},
+		</if>
+		<if test="send2 != null and send2!=''">
+		`send2`= #{send2,jdbcType=VARCHAR},
+		</if>
+		<if test="sstart3 != null and sstart3!=''">
+		`sstart3`= #{sstart3,jdbcType=VARCHAR},
+		</if>
+		<if test="send3 != null and send3!=''">
+		`send3`= #{send3,jdbcType=VARCHAR},
+		</if>
+		<if test="school1 != null and school1!=''">
+		`school1`= #{school1,jdbcType=VARCHAR},
+		</if>
+		<if test="school2 != null and school2!=''">
+		`school2`= #{school2,jdbcType=VARCHAR},
+		</if>
+		<if test="school3 != null and school3!=''">
+		`school3`= #{school3,jdbcType=VARCHAR},
+		</if>
+		<if test="remark1 != null and remark1!=''">
+		`remark1`= #{remark1,jdbcType=VARCHAR},
+		</if>
+		<if test="remark2 != null and remark2!=''">
+		`remark2`= #{remark2,jdbcType=VARCHAR},
+		</if>
+		<if test="remark3 != null and remark3!=''">
+		`remark3`= #{remark3,jdbcType=VARCHAR},
+		</if>
+		<if test="kstart1 != null and kstart1!=''">
+		`kstart1`= #{kstart1,jdbcType=VARCHAR},
+		</if>
+		<if test="kend1 != null and kend1!=''">
+		`kend1`= #{kend1,jdbcType=VARCHAR},
+		</if>
+		<if test="kstart2 != null and kstart2!=''">
+		`kstart2`= #{kstart2,jdbcType=VARCHAR},
+		</if>
+		<if test="kend2 != null and kend2!=''">
+		`kend2`= #{kend2,jdbcType=VARCHAR},
+		</if>
+		<if test="kstart3 != null and kstart3!=''">
+		`kstart3`= #{kstart3,jdbcType=VARCHAR},
+		</if>
+		<if test="kend3 != null and kend3!=''">
+		`kend3`= #{kend3,jdbcType=VARCHAR},
+		</if>
+		<if test="kstart4 != null and kstart4!=''">
+		`kstart4`= #{kstart4,jdbcType=VARCHAR},
+		</if>
+		<if test="kend4 != null and kend4!=''">
+		`kend4`= #{kend4,jdbcType=VARCHAR},
+		</if>
+		<if test="pro1 != null and pro1!=''">
+		`pro1`= #{pro1,jdbcType=VARCHAR},
+		</if>
+		<if test="pro2 != null and pro2!=''">
+		`pro2`= #{pro2,jdbcType=VARCHAR},
+		</if>
+		<if test="pro3 != null and pro3!=''">
+		`pro3`= #{pro3,jdbcType=VARCHAR},
+		</if>
+		<if test="pro4 != null and pro4!=''">
+		`pro4`= #{pro4,jdbcType=VARCHAR},
+		</if>
+		<if test="from1 != null and from1!=''">
+		`from1`= #{from1,jdbcType=VARCHAR},
+		</if>
+		<if test="from2 != null and from2!=''">
+		`from2`= #{from2,jdbcType=VARCHAR},
+		</if>
+		<if test="from3 != null and from3!=''">
+		`from3`= #{from3,jdbcType=VARCHAR},
+		</if>
+		<if test="from4 != null and from4!=''">
+		`from4`= #{from4,jdbcType=VARCHAR},
+		</if>
+		<if test="on1 != null and on1!=''">
+		`on1`= #{on1,jdbcType=VARCHAR},
+		</if>
+		<if test="on2 != null and on2!=''">
+		`on2`= #{on2,jdbcType=VARCHAR},
+		</if>
+		<if test="on3 != null and on3!=''">
+		`on3`= #{on3,jdbcType=VARCHAR},
+		</if>
+		<if test="on4 != null and on4!=''">
+		`on4`= #{on4,jdbcType=VARCHAR},
+		</if>
+		<if test="result1 != null and result1!=''">
+		`result1`= #{result1,jdbcType=VARCHAR},
+		</if>
+		<if test="result2 != null and result2!=''">
+		`result2`= #{result2,jdbcType=VARCHAR},
+		</if>
+		<if test="result3 != null and result3!=''">
+		`result3`= #{result3,jdbcType=VARCHAR},
+		</if>
+		<if test="result4 != null and result4!=''">
+		`result4`= #{result4,jdbcType=VARCHAR},
+		</if>
+		<if test="meb1 != null and meb1!=''">
+		`meb1`= #{meb1,jdbcType=VARCHAR},
+		</if>
+		<if test="num1 != null and num1!=''">
+		`num1`= #{num1,jdbcType=VARCHAR},
+		</if>
+		<if test="sex1 != null and sex1!=''">
+		`sex1`= #{sex1,jdbcType=VARCHAR},
+		</if>
+		<if test="sfz1 != null and sfz1!=''">
+		`sfz1`= #{sfz1,jdbcType=VARCHAR},
+		</if>
+		<if test="xy1 != null and xy1!=''">
+		`xy1`= #{xy1,jdbcType=VARCHAR},
+		</if>
+		<if test="nj1 != null and nj1!=''">
+		`nj1`= #{nj1,jdbcType=VARCHAR},
+		</if>
+		<if test="zy1 != null and zy1!=''">
+		`zy1`= #{zy1,jdbcType=VARCHAR},
+		</if>
+		<if test="dh1 != null and dh1!=''">
+		`dh1`= #{dh1,jdbcType=VARCHAR},
+		</if>
+		<if test="sj1 != null and sj1!=''">
+		`sj1`= #{sj1,jdbcType=VARCHAR},
+		</if>
+		<if test="email1 != null and email1!=''">
+		`email1`= #{email1,jdbcType=VARCHAR},
+		</if>
+		<if test="fg1 != null and fg1!=''">
+		`fg1`= #{fg1,jdbcType=VARCHAR},
+		</if>
+		<if test="qm1 != null and qm1!=''">
+		`qm1`= #{qm1,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc1 != null and kymc1!=''">
+		`kymc1`= #{kymc1,jdbcType=VARCHAR},
+		</if>
+		<if test="qz1 != null and qz1!=''">
+		`qz1`= #{qz1,jdbcType=VARCHAR},
+		</if>
+		<if test="cg1 != null and cg1!=''">
+		`cg1`= #{cg1,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc2 != null and kymc2!=''">
+		`kymc2`= #{kymc2,jdbcType=VARCHAR},
+		</if>
+		<if test="qz2 != null and qz2!=''">
+		`qz2`= #{qz2,jdbcType=VARCHAR},
+		</if>
+		<if test="cg2 != null and cg2!=''">
+		`cg2`= #{cg2,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc3 != null and kymc3!=''">
+		`kymc3`= #{kymc3,jdbcType=VARCHAR},
+		</if>
+		<if test="qz3 != null and qz3!=''">
+		`qz3`= #{qz3,jdbcType=VARCHAR},
+		</if>
+		<if test="cg3 != null and cg3!=''">
+		`cg3`= #{cg3,jdbcType=VARCHAR},
+		</if>
+		<if test="meb2 != null and meb2!=''">
+		`meb2`= #{meb2,jdbcType=VARCHAR},
+		</if>
+		<if test="num2 != null and num2!=''">
+		`num2`= #{num2,jdbcType=VARCHAR},
+		</if>
+		<if test="sex2 != null and sex2!=''">
+		`sex2`= #{sex2,jdbcType=VARCHAR},
+		</if>
+		<if test="sfz2 != null and sfz2!=''">
+		`sfz2`= #{sfz2,jdbcType=VARCHAR},
+		</if>
+		<if test="xy2 != null and xy2!=''">
+		`xy2`= #{xy2,jdbcType=VARCHAR},
+		</if>
+		<if test="nj2 != null and nj2!=''">
+		`nj2`= #{nj2,jdbcType=VARCHAR},
+		</if>
+		<if test="zy2 != null and zy2!=''">
+		`zy2`= #{zy2,jdbcType=VARCHAR},
+		</if>
+		<if test="dh2 != null and dh2!=''">
+		`dh2`= #{dh2,jdbcType=VARCHAR},
+		</if>
+		<if test="sj2 != null and sj2!=''">
+		`sj2`= #{sj2,jdbcType=VARCHAR},
+		</if>
+		<if test="email2 != null and email2!=''">
+		`email2`= #{email2,jdbcType=VARCHAR},
+		</if>
+		<if test="fg2 != null and fg2!=''">
+		`fg2`= #{fg2,jdbcType=VARCHAR},
+		</if>
+		<if test="qm2 != null and qm2!=''">
+		`qm2`= #{qm2,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc4 != null and kymc4!=''">
+		`kymc4`= #{kymc4,jdbcType=VARCHAR},
+		</if>
+		<if test="qz4 != null and qz4!=''">
+		`qz4`= #{qz4,jdbcType=VARCHAR},
+		</if>
+		<if test="cg4 != null and cg4!=''">
+		`cg4`= #{cg4,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc5 != null and kymc5!=''">
+		`kymc5`= #{kymc5,jdbcType=VARCHAR},
+		</if>
+		<if test="qz5 != null and qz5!=''">
+		`qz5`= #{qz5,jdbcType=VARCHAR},
+		</if>
+		<if test="cg5 != null and cg5!=''">
+		`cg5`= #{cg5,jdbcType=VARCHAR},
+		</if>
+		<if test="kymc6 != null and kymc6!=''">
+		`kymc6`= #{kymc6,jdbcType=VARCHAR},
+		</if>
+		<if test="qz6 != null and qz6!=''">
+		`qz6`= #{qz6,jdbcType=VARCHAR},
+		</if>
+		<if test="cg6 != null and cg6!=''">
+		`cg6`= #{cg6,jdbcType=VARCHAR},
+		</if>
+		<if test="xmzy != null and xmzy!=''">
+		`xmzy`= #{xmzy,jdbcType=VARCHAR},
+		</if>
+		<if test="yjfa != null and yjfa!=''">
+		`yjfa`= #{yjfa,jdbcType=VARCHAR},
+		</if>
+		<if test="yjsj != null and yjsj!=''">
+		`yjsj`= #{yjsj,jdbcType=VARCHAR},
+		</if>
+		<if test="ap != null and ap!=''">
+		`ap`= #{ap,jdbcType=VARCHAR},
+		</if>
+		<if test="tj != null and tj!=''">
+		`tj`= #{tj,jdbcType=VARCHAR},
+		</if>
+		<if test="cgxs != null and cgxs!=''">
+		`cgxs`= #{cgxs,jdbcType=VARCHAR},
+		</if>
+		<if test="jfze != null and jfze!=''">
+		`jfze`= #{jfze,jdbcType=VARCHAR},
+		</if>
+		<if test="rjjf != null and rjjf!=''">
+		`rjjf`= #{rjjf,jdbcType=VARCHAR},
+		</if>
+		<if test="dxscxcyxljhzz != null and dxscxcyxljhzz!=''">
+		`dxscxcyxljhzz`= #{dxscxcyxljhzz,jdbcType=VARCHAR},
+		</if>
+		<if test="sqxxzz != null and sqxxzz!=''">
+		`sqxxzz`= #{sqxxzz,jdbcType=VARCHAR},
+		</if>
+		<if test="xxptzz != null and xxptzz!=''">
+		`xxptzz`= #{xxptzz,jdbcType=VARCHAR},
+		</if>
+		<if test="jsktf != null and jsktf!=''">
+		`jsktf`= #{jsktf,jdbcType=VARCHAR},
+		</if>
+		<if test="qt != null and qt!=''">
+		`qt`= #{qt,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm1 != null and yszckm1!=''">
+		`yszckm1`= #{yszckm1,jdbcType=VARCHAR},
+		</if>
+		<if test="zc1 != null and zc1!=''">
+		`zc1`= #{zc1,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy1 != null and zcyy1!=''">
+		`zcyy1`= #{zcyy1,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm2 != null and yszckm2!=''">
+		`yszckm2`= #{yszckm2,jdbcType=VARCHAR},
+		</if>
+		<if test="zc2 != null and zc2!=''">
+		`zc2`= #{zc2,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy2 != null and zcyy2!=''">
+		`zcyy2`= #{zcyy2,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm3 != null and yszckm3!=''">
+		`yszckm3`= #{yszckm3,jdbcType=VARCHAR},
+		</if>
+		<if test="zc3 != null and zc3!=''">
+		`zc3`= #{zc3,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy3 != null and zcyy3!=''">
+		`zcyy3`= #{zcyy3,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm4 != null and yszckm4!=''">
+		`yszckm4`= #{yszckm4,jdbcType=VARCHAR},
+		</if>
+		<if test="zc4 != null and zc4!=''">
+		`zc4`= #{zc4,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy4 != null and zcyy4!=''">
+		`zcyy4`= #{zcyy4,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm5 != null and yszckm5!=''">
+		`yszckm5`= #{yszckm5,jdbcType=VARCHAR},
+		</if>
+		<if test="zc5 != null and zc5!=''">
+		`zc5`= #{zc5,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy5 != null and zcyy5!=''">
+		`zcyy5`= #{zcyy5,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm6 != null and yszckm6!=''">
+		`yszckm6`= #{yszckm6,jdbcType=VARCHAR},
+		</if>
+		<if test="zc6 != null and zc6!=''">
+		`zc6`= #{zc6,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy6 != null and zcyy6!=''">
+		`zcyy6`= #{zcyy6,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm7 != null and yszckm7!=''">
+		`yszckm7`= #{yszckm7,jdbcType=VARCHAR},
+		</if>
+		<if test="zc7 != null and zc7!=''">
+		`zc7`= #{zc7,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy7 != null and zcyy7!=''">
+		`zcyy7`= #{zcyy7,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm8 != null and yszckm8!=''">
+		`yszckm8`= #{yszckm8,jdbcType=VARCHAR},
+		</if>
+		<if test="zc8 != null and zc8!=''">
+		`zc8`= #{zc8,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy8 != null and zcyy8!=''">
+		`zcyy8`= #{zcyy8,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm9 != null and yszckm9!=''">
+		`yszckm9`= #{yszckm9,jdbcType=VARCHAR},
+		</if>
+		<if test="zc9 != null and zc9!=''">
+		`zc9`= #{zc9,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy9 != null and zcyy9!=''">
+		`zcyy9`= #{zcyy9,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm10 != null and yszckm10!=''">
+		`yszckm10`= #{yszckm10,jdbcType=VARCHAR},
+		</if>
+		<if test="zc10 != null and zc10!=''">
+		`zc10`= #{zc10,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy10 != null and zcyy10!=''">
+		`zcyy10`= #{zcyy10,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm11 != null and yszckm11!=''">
+		`yszckm11`= #{yszckm11,jdbcType=VARCHAR},
+		</if>
+		<if test="zc11 != null and zc11!=''">
+		`zc11`= #{zc11,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy11 != null and zcyy11!=''">
+		`zcyy11`= #{zcyy11,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm12 != null and yszckm12!=''">
+		`yszckm12`= #{yszckm12,jdbcType=VARCHAR},
+		</if>
+		<if test="zc12 != null and zc12!=''">
+		`zc12`= #{zc12,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy12 != null and zcyy12!=''">
+		`zcyy12`= #{zcyy12,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm13 != null and yszckm13!=''">
+		`yszckm13`= #{yszckm13,jdbcType=VARCHAR},
+		</if>
+		<if test="zc13 != null and zc13!=''">
+		`zc13`= #{zc13,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy13 != null and zcyy13!=''">
+		`zcyy13`= #{zcyy13,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm14 != null and yszckm14!=''">
+		`yszckm14`= #{yszckm14,jdbcType=VARCHAR},
+		</if>
+		<if test="zc14 != null and zc14!=''">
+		`zc14`= #{zc14,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy14 != null and zcyy14!=''">
+		`zcyy14`= #{zcyy14,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm15 != null and yszckm15!=''">
+		`yszckm15`= #{yszckm15,jdbcType=VARCHAR},
+		</if>
+		<if test="zc15 != null and zc15!=''">
+		`zc15`= #{zc15,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy15 != null and zcyy15!=''">
+		`zcyy15`= #{zcyy15,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm16 != null and yszckm16!=''">
+		`yszckm16`= #{yszckm16,jdbcType=VARCHAR},
+		</if>
+		<if test="zc16 != null and zc16!=''">
+		`zc16`= #{zc16,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy16 != null and zcyy16!=''">
+		`zcyy16`= #{zcyy16,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm17 != null and yszckm17!=''">
+		`yszckm17`= #{yszckm17,jdbcType=VARCHAR},
+		</if>
+		<if test="zc17 != null and zc17!=''">
+		`zc17`= #{zc17,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy17 != null and zcyy17!=''">
+		`zcyy17`= #{zcyy17,jdbcType=VARCHAR},
+		</if>
+		<if test="yszckm18 != null and yszckm18!=''">
+		`yszckm18`= #{yszckm18,jdbcType=VARCHAR},
+		</if>
+		<if test="zc18 != null and zc18!=''">
+		`zc18`= #{zc18,jdbcType=VARCHAR},
+		</if>
+		<if test="zcyy18 != null and zcyy18!=''">
+		`zcyy18`= #{zcyy18,jdbcType=VARCHAR},
+		</if>
+		<if test="teaname != null and teaname!=''">
+		`teaname`= #{teaname,jdbcType=VARCHAR},
+		</if>
+		<if test="teasex != null and teasex!=''">
+		`teasex`= #{teasex,jdbcType=VARCHAR},
+		</if>
+		<if test="teamz != null and teamz!=''">
+		`teamz`= #{teamz,jdbcType=VARCHAR},
+		</if>
+		<if test="teacsny != null and teacsny!=''">
+		`teacsny`= #{teacsny,jdbcType=VARCHAR},
+		</if>
+		<if test="teaxy != null and teaxy!=''">
+		`teaxy`= #{teaxy,jdbcType=VARCHAR},
+		</if>
+		<if test="teaxl != null and teaxl!=''">
+		`teaxl`= #{teaxl,jdbcType=VARCHAR},
+		</if>
+		<if test="teazc != null and teazc!=''">
+		`teazc`= #{teazc,jdbcType=VARCHAR},
+		</if>
+		<if test="teazw != null and teazw!=''">
+		`teazw`= #{teazw,jdbcType=VARCHAR},
+		</if>
+		<if test="teafx != null and teafx!=''">
+		`teafx`= #{teafx,jdbcType=VARCHAR},
+		</if>
+		<if test="teadz != null and teadz!=''">
+		`teadz`= #{teadz,jdbcType=VARCHAR},
+		</if>
+		<if test="teayb != null and teayb!=''">
+		`teayb`= #{teayb,jdbcType=VARCHAR},
+		</if>
+		<if test="teamail2 != null and teamail2!=''">
+		`teamail2`= #{teamail2,jdbcType=VARCHAR},
+		</if>
+		<if test="teadh != null and teadh!=''">
+		`teadh`= #{teadh,jdbcType=VARCHAR},
+		</if>
+		<if test="teasj != null and teasj!=''">
+		`teasj`= #{teasj,jdbcType=VARCHAR},
+		</if>
+		<if test="teanowdesc != null and teanowdesc!=''">
+		`teanowdesc`= #{teanowdesc,jdbcType=VARCHAR},
+		</if>
+		<if test="teajy != null and teajy!=''">
+		`teajy`= #{teajy,jdbcType=VARCHAR},
+		</if>
+		<if test="teajy2 != null and teajy2!=''">
+		`teajy2`= #{teajy2,jdbcType=VARCHAR},
+		</if>
+		<if test="xyyj != null and xyyj!=''">
+		`xyyj`= #{xyyj,jdbcType=VARCHAR},
+		</if>
+		<if test="tjfzr != null and tjfzr!=''">
+		`tjfzr`= #{tjfzr,jdbcType=VARCHAR},
+		</if>
+		<if test="xyrq != null and xyrq!=''">
+		`xyrq`= #{xyrq,jdbcType=VARCHAR},
+		</if>
+		<if test="tearq != null and tearq!=''">
+		`tearq`= #{tearq,jdbcType=VARCHAR},
+		</if>
+		<if test="xxrq != null and xxrq!=''">
+		`xxrq`= #{xxrq,jdbcType=VARCHAR},
+		</if>
+		<if test="zjyj != null and zjyj!=''">
+		`zjyj`= #{zjyj,jdbcType=VARCHAR},
+		</if>
+		<if test="zjrq != null and zjrq!=''">
+		`zjrq`= #{zjrq,jdbcType=VARCHAR},
+		</if>
+		<if test="c1 != null and c1!=''">
+		`c1`= #{c1,jdbcType=VARCHAR},
+		</if>
+		<if test="c2 != null and c2!=''">
+		`c2`= #{c2,jdbcType=VARCHAR},
+		</if>
+		<if test="c3 != null and c3!=''">
+		`c3`= #{c3,jdbcType=VARCHAR},
+		</if>
+		<if test="c4 != null and c4!=''">
+		`c4`= #{c4,jdbcType=VARCHAR},
+		</if>
+		<if test="c5 != null and c5!=''">
+		`c5`= #{c5,jdbcType=VARCHAR},
+		</if>
+		<if test="c6 != null and c6!=''">
+		`c6`= #{c6,jdbcType=VARCHAR},
+		</if>
+		<if test="c7 != null and c7!=''">
+		`c7`= #{c7,jdbcType=VARCHAR},
+		</if>
+		<if test="c8 != null and c8!=''">
+		`c8`= #{c8,jdbcType=VARCHAR},
+		</if>
+		<if test="c9 != null and c9!=''">
+		`c9`= #{c9,jdbcType=VARCHAR},
+		</if>
+		<if test="c10 != null and c10!=''">
+		`c10`= #{c10,jdbcType=VARCHAR},
+		</if>
+		<if test="c11 != null and c11!=''">
+		`c11`= #{c11,jdbcType=VARCHAR},
+		</if>
+		<if test="c12 != null and c12!=''">
+		`c12`= #{c12,jdbcType=VARCHAR},
+		</if>
+		<if test="c13 != null and c13!=''">
+		`c13`= #{c13,jdbcType=VARCHAR},
+		</if>
+		<if test="c14 != null and c14!=''">
+		`c14`= #{c14,jdbcType=VARCHAR},
+		</if>
+		<if test="lb1 != null and lb1!=''">
+		`lb1`= #{lb1,jdbcType=VARCHAR},
+		</if>
+		<if test="lb2 != null and lb2!=''">
+		`lb2`= #{lb2,jdbcType=VARCHAR},
+		</if>
+		<if test="lb3 != null and lb3!=''">
+		`lb3`= #{lb3,jdbcType=VARCHAR},
+		</if>
+		<if test="lb4 != null and lb4!=''">
+		`lb4`= #{lb4,jdbcType=VARCHAR},
+		</if>
+		<if test="lb5 != null and lb5!=''">
+		`lb5`= #{lb5,jdbcType=VARCHAR},
+		</if>
+		<if test="lb6 != null and lb6!=''">
+		`lb6`= #{lb6,jdbcType=VARCHAR},
+		</if>
+		<if test="lb7 != null and lb7!=''">
+		`lb7`= #{lb7,jdbcType=VARCHAR},
+		</if>
+		<if test="lb8 != null and lb8!=''">
+		`lb8`= #{lb8,jdbcType=VARCHAR},
+		</if>
+		<if test="lb9 != null and lb9!=''">
+		`lb9`= #{lb9,jdbcType=VARCHAR},
+		</if>
+		<if test="lb10 != null and lb10!=''">
+		`lb10`= #{lb10,jdbcType=VARCHAR},
+		</if>
+		<if test="lb11 != null and lb11!=''">
+		`lb11`= #{lb11,jdbcType=VARCHAR},
+		</if>
+		<if test="lb12 != null and lb12!=''">
+		`lb12`= #{lb12,jdbcType=VARCHAR},
+		</if>
+		<if test="lb13 != null and lb13!=''">
+		`lb13`= #{lb13,jdbcType=VARCHAR},
+		</if>
+		<if test="lb14 != null and lb14!=''">
+		`lb14`= #{lb14,jdbcType=VARCHAR},
+		</if>
+		<if test="s1 != null and s1!=''">
+		`s1`= #{s1,jdbcType=VARCHAR},
+		</if>
+		<if test="s2 != null and s2!=''">
+		`s2`= #{s2,jdbcType=VARCHAR},
+		</if>
+		<if test="s3 != null and s3!=''">
+		`s3`= #{s3,jdbcType=VARCHAR},
+		</if>
+		<if test="s4 != null and s4!=''">
+		`s4`= #{s4,jdbcType=VARCHAR},
+		</if>
+		<if test="s5 != null and s5!=''">
+		`s5`= #{s5,jdbcType=VARCHAR},
+		</if>
+		<if test="s6 != null and s6!=''">
+		`s6`= #{s6,jdbcType=VARCHAR},
+		</if>
+		<if test="s7 != null and s7!=''">
+		`s7`= #{s7,jdbcType=VARCHAR},
+		</if>
+		<if test="s8 != null and s8!=''">
+		`s8`= #{s8,jdbcType=VARCHAR},
+		</if>
+		<if test="s9 != null and s9!=''">
+		`s9`= #{s9,jdbcType=VARCHAR},
+		</if>
+		<if test="s10 != null and s10!=''">
+		`s10`= #{s10,jdbcType=VARCHAR},
+		</if>
+		<if test="s11 != null and s11!=''">
+		`s11`= #{s11,jdbcType=VARCHAR},
+		</if>
+		<if test="s12 != null and s12!=''">
+		`s12`= #{s12,jdbcType=VARCHAR},
+		</if>
+		<if test="s13 != null and s13!=''">
+		`s13`= #{s13,jdbcType=VARCHAR},
+		</if>
+		<if test="s14 != null and s14!=''">
+		`s14`= #{s14,jdbcType=VARCHAR},
+		</if>
+		<if test="cj1 != null and cj1!=''">
+		`cj1`= #{cj1,jdbcType=VARCHAR},
+		</if>
+		<if test="cj2 != null and cj2!=''">
+		`cj2`= #{cj2,jdbcType=VARCHAR},
+		</if>
+		<if test="cj3 != null and cj3!=''">
+		`cj3`= #{cj3,jdbcType=VARCHAR},
+		</if>
+		<if test="cj4 != null and cj4!=''">
+		`cj4`= #{cj4,jdbcType=VARCHAR},
+		</if>
+		<if test="cj5 != null and cj5!=''">
+		`cj5`= #{cj5,jdbcType=VARCHAR},
+		</if>
+		<if test="cj6 != null and cj6!=''">
+		`cj6`= #{cj6,jdbcType=VARCHAR},
+		</if>
+		<if test="cj7 != null and cj7!=''">
+		`cj7`= #{cj7,jdbcType=VARCHAR},
+		</if>
+		<if test="cj8 != null and cj8!=''">
+		`cj8`= #{cj8,jdbcType=VARCHAR},
+		</if>
+		<if test="cj9 != null and cj9!=''">
+		`cj9`= #{cj9,jdbcType=VARCHAR},
+		</if>
+		<if test="cj10 != null and cj10!=''">
+		`cj10`= #{cj10,jdbcType=VARCHAR},
+		</if>
+		<if test="cj11 != null and cj11!=''">
+		`cj11`= #{cj11,jdbcType=VARCHAR},
+		</if>
+		<if test="cj12 != null and cj12!=''">
+		`cj12`= #{cj12,jdbcType=VARCHAR},
+		</if>
+		<if test="cj13 != null and cj13!=''">
+		`cj13`= #{cj13,jdbcType=VARCHAR},
+		</if>
+		<if test="cj14 != null and cj14!=''">
+		`cj14`= #{cj14,jdbcType=VARCHAR},
+		</if>
+		<if test="c15 != null and c15!=''">
+		`c15`= #{c15,jdbcType=VARCHAR},
+		</if>
+		<if test="c16 != null and c16!=''">
+		`c16`= #{c16,jdbcType=VARCHAR},
+		</if>
+		<if test="c17 != null and c17!=''">
+		`c17`= #{c17,jdbcType=VARCHAR},
+		</if>
+		<if test="c18 != null and c18!=''">
+		`c18`= #{c18,jdbcType=VARCHAR},
+		</if>
+		<if test="c19 != null and c19!=''">
+		`c19`= #{c19,jdbcType=VARCHAR},
+		</if>
+		<if test="c20 != null and c20!=''">
+		`c20`= #{c20,jdbcType=VARCHAR},
+		</if>
+		<if test="c21 != null and c21!=''">
+		`c21`= #{c21,jdbcType=VARCHAR},
+		</if>
+		<if test="c22 != null and c22!=''">
+		`c22`= #{c22,jdbcType=VARCHAR},
+		</if>
+		<if test="c23 != null and c23!=''">
+		`c23`= #{c23,jdbcType=VARCHAR},
+		</if>
+		<if test="c24 != null and c24!=''">
+		`c24`= #{c24,jdbcType=VARCHAR},
+		</if>
+		<if test="c25 != null and c25!=''">
+		`c25`= #{c25,jdbcType=VARCHAR},
+		</if>
+		<if test="c26 != null and c26!=''">
+		`c26`= #{c26,jdbcType=VARCHAR},
+		</if>
+		<if test="c27 != null and c27!=''">
+		`c27`= #{c27,jdbcType=VARCHAR},
+		</if>
+		<if test="c28 != null and c28!=''">
+		`c28`= #{c28,jdbcType=VARCHAR},
+		</if>
+		<if test="lb15 != null and lb15!=''">
+		`lb15`= #{lb15,jdbcType=VARCHAR},
+		</if>
+		<if test="lb16 != null and lb16!=''">
+		`lb16`= #{lb16,jdbcType=VARCHAR},
+		</if>
+		<if test="lb17 != null and lb17!=''">
+		`lb17`= #{lb17,jdbcType=VARCHAR},
+		</if>
+		<if test="lb18 != null and lb18!=''">
+		`lb18`= #{lb18,jdbcType=VARCHAR},
+		</if>
+		<if test="lb19 != null and lb19!=''">
+		`lb19`= #{lb19,jdbcType=VARCHAR},
+		</if>
+		<if test="lb20 != null and lb20!=''">
+		`lb20`= #{lb20,jdbcType=VARCHAR},
+		</if>
+		<if test="lb21 != null and lb21!=''">
+		`lb21`= #{lb21,jdbcType=VARCHAR},
+		</if>
+		<if test="lb22 != null and lb22!=''">
+		`lb22`= #{lb22,jdbcType=VARCHAR},
+		</if>
+		<if test="lb23 != null and lb23!=''">
+		`lb23`= #{lb23,jdbcType=VARCHAR},
+		</if>
+		<if test="lb24 != null and lb24!=''">
+		`lb24`= #{lb24,jdbcType=VARCHAR},
+		</if>
+		<if test="lb25 != null and lb25!=''">
+		`lb25`= #{lb25,jdbcType=VARCHAR},
+		</if>
+		<if test="lb26 != null and lb26!=''">
+		`lb26`= #{lb26,jdbcType=VARCHAR},
+		</if>
+		<if test="lb27 != null and lb27!=''">
+		`lb27`= #{lb27,jdbcType=VARCHAR},
+		</if>
+		<if test="lb28 != null and lb28!=''">
+		`lb28`= #{lb28,jdbcType=VARCHAR},
+		</if>
+		<if test="s15 != null and s15!=''">
+		`s15`= #{s15,jdbcType=VARCHAR},
+		</if>
+		<if test="s16 != null and s16!=''">
+		`s16`= #{s16,jdbcType=VARCHAR},
+		</if>
+		<if test="s17 != null and s17!=''">
+		`s17`= #{s17,jdbcType=VARCHAR},
+		</if>
+		<if test="s18 != null and s18!=''">
+		`s18`= #{s18,jdbcType=VARCHAR},
+		</if>
+		<if test="s19 != null and s19!=''">
+		`s19`= #{s19,jdbcType=VARCHAR},
+		</if>
+		<if test="s20 != null and s20!=''">
+		`s20`= #{s20,jdbcType=VARCHAR},
+		</if>
+		<if test="s21 != null and s21!=''">
+		`s21`= #{s21,jdbcType=VARCHAR},
+		</if>
+		<if test="s22 != null and s22!=''">
+		`s22`= #{s22,jdbcType=VARCHAR},
+		</if>
+		<if test="s23 != null and s23!=''">
+		`s23`= #{s23,jdbcType=VARCHAR},
+		</if>
+		<if test="s24 != null and s24!=''">
+		`s24`= #{s24,jdbcType=VARCHAR},
+		</if>
+		<if test="s25 != null and s25!=''">
+		`s25`= #{s25,jdbcType=VARCHAR},
+		</if>
+		<if test="s26 != null and s26!=''">
+		`s26`= #{s26,jdbcType=VARCHAR},
+		</if>
+		<if test="s27 != null and s27!=''">
+		`s27`= #{s27,jdbcType=VARCHAR},
+		</if>
+		<if test="s28 != null and s28!=''">
+		`s28`= #{s28,jdbcType=VARCHAR},
+		</if>
+		<if test="cj15 != null and cj15!=''">
+		`cj15`= #{cj15,jdbcType=VARCHAR},
+		</if>
+		<if test="cj16 != null and cj16!=''">
+		`cj16`= #{cj16,jdbcType=VARCHAR},
+		</if>
+		<if test="cj17 != null and cj17!=''">
+		`cj17`= #{cj17,jdbcType=VARCHAR},
+		</if>
+		<if test="cj18 != null and cj18!=''">
+		`cj18`= #{cj18,jdbcType=VARCHAR},
+		</if>
+		<if test="cj19 != null and cj19!=''">
+		`cj19`= #{cj19,jdbcType=VARCHAR},
+		</if>
+		<if test="cj20 != null and cj20!=''">
+		`cj20`= #{cj20,jdbcType=VARCHAR},
+		</if>
+		<if test="cj21 != null and cj21!=''">
+		`cj21`= #{cj21,jdbcType=VARCHAR},
+		</if>
+		<if test="cj22 != null and cj22!=''">
+		`cj22`= #{cj22,jdbcType=VARCHAR},
+		</if>
+		<if test="cj23 != null and cj23!=''">
+		`cj23`= #{cj23,jdbcType=VARCHAR},
+		</if>
+		<if test="cj24 != null and cj24!=''">
+		`cj24`= #{cj24,jdbcType=VARCHAR},
+		</if>
+		<if test="cj25 != null and cj25!=''">
+		`cj25`= #{cj25,jdbcType=VARCHAR},
+		</if>
+		<if test="cj26 != null and cj26!=''">
+		`cj26`= #{cj26,jdbcType=VARCHAR},
+		</if>
+		<if test="cj27 != null and cj27!=''">
+		`cj27`= #{cj27,jdbcType=VARCHAR},
+		</if>
+		<if test="cj28 != null and cj28!=''">
+		`cj28`= #{cj28,jdbcType=VARCHAR},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

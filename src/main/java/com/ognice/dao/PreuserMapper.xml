@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.PreuserMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Preuser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="xueyuanid" property="xueyuanid" jdbcType="INTEGER" />
+		<result column="xueyuanname" property="xueyuanname" jdbcType="VARCHAR" />
+		<result column="clazzid" property="clazzid" jdbcType="INTEGER" />
+		<result column="clazzname" property="clazzname" jdbcType="VARCHAR" />
+		<result column="schoolnum" property="schoolnum" jdbcType="VARCHAR" />
+		<result column="proid" property="proid" jdbcType="INTEGER" />
+		<result column="proname" property="proname" jdbcType="VARCHAR" />
+		<result column="grade" property="grade" jdbcType="VARCHAR" />
+		<result column="level" property="level" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`username`
+		,
+		`name`
+		,
+		`password`
+		,
+		`type`
+		,
+		`xueyuanid`
+		,
+		`xueyuanname`
+		,
+		`clazzid`
+		,
+		`clazzname`
+		,
+		`schoolnum`
+		,
+		`proid`
+		,
+		`proname`
+		,
+		`grade`
+		,
+		`level`
+		
+	</sql>
+    <select id="login" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from `preuser` where username = #{0} AND password = #{1} limit 0,1;
+</select>
+	<select id="selectPreuserById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `preuser` where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `preuser` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.username !=null and params.username!=''">
+		 AND `username` like concat('%',#{params.username},'%')
+		</if>
+		<if test="params.name !=null and params.name!=''">
+		 AND `name` like concat('%',#{params.name},'%')
+		</if>
+		<if test="params.password !=null and params.password!=''">
+		 AND `password` like concat('%',#{params.password},'%')
+		</if>
+		<if test="params.type !=null ">
+		AND `type` = #{params.type}
+		</if>
+		<if test="params.xueyuanid !=null ">
+		AND `xueyuanid` = #{params.xueyuanid}
+		</if>
+		<if test="params.xueyuanname !=null and params.xueyuanname!=''">
+		 AND `xueyuanname` like concat('%',#{params.xueyuanname},'%')
+		</if>
+		<if test="params.clazzid !=null ">
+		AND `clazzid` = #{params.clazzid}
+		</if>
+		<if test="params.clazzname !=null and params.clazzname!=''">
+		 AND `clazzname` like concat('%',#{params.clazzname},'%')
+		</if>
+		<if test="params.schoolnum !=null and params.schoolnum!=''">
+		 AND `schoolnum` like concat('%',#{params.schoolnum},'%')
+		</if>
+		<if test="params.proid !=null ">
+		AND `proid` = #{params.proid}
+		</if>
+		<if test="params.proname !=null and params.proname!=''">
+		 AND `proname` like concat('%',#{params.proname},'%')
+		</if>
+		<if test="params.grade !=null and params.grade!=''">
+		 AND `grade` like concat('%',#{params.grade},'%')
+		</if>
+		<if test="params.level !=null and params.level!=''">
+		 AND `level` like concat('%',#{params.level},'%')
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `preuser` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Preuser"> insert into `preuser` (
+		`id`
+				,
+		`username`
+				,
+		`name`
+				,
+		`password`
+				,
+		`type`
+				,
+		`xueyuanid`
+				,
+		`xueyuanname`
+				,
+		`clazzid`
+				,
+		`clazzname`
+				,
+		`schoolnum`
+				,
+		`proid`
+				,
+		`proname`
+				,
+		`grade`
+				,
+		`level`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{username,jdbcType=VARCHAR}
+				,
+		#{name,jdbcType=VARCHAR}
+				,
+		#{password,jdbcType=VARCHAR}
+				,
+		#{type,jdbcType=INTEGER}
+				,
+		#{xueyuanid,jdbcType=INTEGER}
+				,
+		#{xueyuanname,jdbcType=VARCHAR}
+				,
+		#{clazzid,jdbcType=INTEGER}
+				,
+		#{clazzname,jdbcType=VARCHAR}
+				,
+		#{schoolnum,jdbcType=VARCHAR}
+				,
+		#{proid,jdbcType=INTEGER}
+				,
+		#{proname,jdbcType=VARCHAR}
+				,
+		#{grade,jdbcType=VARCHAR}
+				,
+		#{level,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Preuser">
+		update `preuser`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="username != null and username!=''">
+		`username`= #{username,jdbcType=VARCHAR},
+		</if>
+		<if test="name != null and name!=''">
+		`name`= #{name,jdbcType=VARCHAR},
+		</if>
+		<if test="password != null and password!=''">
+		`password`= #{password,jdbcType=VARCHAR},
+		</if>
+		<if test="type != null and type!=''">
+		`type`= #{type,jdbcType=INTEGER},
+		</if>
+		<if test="xueyuanid != null and xueyuanid!=''">
+		`xueyuanid`= #{xueyuanid,jdbcType=INTEGER},
+		</if>
+		<if test="xueyuanname != null and xueyuanname!=''">
+		`xueyuanname`= #{xueyuanname,jdbcType=VARCHAR},
+		</if>
+		<if test="clazzid != null and clazzid!=''">
+		`clazzid`= #{clazzid,jdbcType=INTEGER},
+		</if>
+		<if test="clazzname != null and clazzname!=''">
+		`clazzname`= #{clazzname,jdbcType=VARCHAR},
+		</if>
+		<if test="schoolnum != null and schoolnum!=''">
+		`schoolnum`= #{schoolnum,jdbcType=VARCHAR},
+		</if>
+		<if test="proid != null and proid!=''">
+		`proid`= #{proid,jdbcType=INTEGER},
+		</if>
+		<if test="proname != null and proname!=''">
+		`proname`= #{proname,jdbcType=VARCHAR},
+		</if>
+		<if test="grade != null and grade!=''">
+		`grade`= #{grade,jdbcType=VARCHAR},
+		</if>
+		<if test="level != null and level!=''">
+		`level`= #{level,jdbcType=VARCHAR},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

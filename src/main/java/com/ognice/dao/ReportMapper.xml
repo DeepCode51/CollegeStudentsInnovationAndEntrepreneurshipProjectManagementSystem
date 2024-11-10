@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.ReportMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Report">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="desc" property="desc" jdbcType="VARCHAR" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`desc`
+		,
+		`projectid`
+		,
+		`projectname`
+		
+	</sql>
+	<select id="selectReportById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `report` where id = #{id,jdbcType=INTEGER}
+	</select>
+    <select id="selectReportByProId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from `report` where projectid = #{id,jdbcType=INTEGER}
+    </select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `report` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.desc !=null and params.desc!=''">
+		 AND `desc` like concat('%',#{params.desc},'%')
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `report` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Report"> insert into `report` (
+		`id`
+				,
+		`desc`
+				,
+		`projectid`
+				,
+		`projectname`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{desc,jdbcType=VARCHAR}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Report">
+		update `report`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="desc != null and desc!=''">
+		`desc`= #{desc,jdbcType=VARCHAR},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

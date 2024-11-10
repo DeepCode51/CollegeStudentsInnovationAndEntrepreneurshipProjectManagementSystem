@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ognice.dao.MenuMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Menu">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="title" jdbcType="VARCHAR" property="title" />
+		<result column="main" jdbcType="INTEGER" property="main" />
+		<result column="icon" jdbcType="VARCHAR" property="icon" />
+		<result column="index" jdbcType="INTEGER" property="index" />
+		<result column="parent_id" jdbcType="BIGINT" property="parentId" />
+		<result column="code" jdbcType="VARCHAR" property="code" />
+	</resultMap>
+	<sql id="Base_Column_List"> id, title, main, icon, `index`,parent_id,code
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from menu where id = #{id,jdbcType=BIGINT}
+	</select>
+	<select id="getAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from menu WHERE main=0 Order BY `index` asc
+	</select>
+    <select id="getAllByType" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from menu WHERE main=#{0} AND parent_id is null Order BY `index` asc
+    </select>
+	<select id="getChilds" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from menu WHERE  parent_id=#{0} Order BY `index` asc
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long"> delete from menu where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.ognice.domain.Menu"> insert into menu (id, title, main, icon, index) values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{main,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{index,jdbcType=INTEGER})
+	</insert>
+	<insert id="insertSelective" parameterType="com.ognice.domain.Menu">
+		insert into menu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null"> id,
+			</if>
+			<if test="title != null"> title,
+			</if>
+			<if test="main != null"> main,
+			</if>
+			<if test="icon != null"> icon,
+			</if>
+			<if test="index != null"> index,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null"> #{id,jdbcType=BIGINT},
+			</if>
+			<if test="title != null"> #{title,jdbcType=VARCHAR},
+			</if>
+			<if test="main != null"> #{main,jdbcType=INTEGER},
+			</if>
+			<if test="icon != null"> #{icon,jdbcType=VARCHAR},
+			</if>
+			<if test="index != null"> #{index,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.ognice.domain.Menu">
+		update menu
+		<set>
+			<if test="title != null"> title = #{title,jdbcType=VARCHAR},
+			</if>
+			<if test="main != null"> main = #{main,jdbcType=INTEGER},
+			</if>
+			<if test="icon != null"> icon = #{icon,jdbcType=VARCHAR},
+			</if>
+			<if test="index != null"> index = #{index,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.ognice.domain.Menu"> update menu set title = #{title,jdbcType=VARCHAR}, main = #{main,jdbcType=INTEGER}, icon = #{icon,jdbcType=VARCHAR}, index = #{index,jdbcType=INTEGER} where id = #{id,jdbcType=BIGINT}
+	</update>
+</mapper>

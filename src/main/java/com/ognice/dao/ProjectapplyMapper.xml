@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.ProjectapplyMapper">
+    <resultMap id="BaseResultMap" type="com.ognice.domain.Projectapply">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="projectid" property="projectid" jdbcType="INTEGER"/>
+        <result column="projectname" property="projectname" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="preuserid" property="preuserid" jdbcType="INTEGER"/>
+        <result column="preusername" property="preusername" jdbcType="VARCHAR"/>
+        <result column="user2" property="user2" jdbcType="VARCHAR"/>
+        <result column="user3" property="user3" jdbcType="VARCHAR"/>
+        <result column="user4" property="user4" jdbcType="VARCHAR"/>
+        <result column="user5" property="user5" jdbcType="VARCHAR"/>
+        <result column="pro1" property="pro1" jdbcType="VARCHAR"/>
+        <result column="pro2" property="pro2" jdbcType="VARCHAR"/>
+        <result column="pro3" property="pro3" jdbcType="VARCHAR"/>
+        <result column="pro4" property="pro4" jdbcType="VARCHAR"/>
+        <result column="pro5" property="pro5" jdbcType="VARCHAR"/>
+        <result column="clazz1" property="clazz1" jdbcType="VARCHAR"/>
+        <result column="clazz2" property="clazz2" jdbcType="VARCHAR"/>
+        <result column="clazz3" property="clazz3" jdbcType="VARCHAR"/>
+        <result column="clazz4" property="clazz4" jdbcType="VARCHAR"/>
+        <result column="clazz5" property="clazz5" jdbcType="VARCHAR"/>
+        <result column="grade1" property="grade1" jdbcType="VARCHAR"/>
+        <result column="grade2" property="grade2" jdbcType="VARCHAR"/>
+        <result column="grade3" property="grade3" jdbcType="VARCHAR"/>
+        <result column="grade4" property="grade4" jdbcType="VARCHAR"/>
+        <result column="grade5" property="grade5" jdbcType="VARCHAR"/>
+        <result column="tea" property="tea" jdbcType="VARCHAR"/>
+        <result column="tealevel" property="tealevel" jdbcType="VARCHAR"/>
+        <result column="room" property="room" jdbcType="VARCHAR"/>
+        <result column="xueyuan" property="xueyuan" jdbcType="VARCHAR"/>
+        <result column="nowdesc" property="nowdesc" jdbcType="VARCHAR"/>
+        <result column="nowidea" property="nowidea" jdbcType="VARCHAR"/>
+        <result column="point" property="point" jdbcType="VARCHAR"/>
+        <result column="need" property="need" jdbcType="VARCHAR"/>
+        <result column="process" property="process" jdbcType="VARCHAR"/>
+        <result column="resultplan" property="resultplan" jdbcType="VARCHAR"/>
+        <result column="budget" property="budget" jdbcType="VARCHAR"/>
+        <result column="yuancomment" property="yuancomment" jdbcType="VARCHAR"/>
+        <result column="xiaocomment" property="xiaocomment" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		`id`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`status`
+		,
+		`preuserid`
+		,
+		`preusername`
+		,
+		`user2`
+		,
+		`user3`
+		,
+		`user4`
+		,
+		`user5`
+		,
+		`pro1`
+		,
+		`pro2`
+		,
+		`pro3`
+		,
+		`pro4`
+		,
+		`pro5`
+		,
+		`clazz1`
+		,
+		`clazz2`
+		,
+		`clazz3`
+		,
+		`clazz4`
+		,
+		`clazz5`
+		,
+		`grade1`
+		,
+		`grade2`
+		,
+		`grade3`
+		,
+		`grade4`
+		,
+		`grade5`
+		,
+		`tea`
+		,
+		`tealevel`
+		,
+		`room`
+		,
+		`xueyuan`
+		,
+		`nowdesc`
+		,
+		`nowidea`
+		,
+		`point`
+		,
+		`need`
+		,
+		`process`
+		,
+		`resultplan`
+		,
+		`budget`
+		,
+		`yuancomment`
+		,
+		`xiaocomment`
+		
+	</sql>
+    <select id="selectProjectapplyById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from `projectapply` where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectProjectapplyByProjectId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from `projectapply` where projectid = #{id,jdbcType=INTEGER} limit 0,1
+    </select>
+    <select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `projectapply` where 1=1
+        <if test="params!=null">
+            <if test="params.id !=null ">
+                AND `id` = #{params.id}
+            </if>
+            <if test="params.projectid !=null ">
+                AND `projectid` = #{params.projectid}
+            </if>
+            <if test="params.projectname !=null and params.projectname!=''">
+                AND `projectname` like concat('%',#{params.projectname},'%')
+            </if>
+            <if test="params.status !=null ">
+                AND `status` = #{params.status}
+            </if>
+            <if test="params.preuserid !=null ">
+                AND `preuserid` = #{params.preuserid}
+            </if>
+            <if test="params.preusername !=null and params.preusername!=''">
+                AND `preusername` like concat('%',#{params.preusername},'%')
+            </if>
+            <if test="params.user2 !=null and params.user2!=''">
+                AND `user2` like concat('%',#{params.user2},'%')
+            </if>
+            <if test="params.user3 !=null and params.user3!=''">
+                AND `user3` like concat('%',#{params.user3},'%')
+            </if>
+            <if test="params.user4 !=null and params.user4!=''">
+                AND `user4` like concat('%',#{params.user4},'%')
+            </if>
+            <if test="params.user5 !=null and params.user5!=''">
+                AND `user5` like concat('%',#{params.user5},'%')
+            </if>
+            <if test="params.pro1 !=null and params.pro1!=''">
+                AND `pro1` like concat('%',#{params.pro1},'%')
+            </if>
+            <if test="params.pro2 !=null and params.pro2!=''">
+                AND `pro2` like concat('%',#{params.pro2},'%')
+            </if>
+            <if test="params.pro3 !=null and params.pro3!=''">
+                AND `pro3` like concat('%',#{params.pro3},'%')
+            </if>
+            <if test="params.pro4 !=null and params.pro4!=''">
+                AND `pro4` like concat('%',#{params.pro4},'%')
+            </if>
+            <if test="params.pro5 !=null and params.pro5!=''">
+                AND `pro5` like concat('%',#{params.pro5},'%')
+            </if>
+            <if test="params.clazz1 !=null and params.clazz1!=''">
+                AND `clazz1` like concat('%',#{params.clazz1},'%')
+            </if>
+            <if test="params.clazz2 !=null and params.clazz2!=''">
+                AND `clazz2` like concat('%',#{params.clazz2},'%')
+            </if>
+            <if test="params.clazz3 !=null and params.clazz3!=''">
+                AND `clazz3` like concat('%',#{params.clazz3},'%')
+            </if>
+            <if test="params.clazz4 !=null and params.clazz4!=''">
+                AND `clazz4` like concat('%',#{params.clazz4},'%')
+            </if>
+            <if test="params.clazz5 !=null and params.clazz5!=''">
+                AND `clazz5` like concat('%',#{params.clazz5},'%')
+            </if>
+            <if test="params.grade1 !=null and params.grade1!=''">
+                AND `grade1` like concat('%',#{params.grade1},'%')
+            </if>
+            <if test="params.grade2 !=null and params.grade2!=''">
+                AND `grade2` like concat('%',#{params.grade2},'%')
+            </if>
+            <if test="params.grade3 !=null and params.grade3!=''">
+                AND `grade3` like concat('%',#{params.grade3},'%')
+            </if>
+            <if test="params.grade4 !=null and params.grade4!=''">
+                AND `grade4` like concat('%',#{params.grade4},'%')
+            </if>
+            <if test="params.grade5 !=null and params.grade5!=''">
+                AND `grade5` like concat('%',#{params.grade5},'%')
+            </if>
+            <if test="params.tea !=null and params.tea!=''">
+                AND `tea` like concat('%',#{params.tea},'%')
+            </if>
+            <if test="params.tealevel !=null and params.tealevel!=''">
+                AND `tealevel` like concat('%',#{params.tealevel},'%')
+            </if>
+            <if test="params.room !=null and params.room!=''">
+                AND `room` like concat('%',#{params.room},'%')
+            </if>
+            <if test="params.xueyuan !=null and params.xueyuan!=''">
+                AND `xueyuan` like concat('%',#{params.xueyuan},'%')
+            </if>
+            <if test="params.nowdesc !=null and params.nowdesc!=''">
+                AND `nowdesc` like concat('%',#{params.nowdesc},'%')
+            </if>
+            <if test="params.nowidea !=null and params.nowidea!=''">
+                AND `nowidea` like concat('%',#{params.nowidea},'%')
+            </if>
+            <if test="params.point !=null and params.point!=''">
+                AND `point` like concat('%',#{params.point},'%')
+            </if>
+            <if test="params.need !=null and params.need!=''">
+                AND `need` like concat('%',#{params.need},'%')
+            </if>
+            <if test="params.process !=null and params.process!=''">
+                AND `process` like concat('%',#{params.process},'%')
+            </if>
+            <if test="params.resultplan !=null and params.resultplan!=''">
+                AND `resultplan` like concat('%',#{params.resultplan},'%')
+            </if>
+            <if test="params.budget !=null and params.budget!=''">
+                AND `budget` like concat('%',#{params.budget},'%')
+            </if>
+            <if test="params.yuancomment !=null and params.yuancomment!=''">
+                AND `yuancomment` like concat('%',#{params.yuancomment},'%')
+            </if>
+            <if test="params.xiaocomment !=null and params.xiaocomment!=''">
+                AND `xiaocomment` like concat('%',#{params.xiaocomment},'%')
+            </if>
+        </if>
+        order by id desc
+        <if test="page!=null">limit #{page},#{pagesize}
+        </if>
+    </select>
+
+    <delete id="delete" parameterType="java.lang.Integer"> delete from `projectapply` where id = #{id,jdbcType=INTEGER}
+	</delete>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ognice.domain.Projectapply"> insert into `projectapply` (
+		`id`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`status`
+				,
+		`preuserid`
+				,
+		`preusername`
+				,
+		`user2`
+				,
+		`user3`
+				,
+		`user4`
+				,
+		`user5`
+				,
+		`pro1`
+				,
+		`pro2`
+				,
+		`pro3`
+				,
+		`pro4`
+				,
+		`pro5`
+				,
+		`clazz1`
+				,
+		`clazz2`
+				,
+		`clazz3`
+				,
+		`clazz4`
+				,
+		`clazz5`
+				,
+		`grade1`
+				,
+		`grade2`
+				,
+		`grade3`
+				,
+		`grade4`
+				,
+		`grade5`
+				,
+		`tea`
+				,
+		`tealevel`
+				,
+		`room`
+				,
+		`xueyuan`
+				,
+		`nowdesc`
+				,
+		`nowidea`
+				,
+		`point`
+				,
+		`need`
+				,
+		`process`
+				,
+		`resultplan`
+				,
+		`budget`
+				,
+		`yuancomment`
+				,
+		`xiaocomment`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{status,jdbcType=INTEGER}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				,
+		#{user2,jdbcType=VARCHAR}
+				,
+		#{user3,jdbcType=VARCHAR}
+				,
+		#{user4,jdbcType=VARCHAR}
+				,
+		#{user5,jdbcType=VARCHAR}
+				,
+		#{pro1,jdbcType=VARCHAR}
+				,
+		#{pro2,jdbcType=VARCHAR}
+				,
+		#{pro3,jdbcType=VARCHAR}
+				,
+		#{pro4,jdbcType=VARCHAR}
+				,
+		#{pro5,jdbcType=VARCHAR}
+				,
+		#{clazz1,jdbcType=VARCHAR}
+				,
+		#{clazz2,jdbcType=VARCHAR}
+				,
+		#{clazz3,jdbcType=VARCHAR}
+				,
+		#{clazz4,jdbcType=VARCHAR}
+				,
+		#{clazz5,jdbcType=VARCHAR}
+				,
+		#{grade1,jdbcType=VARCHAR}
+				,
+		#{grade2,jdbcType=VARCHAR}
+				,
+		#{grade3,jdbcType=VARCHAR}
+				,
+		#{grade4,jdbcType=VARCHAR}
+				,
+		#{grade5,jdbcType=VARCHAR}
+				,
+		#{tea,jdbcType=VARCHAR}
+				,
+		#{tealevel,jdbcType=VARCHAR}
+				,
+		#{room,jdbcType=VARCHAR}
+				,
+		#{xueyuan,jdbcType=VARCHAR}
+				,
+		#{nowdesc,jdbcType=VARCHAR}
+				,
+		#{nowidea,jdbcType=VARCHAR}
+				,
+		#{point,jdbcType=VARCHAR}
+				,
+		#{need,jdbcType=VARCHAR}
+				,
+		#{process,jdbcType=VARCHAR}
+				,
+		#{resultplan,jdbcType=VARCHAR}
+				,
+		#{budget,jdbcType=VARCHAR}
+				,
+		#{yuancomment,jdbcType=VARCHAR}
+				,
+		#{xiaocomment,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+    <update id="update" parameterType="com.ognice.domain.Projectapply">
+        update `projectapply`
+        <set>
+            <if test="id != null and id!=''">
+                `id`= #{id,jdbcType=INTEGER},
+            </if>
+            <if test="projectid != null and projectid!=''">
+                `projectid`= #{projectid,jdbcType=INTEGER},
+            </if>
+            <if test="projectname != null and projectname!=''">
+                `projectname`= #{projectname,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null ">
+                `status`= #{status,jdbcType=INTEGER},
+            </if>
+            <if test="preuserid != null and preuserid!=''">
+                `preuserid`= #{preuserid,jdbcType=INTEGER},
+            </if>
+            <if test="preusername != null and preusername!=''">
+                `preusername`= #{preusername,jdbcType=VARCHAR},
+            </if>
+            <if test="user2 != null and user2!=''">
+                `user2`= #{user2,jdbcType=VARCHAR},
+            </if>
+            <if test="user3 != null and user3!=''">
+                `user3`= #{user3,jdbcType=VARCHAR},
+            </if>
+            <if test="user4 != null and user4!=''">
+                `user4`= #{user4,jdbcType=VARCHAR},
+            </if>
+            <if test="user5 != null and user5!=''">
+                `user5`= #{user5,jdbcType=VARCHAR},
+            </if>
+            <if test="pro1 != null and pro1!=''">
+                `pro1`= #{pro1,jdbcType=VARCHAR},
+            </if>
+            <if test="pro2 != null and pro2!=''">
+                `pro2`= #{pro2,jdbcType=VARCHAR},
+            </if>
+            <if test="pro3 != null and pro3!=''">
+                `pro3`= #{pro3,jdbcType=VARCHAR},
+            </if>
+            <if test="pro4 != null and pro4!=''">
+                `pro4`= #{pro4,jdbcType=VARCHAR},
+            </if>
+            <if test="pro5 != null and pro5!=''">
+                `pro5`= #{pro5,jdbcType=VARCHAR},
+            </if>
+            <if test="clazz1 != null and clazz1!=''">
+                `clazz1`= #{clazz1,jdbcType=VARCHAR},
+            </if>
+            <if test="clazz2 != null and clazz2!=''">
+                `clazz2`= #{clazz2,jdbcType=VARCHAR},
+            </if>
+            <if test="clazz3 != null and clazz3!=''">
+                `clazz3`= #{clazz3,jdbcType=VARCHAR},
+            </if>
+            <if test="clazz4 != null and clazz4!=''">
+                `clazz4`= #{clazz4,jdbcType=VARCHAR},
+            </if>
+            <if test="clazz5 != null and clazz5!=''">
+                `clazz5`= #{clazz5,jdbcType=VARCHAR},
+            </if>
+            <if test="grade1 != null and grade1!=''">
+                `grade1`= #{grade1,jdbcType=VARCHAR},
+            </if>
+            <if test="grade2 != null and grade2!=''">
+                `grade2`= #{grade2,jdbcType=VARCHAR},
+            </if>
+            <if test="grade3 != null and grade3!=''">
+                `grade3`= #{grade3,jdbcType=VARCHAR},
+            </if>
+            <if test="grade4 != null and grade4!=''">
+                `grade4`= #{grade4,jdbcType=VARCHAR},
+            </if>
+            <if test="grade5 != null and grade5!=''">
+                `grade5`= #{grade5,jdbcType=VARCHAR},
+            </if>
+            <if test="tea != null and tea!=''">
+                `tea`= #{tea,jdbcType=VARCHAR},
+            </if>
+            <if test="tealevel != null and tealevel!=''">
+                `tealevel`= #{tealevel,jdbcType=VARCHAR},
+            </if>
+            <if test="room != null and room!=''">
+                `room`= #{room,jdbcType=VARCHAR},
+            </if>
+            <if test="xueyuan != null and xueyuan!=''">
+                `xueyuan`= #{xueyuan,jdbcType=VARCHAR},
+            </if>
+            <if test="nowdesc != null and nowdesc!=''">
+                `nowdesc`= #{nowdesc,jdbcType=VARCHAR},
+            </if>
+            <if test="nowidea != null and nowidea!=''">
+                `nowidea`= #{nowidea,jdbcType=VARCHAR},
+            </if>
+            <if test="point != null and point!=''">
+                `point`= #{point,jdbcType=VARCHAR},
+            </if>
+            <if test="need != null and need!=''">
+                `need`= #{need,jdbcType=VARCHAR},
+            </if>
+            <if test="process != null and process!=''">
+                `process`= #{process,jdbcType=VARCHAR},
+            </if>
+            <if test="resultplan != null and resultplan!=''">
+                `resultplan`= #{resultplan,jdbcType=VARCHAR},
+            </if>
+            <if test="budget != null and budget!=''">
+                `budget`= #{budget,jdbcType=VARCHAR},
+            </if>
+            <if test="yuancomment != null and yuancomment!=''">
+                `yuancomment`= #{yuancomment,jdbcType=VARCHAR},
+            </if>
+            <if test="xiaocomment != null and xiaocomment!=''">
+                `xiaocomment`= #{xiaocomment,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+</mapper>

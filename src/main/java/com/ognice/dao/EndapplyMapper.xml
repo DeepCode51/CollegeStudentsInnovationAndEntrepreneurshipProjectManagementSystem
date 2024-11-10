@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.EndapplyMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Endapply">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+		<result column="endtime" property="endtime" jdbcType="VARCHAR" />
+		<result column="deadline" property="deadline" jdbcType="VARCHAR" />
+		<result column="preuserid" property="preuserid" jdbcType="INTEGER" />
+		<result column="preusername" property="preusername" jdbcType="VARCHAR" />
+		<result column="resean" property="resean" jdbcType="VARCHAR" />
+		<result column="teacomment" property="teacomment" jdbcType="VARCHAR" />
+		<result column="xycomment" property="xycomment" jdbcType="VARCHAR" />
+		<result column="xxcomment" property="xxcomment" jdbcType="VARCHAR" />
+		<result column="created" property="created" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`endtime`
+		,
+		`deadline`
+		,
+		`preuserid`
+		,
+		`preusername`
+		,
+		`resean`
+		,
+		`teacomment`
+		,
+		`xycomment`
+		,
+		`xxcomment`
+		,
+		`created`
+		
+	</sql>
+	<select id="selectEndapplyById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `endapply` where id = #{id,jdbcType=INTEGER}
+	</select>
+    <select id="selectEndapplyByProId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from `endapply` where projectid = #{id,jdbcType=INTEGER}
+    </select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `endapply` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		<if test="params.endtime !=null and params.endtime!=''">
+		 AND `endtime` like concat('%',#{params.endtime},'%')
+		</if>
+		<if test="params.deadline !=null and params.deadline!=''">
+		 AND `deadline` like concat('%',#{params.deadline},'%')
+		</if>
+		<if test="params.preuserid !=null ">
+		AND `preuserid` = #{params.preuserid}
+		</if>
+		<if test="params.preusername !=null and params.preusername!=''">
+		 AND `preusername` like concat('%',#{params.preusername},'%')
+		</if>
+		<if test="params.resean !=null and params.resean!=''">
+		 AND `resean` like concat('%',#{params.resean},'%')
+		</if>
+		<if test="params.teacomment !=null and params.teacomment!=''">
+		 AND `teacomment` like concat('%',#{params.teacomment},'%')
+		</if>
+		<if test="params.xycomment !=null and params.xycomment!=''">
+		 AND `xycomment` like concat('%',#{params.xycomment},'%')
+		</if>
+		<if test="params.xxcomment !=null and params.xxcomment!=''">
+		 AND `xxcomment` like concat('%',#{params.xxcomment},'%')
+		</if>
+		<if test="params.created !=null ">
+		AND `created` = #{params.created}
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `endapply` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Endapply"> insert into `endapply` (
+		`id`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`endtime`
+				,
+		`deadline`
+				,
+		`preuserid`
+				,
+		`preusername`
+				,
+		`resean`
+				,
+		`teacomment`
+				,
+		`xycomment`
+				,
+		`xxcomment`
+				,
+		`created`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{endtime,jdbcType=VARCHAR}
+				,
+		#{deadline,jdbcType=VARCHAR}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				,
+		#{resean,jdbcType=VARCHAR}
+				,
+		#{teacomment,jdbcType=VARCHAR}
+				,
+		#{xycomment,jdbcType=VARCHAR}
+				,
+		#{xxcomment,jdbcType=VARCHAR}
+				,
+		#{created,jdbcType=TIMESTAMP}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Endapply">
+		update `endapply`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		<if test="endtime != null and endtime!=''">
+		`endtime`= #{endtime,jdbcType=VARCHAR},
+		</if>
+		<if test="deadline != null and deadline!=''">
+		`deadline`= #{deadline,jdbcType=VARCHAR},
+		</if>
+		<if test="preuserid != null and preuserid!=''">
+		`preuserid`= #{preuserid,jdbcType=INTEGER},
+		</if>
+		<if test="preusername != null and preusername!=''">
+		`preusername`= #{preusername,jdbcType=VARCHAR},
+		</if>
+		<if test="resean != null and resean!=''">
+		`resean`= #{resean,jdbcType=VARCHAR},
+		</if>
+		<if test="teacomment != null and teacomment!=''">
+		`teacomment`= #{teacomment,jdbcType=VARCHAR},
+		</if>
+		<if test="xycomment != null and xycomment!=''">
+		`xycomment`= #{xycomment,jdbcType=VARCHAR},
+		</if>
+		<if test="xxcomment != null and xxcomment!=''">
+		`xxcomment`= #{xxcomment,jdbcType=VARCHAR},
+		</if>
+		<if test="created != null and created!=''">
+		`created`= #{created,jdbcType=TIMESTAMP},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

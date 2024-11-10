@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.ognice.domain.User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="psw" property="psw" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List"> id, username, psw, name, created, status, sex
+	</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from user where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectByUsername" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user where username = #{0}
+    </select>
+    <select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user where 1=1
+        <if test="params!=null">
+            <if test="params.username!=null and params.username!=''"> AND username like concat('%',#{params.username},'%')
+            </if>
+            <if test="params.name!=null and params.name!=''"> and name like concat('%',#{params.name},'%')
+            </if>
+        </if>
+        <if test="page!=null"> limit #{page},#{pagesize}
+        </if>
+    </select>
+    <select id="login" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user where username = #{0} AND psw = #{1}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer"> delete from user where id = #{id,jdbcType=INTEGER}
+	</delete>
+    <insert id="insert" parameterType="com.ognice.domain.User"> insert into user (id, username, psw, name, created, status, sex) values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{psw,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER})
+	</insert>
+    <insert id="insertSelective" parameterType="com.ognice.domain.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null"> id,
+            </if>
+            <if test="username != null"> username,
+            </if>
+            <if test="psw != null"> psw,
+            </if>
+            <if test="name != null"> name,
+            </if>
+            <if test="created != null"> created,
+            </if>
+            <if test="status != null"> status,
+            </if>
+            <if test="sex != null"> sex,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null"> #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="psw != null"> #{psw,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null"> #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="created != null"> #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null"> #{status,jdbcType=INTEGER},
+            </if>
+            <if test="sex != null"> #{sex,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ognice.domain.User">
+        update user
+        <set>
+            <if test="username != null and username!=''"> username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="psw != null  and psw!=''" > psw = #{psw,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null and name!=''"> name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="created != null and created!=''"> created = #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null "> status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="sex != null and sex!=''"> sex = #{sex,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+</mapper>

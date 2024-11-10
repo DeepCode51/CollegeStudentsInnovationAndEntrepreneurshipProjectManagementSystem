@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.CglogMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Cglog">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+		<result column="xy" property="xy" jdbcType="VARCHAR" />
+		<result column="xmlx" property="xmlx" jdbcType="VARCHAR" />
+		<result column="fzr" property="fzr" jdbcType="VARCHAR" />
+		<result column="zdls" property="zdls" jdbcType="VARCHAR" />
+		<result column="qz" property="qz" jdbcType="VARCHAR" />
+		<result column="js" property="js" jdbcType="VARCHAR" />
+		<result column="xm1" property="xm1" jdbcType="VARCHAR" />
+		<result column="xh1" property="xh1" jdbcType="VARCHAR" />
+		<result column="njzy1" property="njzy1" jdbcType="VARCHAR" />
+		<result column="sj1" property="sj1" jdbcType="VARCHAR" />
+		<result column="e1" property="e1" jdbcType="VARCHAR" />
+		<result column="xm2" property="xm2" jdbcType="VARCHAR" />
+		<result column="xh2" property="xh2" jdbcType="VARCHAR" />
+		<result column="njzy2" property="njzy2" jdbcType="VARCHAR" />
+		<result column="sj2" property="sj2" jdbcType="VARCHAR" />
+		<result column="e2" property="e2" jdbcType="VARCHAR" />
+		<result column="xm3" property="xm3" jdbcType="VARCHAR" />
+		<result column="xh3" property="xh3" jdbcType="VARCHAR" />
+		<result column="njzy3" property="njzy3" jdbcType="VARCHAR" />
+		<result column="sj3" property="sj3" jdbcType="VARCHAR" />
+		<result column="e3" property="e3" jdbcType="VARCHAR" />
+		<result column="xm4" property="xm4" jdbcType="VARCHAR" />
+		<result column="xh4" property="xh4" jdbcType="VARCHAR" />
+		<result column="njzy4" property="njzy4" jdbcType="VARCHAR" />
+		<result column="sj4" property="sj4" jdbcType="VARCHAR" />
+		<result column="e4" property="e4" jdbcType="VARCHAR" />
+		<result column="xm5" property="xm5" jdbcType="VARCHAR" />
+		<result column="xh5" property="xh5" jdbcType="VARCHAR" />
+		<result column="njzy5" property="njzy5" jdbcType="VARCHAR" />
+		<result column="sj5" property="sj5" jdbcType="VARCHAR" />
+		<result column="e5" property="e5" jdbcType="VARCHAR" />
+		<result column="xm6" property="xm6" jdbcType="VARCHAR" />
+		<result column="xh6" property="xh6" jdbcType="VARCHAR" />
+		<result column="njzy6" property="njzy6" jdbcType="VARCHAR" />
+		<result column="sj6" property="sj6" jdbcType="VARCHAR" />
+		<result column="e6" property="e6" jdbcType="VARCHAR" />
+		<result column="lsxm" property="lsxm" jdbcType="VARCHAR" />
+		<result column="lszw" property="lszw" jdbcType="VARCHAR" />
+		<result column="szdw" property="szdw" jdbcType="VARCHAR" />
+		<result column="lssj" property="lssj" jdbcType="VARCHAR" />
+		<result column="lse" property="lse" jdbcType="VARCHAR" />
+		<result column="xmjz1" property="xmjz1" jdbcType="VARCHAR" />
+		<result column="cgmc1" property="cgmc1" jdbcType="VARCHAR" />
+		<result column="xs1" property="xs1" jdbcType="VARCHAR" />
+		<result column="fbsj1" property="fbsj1" jdbcType="VARCHAR" />
+		<result column="fbkw1" property="fbkw1" jdbcType="VARCHAR" />
+		<result column="zs1" property="zs1" jdbcType="VARCHAR" />
+		<result column="xmjz2" property="xmjz2" jdbcType="VARCHAR" />
+		<result column="cgmc2" property="cgmc2" jdbcType="VARCHAR" />
+		<result column="xs2" property="xs2" jdbcType="VARCHAR" />
+		<result column="fbsj2" property="fbsj2" jdbcType="VARCHAR" />
+		<result column="fbkw2" property="fbkw2" jdbcType="VARCHAR" />
+		<result column="zs2" property="zs2" jdbcType="VARCHAR" />
+		<result column="xmjz3" property="xmjz3" jdbcType="VARCHAR" />
+		<result column="cgmc3" property="cgmc3" jdbcType="VARCHAR" />
+		<result column="xs3" property="xs3" jdbcType="VARCHAR" />
+		<result column="fbsj3" property="fbsj3" jdbcType="VARCHAR" />
+		<result column="fbkw3" property="fbkw3" jdbcType="VARCHAR" />
+		<result column="zs3" property="zs3" jdbcType="VARCHAR" />
+		<result column="xmjz4" property="xmjz4" jdbcType="VARCHAR" />
+		<result column="cgmc4" property="cgmc4" jdbcType="VARCHAR" />
+		<result column="xs4" property="xs4" jdbcType="VARCHAR" />
+		<result column="fbsj4" property="fbsj4" jdbcType="VARCHAR" />
+		<result column="fbkw4" property="fbkw4" jdbcType="VARCHAR" />
+		<result column="zs4" property="zs4" jdbcType="VARCHAR" />
+		<result column="zywt" property="zywt" jdbcType="VARCHAR" />
+		<result column="jdap" property="jdap" jdbcType="VARCHAR" />
+		<result column="jfsy" property="jfsy" jdbcType="VARCHAR" />
+		<result column="lsyj" property="lsyj" jdbcType="VARCHAR" />
+		<result column="lsyjsj" property="lsyjsj" jdbcType="TIMESTAMP" />
+		<result column="xyyj" property="xyyj" jdbcType="VARCHAR" />
+		<result column="xyyjsj" property="xyyjsj" jdbcType="TIMESTAMP" />
+		<result column="xxyj" property="xxyj" jdbcType="VARCHAR" />
+		<result column="xxyjsj" property="xxyjsj" jdbcType="TIMESTAMP" />
+		<result column="preuserid" property="preuserid" jdbcType="INTEGER" />
+		<result column="preusername" property="preusername" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`xy`
+		,
+		`xmlx`
+		,
+		`fzr`
+		,
+		`zdls`
+		,
+		`qz`
+		,
+		`js`
+		,
+		`xm1`
+		,
+		`xh1`
+		,
+		`njzy1`
+		,
+		`sj1`
+		,
+		`e1`
+		,
+		`xm2`
+		,
+		`xh2`
+		,
+		`njzy2`
+		,
+		`sj2`
+		,
+		`e2`
+		,
+		`xm3`
+		,
+		`xh3`
+		,
+		`njzy3`
+		,
+		`sj3`
+		,
+		`e3`
+		,
+		`xm4`
+		,
+		`xh4`
+		,
+		`njzy4`
+		,
+		`sj4`
+		,
+		`e4`
+		,
+		`xm5`
+		,
+		`xh5`
+		,
+		`njzy5`
+		,
+		`sj5`
+		,
+		`e5`
+		,
+		`xm6`
+		,
+		`xh6`
+		,
+		`njzy6`
+		,
+		`sj6`
+		,
+		`e6`
+		,
+		`lsxm`
+		,
+		`lszw`
+		,
+		`szdw`
+		,
+		`lssj`
+		,
+		`lse`
+		,
+		`xmjz1`
+		,
+		`cgmc1`
+		,
+		`xs1`
+		,
+		`fbsj1`
+		,
+		`fbkw1`
+		,
+		`zs1`
+		,
+		`xmjz2`
+		,
+		`cgmc2`
+		,
+		`xs2`
+		,
+		`fbsj2`
+		,
+		`fbkw2`
+		,
+		`zs2`
+		,
+		`xmjz3`
+		,
+		`cgmc3`
+		,
+		`xs3`
+		,
+		`fbsj3`
+		,
+		`fbkw3`
+		,
+		`zs3`
+		,
+		`xmjz4`
+		,
+		`cgmc4`
+		,
+		`xs4`
+		,
+		`fbsj4`
+		,
+		`fbkw4`
+		,
+		`zs4`
+		,
+		`zywt`
+		,
+		`jdap`
+		,
+		`jfsy`
+		,
+		`lsyj`
+		,
+		`lsyjsj`
+		,
+		`xyyj`
+		,
+		`xyyjsj`
+		,
+		`xxyj`
+		,
+		`xxyjsj`
+		,
+		`preuserid`
+		,
+		`preusername`
+		
+	</sql>
+	<select id="selectCglogById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `cglog` where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `cglog` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		<if test="params.xy !=null and params.xy!=''">
+		 AND `xy` like concat('%',#{params.xy},'%')
+		</if>
+		<if test="params.xmlx !=null and params.xmlx!=''">
+		 AND `xmlx` like concat('%',#{params.xmlx},'%')
+		</if>
+		<if test="params.fzr !=null and params.fzr!=''">
+		 AND `fzr` like concat('%',#{params.fzr},'%')
+		</if>
+		<if test="params.zdls !=null and params.zdls!=''">
+		 AND `zdls` like concat('%',#{params.zdls},'%')
+		</if>
+		<if test="params.qz !=null and params.qz!=''">
+		 AND `qz` like concat('%',#{params.qz},'%')
+		</if>
+		<if test="params.js !=null and params.js!=''">
+		 AND `js` like concat('%',#{params.js},'%')
+		</if>
+		<if test="params.xm1 !=null and params.xm1!=''">
+		 AND `xm1` like concat('%',#{params.xm1},'%')
+		</if>
+		<if test="params.xh1 !=null and params.xh1!=''">
+		 AND `xh1` like concat('%',#{params.xh1},'%')
+		</if>
+		<if test="params.njzy1 !=null and params.njzy1!=''">
+		 AND `njzy1` like concat('%',#{params.njzy1},'%')
+		</if>
+		<if test="params.sj1 !=null and params.sj1!=''">
+		 AND `sj1` like concat('%',#{params.sj1},'%')
+		</if>
+		<if test="params.e1 !=null and params.e1!=''">
+		 AND `e1` like concat('%',#{params.e1},'%')
+		</if>
+		<if test="params.xm2 !=null and params.xm2!=''">
+		 AND `xm2` like concat('%',#{params.xm2},'%')
+		</if>
+		<if test="params.xh2 !=null and params.xh2!=''">
+		 AND `xh2` like concat('%',#{params.xh2},'%')
+		</if>
+		<if test="params.njzy2 !=null and params.njzy2!=''">
+		 AND `njzy2` like concat('%',#{params.njzy2},'%')
+		</if>
+		<if test="params.sj2 !=null and params.sj2!=''">
+		 AND `sj2` like concat('%',#{params.sj2},'%')
+		</if>
+		<if test="params.e2 !=null and params.e2!=''">
+		 AND `e2` like concat('%',#{params.e2},'%')
+		</if>
+		<if test="params.xm3 !=null and params.xm3!=''">
+		 AND `xm3` like concat('%',#{params.xm3},'%')
+		</if>
+		<if test="params.xh3 !=null and params.xh3!=''">
+		 AND `xh3` like concat('%',#{params.xh3},'%')
+		</if>
+		<if test="params.njzy3 !=null and params.njzy3!=''">
+		 AND `njzy3` like concat('%',#{params.njzy3},'%')
+		</if>
+		<if test="params.sj3 !=null and params.sj3!=''">
+		 AND `sj3` like concat('%',#{params.sj3},'%')
+		</if>
+		<if test="params.e3 !=null and params.e3!=''">
+		 AND `e3` like concat('%',#{params.e3},'%')
+		</if>
+		<if test="params.xm4 !=null and params.xm4!=''">
+		 AND `xm4` like concat('%',#{params.xm4},'%')
+		</if>
+		<if test="params.xh4 !=null and params.xh4!=''">
+		 AND `xh4` like concat('%',#{params.xh4},'%')
+		</if>
+		<if test="params.njzy4 !=null and params.njzy4!=''">
+		 AND `njzy4` like concat('%',#{params.njzy4},'%')
+		</if>
+		<if test="params.sj4 !=null and params.sj4!=''">
+		 AND `sj4` like concat('%',#{params.sj4},'%')
+		</if>
+		<if test="params.e4 !=null and params.e4!=''">
+		 AND `e4` like concat('%',#{params.e4},'%')
+		</if>
+		<if test="params.xm5 !=null and params.xm5!=''">
+		 AND `xm5` like concat('%',#{params.xm5},'%')
+		</if>
+		<if test="params.xh5 !=null and params.xh5!=''">
+		 AND `xh5` like concat('%',#{params.xh5},'%')
+		</if>
+		<if test="params.njzy5 !=null and params.njzy5!=''">
+		 AND `njzy5` like concat('%',#{params.njzy5},'%')
+		</if>
+		<if test="params.sj5 !=null and params.sj5!=''">
+		 AND `sj5` like concat('%',#{params.sj5},'%')
+		</if>
+		<if test="params.e5 !=null and params.e5!=''">
+		 AND `e5` like concat('%',#{params.e5},'%')
+		</if>
+		<if test="params.xm6 !=null and params.xm6!=''">
+		 AND `xm6` like concat('%',#{params.xm6},'%')
+		</if>
+		<if test="params.xh6 !=null and params.xh6!=''">
+		 AND `xh6` like concat('%',#{params.xh6},'%')
+		</if>
+		<if test="params.njzy6 !=null and params.njzy6!=''">
+		 AND `njzy6` like concat('%',#{params.njzy6},'%')
+		</if>
+		<if test="params.sj6 !=null and params.sj6!=''">
+		 AND `sj6` like concat('%',#{params.sj6},'%')
+		</if>
+		<if test="params.e6 !=null and params.e6!=''">
+		 AND `e6` like concat('%',#{params.e6},'%')
+		</if>
+		<if test="params.lsxm !=null and params.lsxm!=''">
+		 AND `lsxm` like concat('%',#{params.lsxm},'%')
+		</if>
+		<if test="params.lszw !=null and params.lszw!=''">
+		 AND `lszw` like concat('%',#{params.lszw},'%')
+		</if>
+		<if test="params.szdw !=null and params.szdw!=''">
+		 AND `szdw` like concat('%',#{params.szdw},'%')
+		</if>
+		<if test="params.lssj !=null and params.lssj!=''">
+		 AND `lssj` like concat('%',#{params.lssj},'%')
+		</if>
+		<if test="params.lse !=null and params.lse!=''">
+		 AND `lse` like concat('%',#{params.lse},'%')
+		</if>
+		<if test="params.xmjz1 !=null and params.xmjz1!=''">
+		 AND `xmjz1` like concat('%',#{params.xmjz1},'%')
+		</if>
+		<if test="params.cgmc1 !=null and params.cgmc1!=''">
+		 AND `cgmc1` like concat('%',#{params.cgmc1},'%')
+		</if>
+		<if test="params.xs1 !=null and params.xs1!=''">
+		 AND `xs1` like concat('%',#{params.xs1},'%')
+		</if>
+		<if test="params.fbsj1 !=null and params.fbsj1!=''">
+		 AND `fbsj1` like concat('%',#{params.fbsj1},'%')
+		</if>
+		<if test="params.fbkw1 !=null and params.fbkw1!=''">
+		 AND `fbkw1` like concat('%',#{params.fbkw1},'%')
+		</if>
+		<if test="params.zs1 !=null and params.zs1!=''">
+		 AND `zs1` like concat('%',#{params.zs1},'%')
+		</if>
+		<if test="params.xmjz2 !=null and params.xmjz2!=''">
+		 AND `xmjz2` like concat('%',#{params.xmjz2},'%')
+		</if>
+		<if test="params.cgmc2 !=null and params.cgmc2!=''">
+		 AND `cgmc2` like concat('%',#{params.cgmc2},'%')
+		</if>
+		<if test="params.xs2 !=null and params.xs2!=''">
+		 AND `xs2` like concat('%',#{params.xs2},'%')
+		</if>
+		<if test="params.fbsj2 !=null and params.fbsj2!=''">
+		 AND `fbsj2` like concat('%',#{params.fbsj2},'%')
+		</if>
+		<if test="params.fbkw2 !=null and params.fbkw2!=''">
+		 AND `fbkw2` like concat('%',#{params.fbkw2},'%')
+		</if>
+		<if test="params.zs2 !=null and params.zs2!=''">
+		 AND `zs2` like concat('%',#{params.zs2},'%')
+		</if>
+		<if test="params.xmjz3 !=null and params.xmjz3!=''">
+		 AND `xmjz3` like concat('%',#{params.xmjz3},'%')
+		</if>
+		<if test="params.cgmc3 !=null and params.cgmc3!=''">
+		 AND `cgmc3` like concat('%',#{params.cgmc3},'%')
+		</if>
+		<if test="params.xs3 !=null and params.xs3!=''">
+		 AND `xs3` like concat('%',#{params.xs3},'%')
+		</if>
+		<if test="params.fbsj3 !=null and params.fbsj3!=''">
+		 AND `fbsj3` like concat('%',#{params.fbsj3},'%')
+		</if>
+		<if test="params.fbkw3 !=null and params.fbkw3!=''">
+		 AND `fbkw3` like concat('%',#{params.fbkw3},'%')
+		</if>
+		<if test="params.zs3 !=null and params.zs3!=''">
+		 AND `zs3` like concat('%',#{params.zs3},'%')
+		</if>
+		<if test="params.xmjz4 !=null and params.xmjz4!=''">
+		 AND `xmjz4` like concat('%',#{params.xmjz4},'%')
+		</if>
+		<if test="params.cgmc4 !=null and params.cgmc4!=''">
+		 AND `cgmc4` like concat('%',#{params.cgmc4},'%')
+		</if>
+		<if test="params.xs4 !=null and params.xs4!=''">
+		 AND `xs4` like concat('%',#{params.xs4},'%')
+		</if>
+		<if test="params.fbsj4 !=null and params.fbsj4!=''">
+		 AND `fbsj4` like concat('%',#{params.fbsj4},'%')
+		</if>
+		<if test="params.fbkw4 !=null and params.fbkw4!=''">
+		 AND `fbkw4` like concat('%',#{params.fbkw4},'%')
+		</if>
+		<if test="params.zs4 !=null and params.zs4!=''">
+		 AND `zs4` like concat('%',#{params.zs4},'%')
+		</if>
+		<if test="params.zywt !=null and params.zywt!=''">
+		 AND `zywt` like concat('%',#{params.zywt},'%')
+		</if>
+		<if test="params.jdap !=null and params.jdap!=''">
+		 AND `jdap` like concat('%',#{params.jdap},'%')
+		</if>
+		<if test="params.jfsy !=null and params.jfsy!=''">
+		 AND `jfsy` like concat('%',#{params.jfsy},'%')
+		</if>
+		<if test="params.lsyj !=null and params.lsyj!=''">
+		 AND `lsyj` like concat('%',#{params.lsyj},'%')
+		</if>
+		<if test="params.lsyjsj !=null ">
+		AND `lsyjsj` = #{params.lsyjsj}
+		</if>
+		<if test="params.xyyj !=null and params.xyyj!=''">
+		 AND `xyyj` like concat('%',#{params.xyyj},'%')
+		</if>
+		<if test="params.xyyjsj !=null ">
+		AND `xyyjsj` = #{params.xyyjsj}
+		</if>
+		<if test="params.xxyj !=null and params.xxyj!=''">
+		 AND `xxyj` like concat('%',#{params.xxyj},'%')
+		</if>
+		<if test="params.xxyjsj !=null ">
+		AND `xxyjsj` = #{params.xxyjsj}
+		</if>
+		<if test="params.preuserid !=null ">
+		AND `preuserid` = #{params.preuserid}
+		</if>
+		<if test="params.preusername !=null and params.preusername!=''">
+		 AND `preusername` like concat('%',#{params.preusername},'%')
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `cglog` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Cglog"> insert into `cglog` (
+		`id`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`xy`
+				,
+		`xmlx`
+				,
+		`fzr`
+				,
+		`zdls`
+				,
+		`qz`
+				,
+		`js`
+				,
+		`xm1`
+				,
+		`xh1`
+				,
+		`njzy1`
+				,
+		`sj1`
+				,
+		`e1`
+				,
+		`xm2`
+				,
+		`xh2`
+				,
+		`njzy2`
+				,
+		`sj2`
+				,
+		`e2`
+				,
+		`xm3`
+				,
+		`xh3`
+				,
+		`njzy3`
+				,
+		`sj3`
+				,
+		`e3`
+				,
+		`xm4`
+				,
+		`xh4`
+				,
+		`njzy4`
+				,
+		`sj4`
+				,
+		`e4`
+				,
+		`xm5`
+				,
+		`xh5`
+				,
+		`njzy5`
+				,
+		`sj5`
+				,
+		`e5`
+				,
+		`xm6`
+				,
+		`xh6`
+				,
+		`njzy6`
+				,
+		`sj6`
+				,
+		`e6`
+				,
+		`lsxm`
+				,
+		`lszw`
+				,
+		`szdw`
+				,
+		`lssj`
+				,
+		`lse`
+				,
+		`xmjz1`
+				,
+		`cgmc1`
+				,
+		`xs1`
+				,
+		`fbsj1`
+				,
+		`fbkw1`
+				,
+		`zs1`
+				,
+		`xmjz2`
+				,
+		`cgmc2`
+				,
+		`xs2`
+				,
+		`fbsj2`
+				,
+		`fbkw2`
+				,
+		`zs2`
+				,
+		`xmjz3`
+				,
+		`cgmc3`
+				,
+		`xs3`
+				,
+		`fbsj3`
+				,
+		`fbkw3`
+				,
+		`zs3`
+				,
+		`xmjz4`
+				,
+		`cgmc4`
+				,
+		`xs4`
+				,
+		`fbsj4`
+				,
+		`fbkw4`
+				,
+		`zs4`
+				,
+		`zywt`
+				,
+		`jdap`
+				,
+		`jfsy`
+				,
+		`lsyj`
+				,
+		`lsyjsj`
+				,
+		`xyyj`
+				,
+		`xyyjsj`
+				,
+		`xxyj`
+				,
+		`xxyjsj`
+				,
+		`preuserid`
+				,
+		`preusername`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{xy,jdbcType=VARCHAR}
+				,
+		#{xmlx,jdbcType=VARCHAR}
+				,
+		#{fzr,jdbcType=VARCHAR}
+				,
+		#{zdls,jdbcType=VARCHAR}
+				,
+		#{qz,jdbcType=VARCHAR}
+				,
+		#{js,jdbcType=VARCHAR}
+				,
+		#{xm1,jdbcType=VARCHAR}
+				,
+		#{xh1,jdbcType=VARCHAR}
+				,
+		#{njzy1,jdbcType=VARCHAR}
+				,
+		#{sj1,jdbcType=VARCHAR}
+				,
+		#{e1,jdbcType=VARCHAR}
+				,
+		#{xm2,jdbcType=VARCHAR}
+				,
+		#{xh2,jdbcType=VARCHAR}
+				,
+		#{njzy2,jdbcType=VARCHAR}
+				,
+		#{sj2,jdbcType=VARCHAR}
+				,
+		#{e2,jdbcType=VARCHAR}
+				,
+		#{xm3,jdbcType=VARCHAR}
+				,
+		#{xh3,jdbcType=VARCHAR}
+				,
+		#{njzy3,jdbcType=VARCHAR}
+				,
+		#{sj3,jdbcType=VARCHAR}
+				,
+		#{e3,jdbcType=VARCHAR}
+				,
+		#{xm4,jdbcType=VARCHAR}
+				,
+		#{xh4,jdbcType=VARCHAR}
+				,
+		#{njzy4,jdbcType=VARCHAR}
+				,
+		#{sj4,jdbcType=VARCHAR}
+				,
+		#{e4,jdbcType=VARCHAR}
+				,
+		#{xm5,jdbcType=VARCHAR}
+				,
+		#{xh5,jdbcType=VARCHAR}
+				,
+		#{njzy5,jdbcType=VARCHAR}
+				,
+		#{sj5,jdbcType=VARCHAR}
+				,
+		#{e5,jdbcType=VARCHAR}
+				,
+		#{xm6,jdbcType=VARCHAR}
+				,
+		#{xh6,jdbcType=VARCHAR}
+				,
+		#{njzy6,jdbcType=VARCHAR}
+				,
+		#{sj6,jdbcType=VARCHAR}
+				,
+		#{e6,jdbcType=VARCHAR}
+				,
+		#{lsxm,jdbcType=VARCHAR}
+				,
+		#{lszw,jdbcType=VARCHAR}
+				,
+		#{szdw,jdbcType=VARCHAR}
+				,
+		#{lssj,jdbcType=VARCHAR}
+				,
+		#{lse,jdbcType=VARCHAR}
+				,
+		#{xmjz1,jdbcType=VARCHAR}
+				,
+		#{cgmc1,jdbcType=VARCHAR}
+				,
+		#{xs1,jdbcType=VARCHAR}
+				,
+		#{fbsj1,jdbcType=VARCHAR}
+				,
+		#{fbkw1,jdbcType=VARCHAR}
+				,
+		#{zs1,jdbcType=VARCHAR}
+				,
+		#{xmjz2,jdbcType=VARCHAR}
+				,
+		#{cgmc2,jdbcType=VARCHAR}
+				,
+		#{xs2,jdbcType=VARCHAR}
+				,
+		#{fbsj2,jdbcType=VARCHAR}
+				,
+		#{fbkw2,jdbcType=VARCHAR}
+				,
+		#{zs2,jdbcType=VARCHAR}
+				,
+		#{xmjz3,jdbcType=VARCHAR}
+				,
+		#{cgmc3,jdbcType=VARCHAR}
+				,
+		#{xs3,jdbcType=VARCHAR}
+				,
+		#{fbsj3,jdbcType=VARCHAR}
+				,
+		#{fbkw3,jdbcType=VARCHAR}
+				,
+		#{zs3,jdbcType=VARCHAR}
+				,
+		#{xmjz4,jdbcType=VARCHAR}
+				,
+		#{cgmc4,jdbcType=VARCHAR}
+				,
+		#{xs4,jdbcType=VARCHAR}
+				,
+		#{fbsj4,jdbcType=VARCHAR}
+				,
+		#{fbkw4,jdbcType=VARCHAR}
+				,
+		#{zs4,jdbcType=VARCHAR}
+				,
+		#{zywt,jdbcType=VARCHAR}
+				,
+		#{jdap,jdbcType=VARCHAR}
+				,
+		#{jfsy,jdbcType=VARCHAR}
+				,
+		#{lsyj,jdbcType=VARCHAR}
+				,
+		#{lsyjsj,jdbcType=TIMESTAMP}
+				,
+		#{xyyj,jdbcType=VARCHAR}
+				,
+		#{xyyjsj,jdbcType=TIMESTAMP}
+				,
+		#{xxyj,jdbcType=VARCHAR}
+				,
+		#{xxyjsj,jdbcType=TIMESTAMP}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Cglog">
+		update `cglog`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		<if test="xy != null and xy!=''">
+		`xy`= #{xy,jdbcType=VARCHAR},
+		</if>
+		<if test="xmlx != null and xmlx!=''">
+		`xmlx`= #{xmlx,jdbcType=VARCHAR},
+		</if>
+		<if test="fzr != null and fzr!=''">
+		`fzr`= #{fzr,jdbcType=VARCHAR},
+		</if>
+		<if test="zdls != null and zdls!=''">
+		`zdls`= #{zdls,jdbcType=VARCHAR},
+		</if>
+		<if test="qz != null and qz!=''">
+		`qz`= #{qz,jdbcType=VARCHAR},
+		</if>
+		<if test="js != null and js!=''">
+		`js`= #{js,jdbcType=VARCHAR},
+		</if>
+		<if test="xm1 != null and xm1!=''">
+		`xm1`= #{xm1,jdbcType=VARCHAR},
+		</if>
+		<if test="xh1 != null and xh1!=''">
+		`xh1`= #{xh1,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy1 != null and njzy1!=''">
+		`njzy1`= #{njzy1,jdbcType=VARCHAR},
+		</if>
+		<if test="sj1 != null and sj1!=''">
+		`sj1`= #{sj1,jdbcType=VARCHAR},
+		</if>
+		<if test="e1 != null and e1!=''">
+		`e1`= #{e1,jdbcType=VARCHAR},
+		</if>
+		<if test="xm2 != null and xm2!=''">
+		`xm2`= #{xm2,jdbcType=VARCHAR},
+		</if>
+		<if test="xh2 != null and xh2!=''">
+		`xh2`= #{xh2,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy2 != null and njzy2!=''">
+		`njzy2`= #{njzy2,jdbcType=VARCHAR},
+		</if>
+		<if test="sj2 != null and sj2!=''">
+		`sj2`= #{sj2,jdbcType=VARCHAR},
+		</if>
+		<if test="e2 != null and e2!=''">
+		`e2`= #{e2,jdbcType=VARCHAR},
+		</if>
+		<if test="xm3 != null and xm3!=''">
+		`xm3`= #{xm3,jdbcType=VARCHAR},
+		</if>
+		<if test="xh3 != null and xh3!=''">
+		`xh3`= #{xh3,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy3 != null and njzy3!=''">
+		`njzy3`= #{njzy3,jdbcType=VARCHAR},
+		</if>
+		<if test="sj3 != null and sj3!=''">
+		`sj3`= #{sj3,jdbcType=VARCHAR},
+		</if>
+		<if test="e3 != null and e3!=''">
+		`e3`= #{e3,jdbcType=VARCHAR},
+		</if>
+		<if test="xm4 != null and xm4!=''">
+		`xm4`= #{xm4,jdbcType=VARCHAR},
+		</if>
+		<if test="xh4 != null and xh4!=''">
+		`xh4`= #{xh4,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy4 != null and njzy4!=''">
+		`njzy4`= #{njzy4,jdbcType=VARCHAR},
+		</if>
+		<if test="sj4 != null and sj4!=''">
+		`sj4`= #{sj4,jdbcType=VARCHAR},
+		</if>
+		<if test="e4 != null and e4!=''">
+		`e4`= #{e4,jdbcType=VARCHAR},
+		</if>
+		<if test="xm5 != null and xm5!=''">
+		`xm5`= #{xm5,jdbcType=VARCHAR},
+		</if>
+		<if test="xh5 != null and xh5!=''">
+		`xh5`= #{xh5,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy5 != null and njzy5!=''">
+		`njzy5`= #{njzy5,jdbcType=VARCHAR},
+		</if>
+		<if test="sj5 != null and sj5!=''">
+		`sj5`= #{sj5,jdbcType=VARCHAR},
+		</if>
+		<if test="e5 != null and e5!=''">
+		`e5`= #{e5,jdbcType=VARCHAR},
+		</if>
+		<if test="xm6 != null and xm6!=''">
+		`xm6`= #{xm6,jdbcType=VARCHAR},
+		</if>
+		<if test="xh6 != null and xh6!=''">
+		`xh6`= #{xh6,jdbcType=VARCHAR},
+		</if>
+		<if test="njzy6 != null and njzy6!=''">
+		`njzy6`= #{njzy6,jdbcType=VARCHAR},
+		</if>
+		<if test="sj6 != null and sj6!=''">
+		`sj6`= #{sj6,jdbcType=VARCHAR},
+		</if>
+		<if test="e6 != null and e6!=''">
+		`e6`= #{e6,jdbcType=VARCHAR},
+		</if>
+		<if test="lsxm != null and lsxm!=''">
+		`lsxm`= #{lsxm,jdbcType=VARCHAR},
+		</if>
+		<if test="lszw != null and lszw!=''">
+		`lszw`= #{lszw,jdbcType=VARCHAR},
+		</if>
+		<if test="szdw != null and szdw!=''">
+		`szdw`= #{szdw,jdbcType=VARCHAR},
+		</if>
+		<if test="lssj != null and lssj!=''">
+		`lssj`= #{lssj,jdbcType=VARCHAR},
+		</if>
+		<if test="lse != null and lse!=''">
+		`lse`= #{lse,jdbcType=VARCHAR},
+		</if>
+		<if test="xmjz1 != null and xmjz1!=''">
+		`xmjz1`= #{xmjz1,jdbcType=VARCHAR},
+		</if>
+		<if test="cgmc1 != null and cgmc1!=''">
+		`cgmc1`= #{cgmc1,jdbcType=VARCHAR},
+		</if>
+		<if test="xs1 != null and xs1!=''">
+		`xs1`= #{xs1,jdbcType=VARCHAR},
+		</if>
+		<if test="fbsj1 != null and fbsj1!=''">
+		`fbsj1`= #{fbsj1,jdbcType=VARCHAR},
+		</if>
+		<if test="fbkw1 != null and fbkw1!=''">
+		`fbkw1`= #{fbkw1,jdbcType=VARCHAR},
+		</if>
+		<if test="zs1 != null and zs1!=''">
+		`zs1`= #{zs1,jdbcType=VARCHAR},
+		</if>
+		<if test="xmjz2 != null and xmjz2!=''">
+		`xmjz2`= #{xmjz2,jdbcType=VARCHAR},
+		</if>
+		<if test="cgmc2 != null and cgmc2!=''">
+		`cgmc2`= #{cgmc2,jdbcType=VARCHAR},
+		</if>
+		<if test="xs2 != null and xs2!=''">
+		`xs2`= #{xs2,jdbcType=VARCHAR},
+		</if>
+		<if test="fbsj2 != null and fbsj2!=''">
+		`fbsj2`= #{fbsj2,jdbcType=VARCHAR},
+		</if>
+		<if test="fbkw2 != null and fbkw2!=''">
+		`fbkw2`= #{fbkw2,jdbcType=VARCHAR},
+		</if>
+		<if test="zs2 != null and zs2!=''">
+		`zs2`= #{zs2,jdbcType=VARCHAR},
+		</if>
+		<if test="xmjz3 != null and xmjz3!=''">
+		`xmjz3`= #{xmjz3,jdbcType=VARCHAR},
+		</if>
+		<if test="cgmc3 != null and cgmc3!=''">
+		`cgmc3`= #{cgmc3,jdbcType=VARCHAR},
+		</if>
+		<if test="xs3 != null and xs3!=''">
+		`xs3`= #{xs3,jdbcType=VARCHAR},
+		</if>
+		<if test="fbsj3 != null and fbsj3!=''">
+		`fbsj3`= #{fbsj3,jdbcType=VARCHAR},
+		</if>
+		<if test="fbkw3 != null and fbkw3!=''">
+		`fbkw3`= #{fbkw3,jdbcType=VARCHAR},
+		</if>
+		<if test="zs3 != null and zs3!=''">
+		`zs3`= #{zs3,jdbcType=VARCHAR},
+		</if>
+		<if test="xmjz4 != null and xmjz4!=''">
+		`xmjz4`= #{xmjz4,jdbcType=VARCHAR},
+		</if>
+		<if test="cgmc4 != null and cgmc4!=''">
+		`cgmc4`= #{cgmc4,jdbcType=VARCHAR},
+		</if>
+		<if test="xs4 != null and xs4!=''">
+		`xs4`= #{xs4,jdbcType=VARCHAR},
+		</if>
+		<if test="fbsj4 != null and fbsj4!=''">
+		`fbsj4`= #{fbsj4,jdbcType=VARCHAR},
+		</if>
+		<if test="fbkw4 != null and fbkw4!=''">
+		`fbkw4`= #{fbkw4,jdbcType=VARCHAR},
+		</if>
+		<if test="zs4 != null and zs4!=''">
+		`zs4`= #{zs4,jdbcType=VARCHAR},
+		</if>
+		<if test="zywt != null and zywt!=''">
+		`zywt`= #{zywt,jdbcType=VARCHAR},
+		</if>
+		<if test="jdap != null and jdap!=''">
+		`jdap`= #{jdap,jdbcType=VARCHAR},
+		</if>
+		<if test="jfsy != null and jfsy!=''">
+		`jfsy`= #{jfsy,jdbcType=VARCHAR},
+		</if>
+		<if test="lsyj != null and lsyj!=''">
+		`lsyj`= #{lsyj,jdbcType=VARCHAR},
+		</if>
+		<if test="lsyjsj != null and lsyjsj!=''">
+		`lsyjsj`= #{lsyjsj,jdbcType=TIMESTAMP},
+		</if>
+		<if test="xyyj != null and xyyj!=''">
+		`xyyj`= #{xyyj,jdbcType=VARCHAR},
+		</if>
+		<if test="xyyjsj != null and xyyjsj!=''">
+		`xyyjsj`= #{xyyjsj,jdbcType=TIMESTAMP},
+		</if>
+		<if test="xxyj != null and xxyj!=''">
+		`xxyj`= #{xxyj,jdbcType=VARCHAR},
+		</if>
+		<if test="xxyjsj != null and xxyjsj!=''">
+		`xxyjsj`= #{xxyjsj,jdbcType=TIMESTAMP},
+		</if>
+		<if test="preuserid != null and preuserid!=''">
+		`preuserid`= #{preuserid,jdbcType=INTEGER},
+		</if>
+		<if test="preusername != null and preusername!=''">
+		`preusername`= #{preusername,jdbcType=VARCHAR},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

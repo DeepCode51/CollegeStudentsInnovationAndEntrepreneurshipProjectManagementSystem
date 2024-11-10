@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.CostMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Cost">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="amount" property="amount" jdbcType="VARCHAR" />
+		<result column="cate" property="cate" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="created" property="created" jdbcType="TIMESTAMP" />
+		<result column="preuserid" property="preuserid" jdbcType="INTEGER" />
+		<result column="preusername" property="preusername" jdbcType="VARCHAR" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`amount`
+		,
+		`cate`
+		,
+		`name`
+		,
+		`created`
+		,
+		`preuserid`
+		,
+		`preusername`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`status`
+		
+	</sql>
+	<select id="selectCostById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `cost` where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `cost` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.amount !=null and params.amount!=''">
+		 AND `amount` like concat('%',#{params.amount},'%')
+		</if>
+		<if test="params.cate !=null and params.cate!=''">
+		 AND `cate` like concat('%',#{params.cate},'%')
+		</if>
+		<if test="params.name !=null and params.name!=''">
+		 AND `name` like concat('%',#{params.name},'%')
+		</if>
+		<if test="params.created !=null ">
+		AND `created` = #{params.created}
+		</if>
+		<if test="params.preuserid !=null ">
+		AND `preuserid` = #{params.preuserid}
+		</if>
+		<if test="params.preusername !=null and params.preusername!=''">
+		 AND `preusername` like concat('%',#{params.preusername},'%')
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		<if test="params.status !=null ">
+		AND `status` = #{params.status}
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `cost` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Cost"> insert into `cost` (
+		`id`
+				,
+		`amount`
+				,
+		`cate`
+				,
+		`name`
+				,
+		`created`
+				,
+		`preuserid`
+				,
+		`preusername`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`status`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{amount,jdbcType=VARCHAR}
+				,
+		#{cate,jdbcType=VARCHAR}
+				,
+		#{name,jdbcType=VARCHAR}
+				,
+		#{created,jdbcType=TIMESTAMP}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{status,jdbcType=INTEGER}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Cost">
+		update `cost`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="amount != null and amount!=''">
+		`amount`= #{amount,jdbcType=VARCHAR},
+		</if>
+		<if test="cate != null and cate!=''">
+		`cate`= #{cate,jdbcType=VARCHAR},
+		</if>
+		<if test="name != null and name!=''">
+		`name`= #{name,jdbcType=VARCHAR},
+		</if>
+		<if test="created != null and created!=''">
+		`created`= #{created,jdbcType=TIMESTAMP},
+		</if>
+		<if test="preuserid != null and preuserid!=''">
+		`preuserid`= #{preuserid,jdbcType=INTEGER},
+		</if>
+		<if test="preusername != null and preusername!=''">
+		`preusername`= #{preusername,jdbcType=VARCHAR},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		<if test="status != null ">
+		`status`= #{status,jdbcType=INTEGER},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

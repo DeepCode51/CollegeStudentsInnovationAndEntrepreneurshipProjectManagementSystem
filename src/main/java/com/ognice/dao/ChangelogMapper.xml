@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ognice.dao.ChangelogMapper">
+	<resultMap id="BaseResultMap" type="com.ognice.domain.Changelog">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="projectid" property="projectid" jdbcType="INTEGER" />
+		<result column="projectname" property="projectname" jdbcType="VARCHAR" />
+		<result column="desc" property="desc" jdbcType="VARCHAR" />
+		<result column="created" property="created" jdbcType="TIMESTAMP" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="preuserid" property="preuserid" jdbcType="INTEGER" />
+		<result column="preusername" property="preusername" jdbcType="VARCHAR" />
+		<result column="user2" property="user2" jdbcType="VARCHAR" />
+		<result column="user3" property="user3" jdbcType="VARCHAR" />
+		<result column="user4" property="user4" jdbcType="VARCHAR" />
+		<result column="user5" property="user5" jdbcType="VARCHAR" />
+		<result column="pro1" property="pro1" jdbcType="VARCHAR" />
+		<result column="pro2" property="pro2" jdbcType="VARCHAR" />
+		<result column="pro3" property="pro3" jdbcType="VARCHAR" />
+		<result column="pro4" property="pro4" jdbcType="VARCHAR" />
+		<result column="pro5" property="pro5" jdbcType="VARCHAR" />
+		<result column="clazz1" property="clazz1" jdbcType="VARCHAR" />
+		<result column="clazz2" property="clazz2" jdbcType="VARCHAR" />
+		<result column="clazz3" property="clazz3" jdbcType="VARCHAR" />
+		<result column="clazz4" property="clazz4" jdbcType="VARCHAR" />
+		<result column="clazz5" property="clazz5" jdbcType="VARCHAR" />
+		<result column="grade1" property="grade1" jdbcType="VARCHAR" />
+		<result column="grade2" property="grade2" jdbcType="VARCHAR" />
+		<result column="grade3" property="grade3" jdbcType="VARCHAR" />
+		<result column="grade4" property="grade4" jdbcType="VARCHAR" />
+		<result column="grade5" property="grade5" jdbcType="VARCHAR" />
+		<result column="mail1" property="mail1" jdbcType="VARCHAR" />
+		<result column="mail2" property="mail2" jdbcType="VARCHAR" />
+		<result column="mail3" property="mail3" jdbcType="VARCHAR" />
+		<result column="mail4" property="mail4" jdbcType="VARCHAR" />
+		<result column="mail5" property="mail5" jdbcType="VARCHAR" />
+		<result column="tel1" property="tel1" jdbcType="VARCHAR" />
+		<result column="tel2" property="tel2" jdbcType="VARCHAR" />
+		<result column="tel3" property="tel3" jdbcType="VARCHAR" />
+		<result column="tel4" property="tel4" jdbcType="VARCHAR" />
+		<result column="tel5" property="tel5" jdbcType="VARCHAR" />
+		<result column="resean" property="resean" jdbcType="VARCHAR" />
+		<result column="recomment" property="recomment" jdbcType="VARCHAR" />
+		<result column="xycomment" property="xycomment" jdbcType="VARCHAR" />
+		<result column="ogmeb" property="ogmeb" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`
+		,
+		`projectid`
+		,
+		`projectname`
+		,
+		`desc`
+		,
+		`created`
+		,
+		`type`
+		,
+		`preuserid`
+		,
+		`preusername`
+		,
+		`user2`
+		,
+		`user3`
+		,
+		`user4`
+		,
+		`user5`
+		,
+		`pro1`
+		,
+		`pro2`
+		,
+		`pro3`
+		,
+		`pro4`
+		,
+		`pro5`
+		,
+		`clazz1`
+		,
+		`clazz2`
+		,
+		`clazz3`
+		,
+		`clazz4`
+		,
+		`clazz5`
+		,
+		`grade1`
+		,
+		`grade2`
+		,
+		`grade3`
+		,
+		`grade4`
+		,
+		`grade5`
+		,
+		`mail1`
+		,
+		`mail2`
+		,
+		`mail3`
+		,
+		`mail4`
+		,
+		`mail5`
+		,
+		`tel1`
+		,
+		`tel2`
+		,
+		`tel3`
+		,
+		`tel4`
+		,
+		`tel5`
+		,
+		`resean`
+		,
+		`recomment`
+		,
+		`xycomment`
+		,
+		`ogmeb`
+		
+	</sql>
+	<select id="selectChangelogById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `changelog` where id = #{id,jdbcType=INTEGER}
+	</select>
+    <select id="selectChangelogByProId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from `changelog` where projectid = #{id,jdbcType=INTEGER}
+    </select>
+	<select id="page" parameterType="com.ognice.controller.common.PageSearchParam" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from `changelog` where 1=1
+		<if test="params!=null">
+		<if test="params.id !=null ">
+		AND `id` = #{params.id}
+		</if>
+		<if test="params.projectid !=null ">
+		AND `projectid` = #{params.projectid}
+		</if>
+		<if test="params.projectname !=null and params.projectname!=''">
+		 AND `projectname` like concat('%',#{params.projectname},'%')
+		</if>
+		<if test="params.desc !=null and params.desc!=''">
+		 AND `desc` like concat('%',#{params.desc},'%')
+		</if>
+		<if test="params.created !=null ">
+		AND `created` = #{params.created}
+		</if>
+		<if test="params.type !=null ">
+		AND `type` = #{params.type}
+		</if>
+		<if test="params.preuserid !=null ">
+		AND `preuserid` = #{params.preuserid}
+		</if>
+		<if test="params.preusername !=null and params.preusername!=''">
+		 AND `preusername` like concat('%',#{params.preusername},'%')
+		</if>
+		<if test="params.user2 !=null and params.user2!=''">
+		 AND `user2` like concat('%',#{params.user2},'%')
+		</if>
+		<if test="params.user3 !=null and params.user3!=''">
+		 AND `user3` like concat('%',#{params.user3},'%')
+		</if>
+		<if test="params.user4 !=null and params.user4!=''">
+		 AND `user4` like concat('%',#{params.user4},'%')
+		</if>
+		<if test="params.user5 !=null and params.user5!=''">
+		 AND `user5` like concat('%',#{params.user5},'%')
+		</if>
+		<if test="params.pro1 !=null and params.pro1!=''">
+		 AND `pro1` like concat('%',#{params.pro1},'%')
+		</if>
+		<if test="params.pro2 !=null and params.pro2!=''">
+		 AND `pro2` like concat('%',#{params.pro2},'%')
+		</if>
+		<if test="params.pro3 !=null and params.pro3!=''">
+		 AND `pro3` like concat('%',#{params.pro3},'%')
+		</if>
+		<if test="params.pro4 !=null and params.pro4!=''">
+		 AND `pro4` like concat('%',#{params.pro4},'%')
+		</if>
+		<if test="params.pro5 !=null and params.pro5!=''">
+		 AND `pro5` like concat('%',#{params.pro5},'%')
+		</if>
+		<if test="params.clazz1 !=null and params.clazz1!=''">
+		 AND `clazz1` like concat('%',#{params.clazz1},'%')
+		</if>
+		<if test="params.clazz2 !=null and params.clazz2!=''">
+		 AND `clazz2` like concat('%',#{params.clazz2},'%')
+		</if>
+		<if test="params.clazz3 !=null and params.clazz3!=''">
+		 AND `clazz3` like concat('%',#{params.clazz3},'%')
+		</if>
+		<if test="params.clazz4 !=null and params.clazz4!=''">
+		 AND `clazz4` like concat('%',#{params.clazz4},'%')
+		</if>
+		<if test="params.clazz5 !=null and params.clazz5!=''">
+		 AND `clazz5` like concat('%',#{params.clazz5},'%')
+		</if>
+		<if test="params.grade1 !=null and params.grade1!=''">
+		 AND `grade1` like concat('%',#{params.grade1},'%')
+		</if>
+		<if test="params.grade2 !=null and params.grade2!=''">
+		 AND `grade2` like concat('%',#{params.grade2},'%')
+		</if>
+		<if test="params.grade3 !=null and params.grade3!=''">
+		 AND `grade3` like concat('%',#{params.grade3},'%')
+		</if>
+		<if test="params.grade4 !=null and params.grade4!=''">
+		 AND `grade4` like concat('%',#{params.grade4},'%')
+		</if>
+		<if test="params.grade5 !=null and params.grade5!=''">
+		 AND `grade5` like concat('%',#{params.grade5},'%')
+		</if>
+		<if test="params.mail1 !=null and params.mail1!=''">
+		 AND `mail1` like concat('%',#{params.mail1},'%')
+		</if>
+		<if test="params.mail2 !=null and params.mail2!=''">
+		 AND `mail2` like concat('%',#{params.mail2},'%')
+		</if>
+		<if test="params.mail3 !=null and params.mail3!=''">
+		 AND `mail3` like concat('%',#{params.mail3},'%')
+		</if>
+		<if test="params.mail4 !=null and params.mail4!=''">
+		 AND `mail4` like concat('%',#{params.mail4},'%')
+		</if>
+		<if test="params.mail5 !=null and params.mail5!=''">
+		 AND `mail5` like concat('%',#{params.mail5},'%')
+		</if>
+		<if test="params.tel1 !=null and params.tel1!=''">
+		 AND `tel1` like concat('%',#{params.tel1},'%')
+		</if>
+		<if test="params.tel2 !=null and params.tel2!=''">
+		 AND `tel2` like concat('%',#{params.tel2},'%')
+		</if>
+		<if test="params.tel3 !=null and params.tel3!=''">
+		 AND `tel3` like concat('%',#{params.tel3},'%')
+		</if>
+		<if test="params.tel4 !=null and params.tel4!=''">
+		 AND `tel4` like concat('%',#{params.tel4},'%')
+		</if>
+		<if test="params.tel5 !=null and params.tel5!=''">
+		 AND `tel5` like concat('%',#{params.tel5},'%')
+		</if>
+		<if test="params.resean !=null and params.resean!=''">
+		 AND `resean` like concat('%',#{params.resean},'%')
+		</if>
+		<if test="params.recomment !=null and params.recomment!=''">
+		 AND `recomment` like concat('%',#{params.recomment},'%')
+		</if>
+		<if test="params.xycomment !=null and params.xycomment!=''">
+		 AND `xycomment` like concat('%',#{params.xycomment},'%')
+		</if>
+		<if test="params.ogmeb !=null and params.ogmeb!=''">
+		 AND `ogmeb` like concat('%',#{params.ogmeb},'%')
+		</if>
+		</if>
+		order by id desc
+		<if test="page!=null"> limit #{page},#{pagesize}
+		</if>
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer"> delete from `changelog` where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ognice.domain.Changelog"> insert into `changelog` (
+		`id`
+				,
+		`projectid`
+				,
+		`projectname`
+				,
+		`desc`
+				,
+		`created`
+				,
+		`type`
+				,
+		`preuserid`
+				,
+		`preusername`
+				,
+		`user2`
+				,
+		`user3`
+				,
+		`user4`
+				,
+		`user5`
+				,
+		`pro1`
+				,
+		`pro2`
+				,
+		`pro3`
+				,
+		`pro4`
+				,
+		`pro5`
+				,
+		`clazz1`
+				,
+		`clazz2`
+				,
+		`clazz3`
+				,
+		`clazz4`
+				,
+		`clazz5`
+				,
+		`grade1`
+				,
+		`grade2`
+				,
+		`grade3`
+				,
+		`grade4`
+				,
+		`grade5`
+				,
+		`mail1`
+				,
+		`mail2`
+				,
+		`mail3`
+				,
+		`mail4`
+				,
+		`mail5`
+				,
+		`tel1`
+				,
+		`tel2`
+				,
+		`tel3`
+				,
+		`tel4`
+				,
+		`tel5`
+				,
+		`resean`
+				,
+		`recomment`
+				,
+		`xycomment`
+				,
+		`ogmeb`
+				
+	) values (
+		#{id,jdbcType=INTEGER}
+				,
+		#{projectid,jdbcType=INTEGER}
+				,
+		#{projectname,jdbcType=VARCHAR}
+				,
+		#{desc,jdbcType=VARCHAR}
+				,
+		#{created,jdbcType=TIMESTAMP}
+				,
+		#{type,jdbcType=INTEGER}
+				,
+		#{preuserid,jdbcType=INTEGER}
+				,
+		#{preusername,jdbcType=VARCHAR}
+				,
+		#{user2,jdbcType=VARCHAR}
+				,
+		#{user3,jdbcType=VARCHAR}
+				,
+		#{user4,jdbcType=VARCHAR}
+				,
+		#{user5,jdbcType=VARCHAR}
+				,
+		#{pro1,jdbcType=VARCHAR}
+				,
+		#{pro2,jdbcType=VARCHAR}
+				,
+		#{pro3,jdbcType=VARCHAR}
+				,
+		#{pro4,jdbcType=VARCHAR}
+				,
+		#{pro5,jdbcType=VARCHAR}
+				,
+		#{clazz1,jdbcType=VARCHAR}
+				,
+		#{clazz2,jdbcType=VARCHAR}
+				,
+		#{clazz3,jdbcType=VARCHAR}
+				,
+		#{clazz4,jdbcType=VARCHAR}
+				,
+		#{clazz5,jdbcType=VARCHAR}
+				,
+		#{grade1,jdbcType=VARCHAR}
+				,
+		#{grade2,jdbcType=VARCHAR}
+				,
+		#{grade3,jdbcType=VARCHAR}
+				,
+		#{grade4,jdbcType=VARCHAR}
+				,
+		#{grade5,jdbcType=VARCHAR}
+				,
+		#{mail1,jdbcType=VARCHAR}
+				,
+		#{mail2,jdbcType=VARCHAR}
+				,
+		#{mail3,jdbcType=VARCHAR}
+				,
+		#{mail4,jdbcType=VARCHAR}
+				,
+		#{mail5,jdbcType=VARCHAR}
+				,
+		#{tel1,jdbcType=VARCHAR}
+				,
+		#{tel2,jdbcType=VARCHAR}
+				,
+		#{tel3,jdbcType=VARCHAR}
+				,
+		#{tel4,jdbcType=VARCHAR}
+				,
+		#{tel5,jdbcType=VARCHAR}
+				,
+		#{resean,jdbcType=VARCHAR}
+				,
+		#{recomment,jdbcType=VARCHAR}
+				,
+		#{xycomment,jdbcType=VARCHAR}
+				,
+		#{ogmeb,jdbcType=VARCHAR}
+				
+	)
+	</insert>
+
+	<update id="update" parameterType="com.ognice.domain.Changelog">
+		update `changelog`
+		<set>
+		<if test="id != null and id!=''">
+		`id`= #{id,jdbcType=INTEGER},
+		</if>
+		<if test="projectid != null and projectid!=''">
+		`projectid`= #{projectid,jdbcType=INTEGER},
+		</if>
+		<if test="projectname != null and projectname!=''">
+		`projectname`= #{projectname,jdbcType=VARCHAR},
+		</if>
+		<if test="desc != null and desc!=''">
+		`desc`= #{desc,jdbcType=VARCHAR},
+		</if>
+		<if test="created != null and created!=''">
+		`created`= #{created,jdbcType=TIMESTAMP},
+		</if>
+		<if test="type != null and type!=''">
+		`type`= #{type,jdbcType=INTEGER},
+		</if>
+		<if test="preuserid != null and preuserid!=''">
+		`preuserid`= #{preuserid,jdbcType=INTEGER},
+		</if>
+		<if test="preusername != null and preusername!=''">
+		`preusername`= #{preusername,jdbcType=VARCHAR},
+		</if>
+		<if test="user2 != null and user2!=''">
+		`user2`= #{user2,jdbcType=VARCHAR},
+		</if>
+		<if test="user3 != null and user3!=''">
+		`user3`= #{user3,jdbcType=VARCHAR},
+		</if>
+		<if test="user4 != null and user4!=''">
+		`user4`= #{user4,jdbcType=VARCHAR},
+		</if>
+		<if test="user5 != null and user5!=''">
+		`user5`= #{user5,jdbcType=VARCHAR},
+		</if>
+		<if test="pro1 != null and pro1!=''">
+		`pro1`= #{pro1,jdbcType=VARCHAR},
+		</if>
+		<if test="pro2 != null and pro2!=''">
+		`pro2`= #{pro2,jdbcType=VARCHAR},
+		</if>
+		<if test="pro3 != null and pro3!=''">
+		`pro3`= #{pro3,jdbcType=VARCHAR},
+		</if>
+		<if test="pro4 != null and pro4!=''">
+		`pro4`= #{pro4,jdbcType=VARCHAR},
+		</if>
+		<if test="pro5 != null and pro5!=''">
+		`pro5`= #{pro5,jdbcType=VARCHAR},
+		</if>
+		<if test="clazz1 != null and clazz1!=''">
+		`clazz1`= #{clazz1,jdbcType=VARCHAR},
+		</if>
+		<if test="clazz2 != null and clazz2!=''">
+		`clazz2`= #{clazz2,jdbcType=VARCHAR},
+		</if>
+		<if test="clazz3 != null and clazz3!=''">
+		`clazz3`= #{clazz3,jdbcType=VARCHAR},
+		</if>
+		<if test="clazz4 != null and clazz4!=''">
+		`clazz4`= #{clazz4,jdbcType=VARCHAR},
+		</if>
+		<if test="clazz5 != null and clazz5!=''">
+		`clazz5`= #{clazz5,jdbcType=VARCHAR},
+		</if>
+		<if test="grade1 != null and grade1!=''">
+		`grade1`= #{grade1,jdbcType=VARCHAR},
+		</if>
+		<if test="grade2 != null and grade2!=''">
+		`grade2`= #{grade2,jdbcType=VARCHAR},
+		</if>
+		<if test="grade3 != null and grade3!=''">
+		`grade3`= #{grade3,jdbcType=VARCHAR},
+		</if>
+		<if test="grade4 != null and grade4!=''">
+		`grade4`= #{grade4,jdbcType=VARCHAR},
+		</if>
+		<if test="grade5 != null and grade5!=''">
+		`grade5`= #{grade5,jdbcType=VARCHAR},
+		</if>
+		<if test="mail1 != null and mail1!=''">
+		`mail1`= #{mail1,jdbcType=VARCHAR},
+		</if>
+		<if test="mail2 != null and mail2!=''">
+		`mail2`= #{mail2,jdbcType=VARCHAR},
+		</if>
+		<if test="mail3 != null and mail3!=''">
+		`mail3`= #{mail3,jdbcType=VARCHAR},
+		</if>
+		<if test="mail4 != null and mail4!=''">
+		`mail4`= #{mail4,jdbcType=VARCHAR},
+		</if>
+		<if test="mail5 != null and mail5!=''">
+		`mail5`= #{mail5,jdbcType=VARCHAR},
+		</if>
+		<if test="tel1 != null and tel1!=''">
+		`tel1`= #{tel1,jdbcType=VARCHAR},
+		</if>
+		<if test="tel2 != null and tel2!=''">
+		`tel2`= #{tel2,jdbcType=VARCHAR},
+		</if>
+		<if test="tel3 != null and tel3!=''">
+		`tel3`= #{tel3,jdbcType=VARCHAR},
+		</if>
+		<if test="tel4 != null and tel4!=''">
+		`tel4`= #{tel4,jdbcType=VARCHAR},
+		</if>
+		<if test="tel5 != null and tel5!=''">
+		`tel5`= #{tel5,jdbcType=VARCHAR},
+		</if>
+		<if test="resean != null and resean!=''">
+		`resean`= #{resean,jdbcType=VARCHAR},
+		</if>
+		<if test="recomment != null and recomment!=''">
+		`recomment`= #{recomment,jdbcType=VARCHAR},
+		</if>
+		<if test="xycomment != null and xycomment!=''">
+		`xycomment`= #{xycomment,jdbcType=VARCHAR},
+		</if>
+		<if test="ogmeb != null and ogmeb!=''">
+		`ogmeb`= #{ogmeb,jdbcType=VARCHAR},
+		</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>
